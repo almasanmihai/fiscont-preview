@@ -1,0 +1,362 @@
+/* Fiscont — site de prezentare
+   Brand: Poppins (titluri, butoane) + DM Sans (text); petrol pe alb murdar, roșul siglei ca accent. */
+:root{
+  /* Paleta petrol pe alb murdar (aleasă în octombrie 2026) */
+  --blue:#0F5E70;      /* petrol: linkuri, butoane, linia de sus a fișei */
+  --blue-2:#0B4957;    /* petrol închis: hover */
+  --sky:#7FB3BF;       /* petrol deschis: doar decor, nu text */
+  --red:#F60015;       /* roșul din siglă: accent rar (linia dublă a totalului) */
+  --red-text:#C4000F;  /* roșul siglei închis, pentru text mic lizibil */
+  --ink:#13262D;       /* text de bază */
+  --muted:#4D6268;
+  --paper:#ECE9E2;     /* fundalul paginii: alb murdar */
+  --surface:#F6F4EF;   /* suprafețe care stau „deasupra”: fișa firmei, butoane, banner */
+  --tint:#E1DDD4;      /* benzi: primul ecran, antetul paginilor, FISCONT Talks */
+  --line:#CFC9BC;
+  --on-blue-muted:#C5DDE2;
+  --on-blue-line:rgba(255,255,255,.26);
+  --heading:#0F4A59;   /* titluri */
+  --band:#0F4A59;      /* fundalul blocului echipei */
+
+  --head:"Poppins",system-ui,"Segoe UI",sans-serif;
+  --text:"DM Sans",system-ui,"Segoe UI",sans-serif;
+
+  --measure:66ch;
+  --gutter:clamp(1rem,4vw,2.5rem);
+  --max:1180px;
+  --sp-1:.5rem;--sp-2:1rem;--sp-3:1.5rem;--sp-4:2.5rem;--sp-5:4rem;--sp-6:6rem;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:96px} /* ancorele nu ajung sub bara fixă */
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font:400 1.0625rem/1.65 var(--text);
+  font-variant-numeric:tabular-nums lining-nums;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block}
+button{font:inherit}
+a{color:var(--blue);text-decoration-thickness:1px;text-underline-offset:.2em}
+a:hover{color:var(--blue-2);text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--blue-2);outline-offset:3px;border-radius:2px}
+.on-blue :focus-visible{outline-color:#fff}
+.skip{position:absolute;left:-9999px;top:0;z-index:50;background:var(--blue);color:#fff;padding:.75rem 1rem}
+.skip:focus{left:0}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- tipografie ---------- */
+h1,h2,h3,h4{font-family:var(--head);color:var(--heading);font-weight:600;margin:0;letter-spacing:-.012em}
+h1{font-size:clamp(2rem,4vw,2.9rem);line-height:1.15}
+h2{font-size:clamp(1.5rem,2.4vw,1.95rem);line-height:1.25}
+h3{font-size:1.2rem;line-height:1.35}
+p{margin:0}
+p+p{margin-top:1em}
+.lead{font:400 clamp(1.1rem,1.5vw,1.25rem)/1.6 var(--text);max-width:58ch;color:var(--ink)}
+.small{font-size:.9rem}
+.muted{color:var(--muted)}
+
+/* marcaj pentru informații de completat de client */
+.todo{
+  background:repeating-linear-gradient(135deg,rgba(14,86,154,.09) 0 5px,transparent 5px 10px);
+  outline:1px dashed rgba(14,86,154,.5);outline-offset:1px;
+  padding:0 .3em;font-style:normal;white-space:nowrap
+}
+.on-blue .todo{background:repeating-linear-gradient(135deg,rgba(255,255,255,.15) 0 5px,transparent 5px 10px);outline-color:rgba(255,255,255,.65)}
+
+/* ---------- butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;min-height:48px;padding:.7rem 1.4rem;
+  background:var(--blue);color:#fff;text-decoration:none;
+  font:500 1rem/1.2 var(--head);
+  border:1px solid var(--blue);border-radius:4px;
+}
+.btn:hover{background:var(--blue-2);border-color:var(--blue-2);color:#fff}
+.btn-line{background:transparent;color:var(--blue)}
+.btn-line:hover{background:var(--blue);color:#fff}
+.actions{display:flex;flex-wrap:wrap;gap:var(--sp-2) var(--sp-3);align-items:center;margin-top:var(--sp-3)}
+
+/* ---------- antet ---------- */
+/* bara de sus rămâne fixă; e semitransparentă, iar ce trece pe sub ea se vede estompat */
+.site-head{
+  position:sticky;top:0;z-index:30;
+  background:rgba(236,233,226,.5);
+  -webkit-backdrop-filter:saturate(140%) blur(8px);backdrop-filter:saturate(140%) blur(8px);
+  border-bottom:1px solid rgba(207,201,188,.6);
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.site-head{background:var(--paper)}}
+@media (prefers-reduced-transparency:reduce){.site-head{background:var(--paper);-webkit-backdrop-filter:none;backdrop-filter:none}}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3);min-height:78px}
+.wordmark{display:inline-flex;align-items:center;text-decoration:none}
+.wordmark .logo{width:180px;height:auto}
+.nav ul{display:flex;gap:clamp(1.25rem,2.5vw,2.25rem);list-style:none;margin:0;padding:0}
+.nav a{color:var(--ink);text-decoration:none;padding:.5rem 0;border-bottom:2px solid transparent;font:500 .98rem var(--head)}
+.nav a:hover{color:var(--blue);border-bottom-color:var(--line)}
+.nav a[aria-current="page"]{border-bottom-color:var(--blue);color:var(--blue)}
+.no-js .menu-btn{display:none !important}
+.menu-btn{display:none;min-height:44px;padding:.5rem .95rem;background:none;border:1px solid var(--ink);color:var(--ink);font:500 .95rem var(--head);border-radius:4px;cursor:pointer}
+
+/* ---------- secțiuni ---------- */
+.section{padding-block:var(--sp-5)}
+.section + .section{border-top:1px solid var(--line)}
+.section.tinted{background:var(--tint);border-top:0}
+.section.tinted + .section{border-top:0}
+.sec-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--sp-2) var(--sp-4);align-items:end;margin-bottom:var(--sp-4)}
+.sec-head p{color:var(--muted);max-width:56ch}
+
+/* ---------- hero ---------- */
+.hero{background:var(--tint);padding-block:clamp(2.5rem,7vw,5.5rem)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--sp-5);align-items:start}
+.hero h1{font-size:clamp(2.4rem,5.4vw,3.9rem);line-height:1.08;letter-spacing:-.02em;max-width:12ch}
+.hero .lead{margin-top:var(--sp-3)}
+
+/* fișa firmei: elementul de semnătură */
+.sheet{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--blue);padding:var(--sp-3) var(--sp-3) var(--sp-2);box-shadow:0 1px 0 var(--line)}
+.sheet-title{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--ink)}
+.sheet-title h2{font-size:1.15rem}
+.sheet-title span{font-size:.85rem;color:var(--muted)}
+.sheet dl{margin:0}
+.sheet .row{display:grid;grid-template-columns:8.5rem 1fr;gap:1rem;padding:.7rem 0;position:relative}
+.sheet .row::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--line);transform-origin:left}
+.sheet dt{font-size:.88rem;color:var(--muted)}
+.sheet dd{margin:0;font-weight:500}
+.sheet .row.total::after{height:0;border-bottom:3px double var(--red);background:none}
+.sheet .note{font-size:.85rem;color:var(--muted);margin-top:.9rem}
+
+@keyframes rule{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.sheet .row::after{animation:rule .7s cubic-bezier(.2,.65,.2,1) both}
+.sheet .row:nth-child(2)::after{animation-delay:.08s}
+.sheet .row:nth-child(3)::after{animation-delay:.16s}
+.sheet .row:nth-child(4)::after{animation-delay:.24s}
+.sheet .row:nth-child(5)::after{animation-delay:.32s}
+.sheet .row:nth-child(6)::after{animation-delay:.40s}
+
+/* ---------- servicii pe coloane cu linii ---------- */
+.cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:2px solid var(--ink)}
+.cols > *{padding:var(--sp-3) var(--sp-3) var(--sp-2);border-left:1px solid var(--line);display:flex;flex-direction:column}
+.cols > *:first-child{border-left:0;padding-left:0}
+.cols > *:last-child{padding-right:0}
+.cols h3{margin-bottom:.6rem}
+.cols ul{margin:.9rem 0 1.1rem;padding-left:1.1rem;color:var(--muted)}
+.cols li+li{margin-top:.25rem}
+.cols a{margin-top:auto}
+
+/* ---------- registru generic ---------- */
+.ledger{border-top:2px solid var(--ink)}
+.ledger .r{display:grid;border-bottom:1px solid var(--line);align-items:baseline}
+.ledger .r > *{padding:.95rem 1rem;border-left:1px solid var(--line);min-width:0}
+.ledger .r > *:first-child{border-left:0;padding-left:0}
+.ledger .r > *:last-child{padding-right:0}
+.ledger .head{font-size:.85rem;font-weight:500;color:var(--muted);border-bottom-color:var(--ink)}
+.ledger .head > *{padding-block:.55rem}
+.num{text-align:right;white-space:nowrap}
+.ledger.kv .r{grid-template-columns:minmax(6.5rem,9rem) 1fr}
+/* în coloana îngustă de lângă text, eticheta stă deasupra valorii */
+.body-grid aside .ledger.kv .r{grid-template-columns:1fr;padding-block:.7rem}
+.body-grid aside .ledger.kv .r > *{border-left:0;padding:0}
+.body-grid aside .ledger.kv dt{font-size:.85rem;color:var(--muted)}
+.ledger.svc .r{grid-template-columns:minmax(0,1.1fr) minmax(0,2.2fr) minmax(0,1fr)}
+.ledger.svc h3{font-size:1.15rem}
+
+/* ---------- echipa: singurul bloc plin ---------- */
+.team{background:var(--band);color:#fff;padding-block:var(--sp-5)}
+.team h2,.team h3{color:#fff}
+.team .sec-head p{color:var(--on-blue-muted)}
+.team a{color:#fff}
+.team .ledger{border-top-color:#fff}
+.team .ledger .r{grid-template-columns:5.5rem minmax(0,1.2fr) minmax(0,1.5fr) minmax(0,1.2fr);border-bottom-color:var(--on-blue-line);align-items:center}
+.team .ledger .r > *{border-left-color:var(--on-blue-line)}
+.team .ledger .head{color:var(--on-blue-muted);border-bottom-color:#fff}
+.team .ledger .r > *:first-child{padding-block:.8rem}
+.team .name{font:600 1.08rem/1.3 var(--head)}
+.team .muted{color:var(--on-blue-muted)}
+/* portrete rotunde, ca în materialele Fiscont */
+.photo{width:4.25rem;aspect-ratio:1;border-radius:50%;overflow:hidden;display:block;background:var(--tint);flex:none}
+.photo img{width:100%;height:100%;object-fit:cover}
+.team .photo{box-shadow:0 0 0 2px rgba(255,255,255,.85)}
+.photo.empty{
+  display:grid;place-items:center;text-align:center;
+  font-size:.6rem;line-height:1.15;color:var(--on-blue-muted);
+  border:1px dashed rgba(255,255,255,.6);box-shadow:none;
+  background:repeating-linear-gradient(135deg,rgba(255,255,255,.1) 0 5px,transparent 5px 10px);
+}
+.photo.on-paper.empty{color:var(--muted);border-color:var(--muted);background:repeating-linear-gradient(135deg,rgba(14,86,154,.08) 0 5px,transparent 5px 10px)}
+.photo.lg{width:7rem}
+
+/* ---------- citat ---------- */
+.quote{max-width:42ch;margin:0}
+.quote blockquote{margin:0}
+.quote q{quotes:"„" "”";font:500 clamp(1.25rem,2.2vw,1.55rem)/1.5 var(--head);color:var(--ink);display:block;letter-spacing:-.005em}
+.quote figcaption{margin-top:var(--sp-2);padding-top:var(--sp-2);border-top:1px solid var(--ink);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem 1.5rem}
+.quote figcaption b{font-weight:700}
+.split{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--sp-5);align-items:start}
+.aside-block{border-top:2px solid var(--ink);padding-top:var(--sp-2)}
+.aside-block + .aside-block{margin-top:var(--sp-4)}
+.aside-block h3{margin-bottom:.5rem}
+
+/* FISCONT Talks */
+.talks{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--sp-5);align-items:start}
+.talks .tagline{font:500 clamp(1.3rem,2.4vw,1.7rem)/1.4 var(--head);color:var(--ink);margin-top:var(--sp-2);max-width:24ch}
+.talks .tagline span{display:block;color:var(--heading)}
+
+/* valori */
+.values{display:flex;flex-wrap:wrap;gap:0;border-top:2px solid var(--ink);list-style:none;margin:0;padding:0}
+.values li{padding:.9rem 1.25rem .9rem 0;margin-right:1.25rem;border-bottom:1px solid var(--line);font:500 1rem var(--head);color:var(--blue)}
+
+/* ---------- blog ---------- */
+.posts .r{grid-template-columns:8rem minmax(0,1fr) 10rem}
+.posts .t a{font:600 1.1rem/1.4 var(--head);text-decoration:none;color:var(--heading)}
+.posts .t a:hover{text-decoration:underline}
+.posts .t p{margin-top:.3rem;color:var(--muted);font-size:.95rem;max-width:62ch}
+.cat-alerta{color:var(--red-text);font-weight:500}
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:var(--sp-3)}
+.filters button{
+  min-height:44px;padding:.45rem 1rem;border:1px solid var(--line);background:var(--surface);
+  color:var(--ink);font:500 .92rem var(--head);border-radius:4px;cursor:pointer
+}
+.filters button:hover{border-color:var(--ink)}
+.filters button[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+.draft-note{margin-top:var(--sp-4);padding-top:var(--sp-3);border-top:1px dashed var(--muted)}
+.draft-note h2{font-size:1.2rem}
+.draft-note .ledger{margin-top:var(--sp-2)}
+
+/* ---------- pagini interioare ---------- */
+.page-head{background:var(--tint);padding-block:clamp(2.25rem,6vw,4.25rem) var(--sp-4)}
+.page-head .crumbs{font-size:.9rem;color:var(--muted);margin-bottom:var(--sp-2)}
+.page-head .crumbs a{color:var(--muted)}
+.page-head h1{max-width:22ch}
+.page-head .lead{margin-top:var(--sp-2)}
+.body-grid{display:grid;grid-template-columns:minmax(0,var(--measure)) minmax(0,1fr);gap:var(--sp-5);align-items:start}
+.text{max-width:var(--measure)}
+.text h2{margin:2em 0 .6em}
+.text h2:first-child{margin-top:0}
+.text ul{padding-left:1.1rem}
+.text li+li{margin-top:.35rem}
+.side{border-top:2px solid var(--ink)}
+.side h2{font:600 1rem/1.3 var(--head);color:var(--ink);padding:.75rem 0 .35rem}
+.side .r{display:grid;grid-template-columns:3.75rem 1fr;gap:.9rem;align-items:center;padding:.8rem 0;border-top:1px solid var(--line)}
+.side .r b{display:block;font:600 1rem/1.3 var(--head)}
+.side .r span{font-size:.9rem;color:var(--muted)}
+.side .photo{width:3.75rem}
+.side .r.cta{grid-template-columns:1fr}
+
+/* pași (secvență reală) */
+.steps{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink);counter-reset:s}
+.steps li{display:grid;grid-template-columns:3rem minmax(0,1fr);gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line);counter-increment:s}
+.steps li::before{content:counter(s);font:600 1.35rem/1.2 var(--head);color:var(--blue)}
+.steps b{display:block;font-weight:700}
+
+/* întrebări */
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-of-type{border-top:2px solid var(--ink)}
+.faq summary{cursor:pointer;padding:1rem 2rem 1rem 0;font-weight:700;list-style:none;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:0;top:.8rem;font:500 1.4rem/1 var(--head);color:var(--blue)}
+.faq details[open] summary::after{content:"−"}
+.faq details p{padding:0 0 1.1rem;max-width:var(--measure)}
+
+/* ---------- articol ---------- */
+.article-head{background:var(--tint);padding-block:clamp(2.25rem,6vw,4rem) var(--sp-3)}
+.article-head h1{max-width:24ch;font-size:clamp(1.9rem,4vw,2.7rem)}
+.deck{font:400 clamp(1.1rem,1.6vw,1.25rem)/1.6 var(--text);margin-top:var(--sp-2);max-width:58ch}
+.byline{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 2rem;margin-top:var(--sp-3);padding-block:1rem;border-top:1px solid var(--ink);border-bottom:1px solid var(--line)}
+.byline .who{display:flex;gap:.9rem;align-items:center}
+.byline .who .photo{width:3rem}
+.byline .who b{display:block;font:600 1rem var(--head)}
+.byline dl{display:flex;flex-wrap:wrap;gap:.25rem 1.75rem;margin:0;font-size:.92rem}
+.byline dt{color:var(--muted)}
+.byline dd{margin:0;font-weight:500}
+.article-body{padding-block:var(--sp-4) var(--sp-5)}
+.prose{font:400 1.125rem/1.75 var(--text);hyphens:auto;max-width:var(--measure)}
+.prose p+p{margin-top:1.05em}
+.prose h2{font-size:1.4rem;margin:1.9em 0 .55em}
+.prose ul,.prose ol{padding-left:1.2rem}
+.prose li+li{margin-top:.35em}
+.prose blockquote{margin:1.5em 0;padding-left:1.25rem;border-left:3px solid var(--blue);font:500 1.15rem/1.6 var(--head);color:var(--ink)}
+.prose .source{font:400 .92rem/1.5 var(--text);color:var(--muted);border-left:2px solid var(--sky);padding-left:1rem;margin:1.4em 0}
+.summary{border-top:2px solid var(--ink);position:sticky;top:1.5rem}
+.summary h2{font:600 1rem/1.3 var(--head);color:var(--ink);padding:.75rem 0 .35rem}
+.summary dl{margin:0}
+.summary dl > div{border-top:1px solid var(--line);padding:.75rem 0}
+.summary dt{font-size:.85rem;font-weight:500;color:var(--muted)}
+.summary dd{margin:.15rem 0 0}
+.author{display:grid;grid-template-columns:auto minmax(0,1fr);gap:var(--sp-3);border-top:2px solid var(--ink);padding-top:var(--sp-3);max-width:calc(var(--measure) + 10rem)}
+.author .photo{width:6rem}
+.disclaimer{font-size:.92rem;color:var(--muted);border-top:1px solid var(--line);padding-top:var(--sp-2);margin-top:var(--sp-3);max-width:calc(var(--measure) + 10rem)}
+
+/* ---------- hartă la cerere ---------- */
+.map{margin-top:var(--sp-3);border:1px solid var(--line);background:var(--tint);aspect-ratio:16/7;min-height:260px;display:grid;place-items:center;text-align:center;padding:var(--sp-3)}
+.map iframe{width:100%;height:100%;border:0}
+.map p{max-width:44ch;color:var(--muted);margin-bottom:var(--sp-2)}
+
+/* ---------- subsol ---------- */
+.site-foot{border-top:2px solid var(--ink);padding-block:var(--sp-4) var(--sp-3);font-size:.93rem}
+.foot-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:var(--sp-3)}
+.foot-grid h2{font:600 .95rem/1.3 var(--head);color:var(--ink);margin-bottom:.6rem}
+.foot-grid .logo{width:150px;height:auto;margin-bottom:.9rem}
+.foot-grid ul{list-style:none;margin:0;padding:0}
+.foot-grid li+li{margin-top:.35rem}
+.foot-grid a{color:var(--ink)}
+.foot-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 2rem;margin-top:var(--sp-4);padding-top:var(--sp-2);border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+
+/* ---------- cookie-uri ---------- */
+.consent{position:fixed;left:var(--gutter);right:var(--gutter);bottom:1rem;z-index:40;max-width:34rem;background:var(--surface);border:1px solid var(--ink);border-top:3px solid var(--blue);padding:1rem 1.1rem;box-shadow:0 10px 28px rgba(19,38,45,.14);display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1rem}
+.consent[hidden]{display:none}
+.consent p{font-size:.88rem;line-height:1.45;flex:1 1 16rem}
+.consent .actions{margin-top:0;gap:.5rem;flex:none}
+.consent .btn{min-height:44px;padding:.5rem 1rem}
+
+/* ---------- responsive ---------- */
+@media (max-width:1060px){
+  .cols{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cols > *:nth-child(3){border-left:0;padding-left:0}
+  .cols > *:nth-child(2){padding-right:0}
+  .cols > *:nth-child(n+3){border-top:1px solid var(--line)}
+}
+@media (max-width:900px){
+  .menu-btn{display:inline-flex;align-items:center}
+  .js .nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--paper);border-bottom:2px solid var(--ink)}
+  .js .nav.open{display:block}
+  .nav ul{flex-direction:column;gap:0;padding:0 var(--gutter) .5rem}
+  .nav li{border-top:1px solid var(--line)}
+  .nav a{display:block;padding:.9rem 0;font-size:1.05rem;border-bottom:0}
+  .no-js .site-head .wrap{flex-wrap:wrap}
+
+  .hero-grid,.split,.body-grid,.talks{grid-template-columns:1fr;gap:var(--sp-4)}
+  .sec-head{grid-template-columns:1fr;align-items:start}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .summary{position:static}
+}
+@media (max-width:760px){
+  .section{padding-block:var(--sp-4)}
+  .cols{grid-template-columns:1fr}
+  .cols > *{border-left:0 !important;padding-inline:0 !important;border-top:1px solid var(--line)}
+  .cols > *:first-child{border-top:0}
+
+  .sheet{padding:1.1rem 1.1rem .9rem}
+  .sheet .row{grid-template-columns:6.75rem 1fr;gap:.75rem}
+
+  .ledger .head{display:none}
+  .ledger .r{grid-template-columns:1fr !important;padding-block:.75rem}
+  .ledger .r > *{border-left:0;padding:.1rem 0}
+  .num{text-align:left}
+  .ledger.kv .r > *:first-child{font-size:.85rem;color:var(--muted)}
+
+  .team .ledger .r{grid-template-columns:4.25rem minmax(0,1fr) !important;column-gap:1rem;align-items:start}
+  .team .ledger .r > *{grid-column:2}
+  .team .ledger .r > *:first-child{grid-column:1;grid-row:1 / span 3;padding:0}
+
+  .posts .r > .d,.posts .r > .c{font-size:.85rem;color:var(--muted)}
+  .posts .r > .c.cat-alerta{color:var(--red-text)}
+  .author{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .map{aspect-ratio:auto}
+}
+@media (max-width:420px){.wordmark .logo{width:150px}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+}
+@media print{
+  .site-head,.consent,.site-foot,.menu-btn{display:none}
+}
