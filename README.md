@@ -29,6 +29,23 @@ La modificări în `assets/styles.css` sau `assets/site.js`, creșteți `V` din 
 | `contact.html` | Contact, programare online, hartă încărcată doar la cerere |
 | `confidentialitate.html` | Proiect de politică GDPR și cookie-uri |
 
+## Previzualizare online (GitHub Pages)
+
+- Adresa: https://almasanmihai.github.io/fiscont-preview/
+- Repo (public): https://github.com/almasanmihai/fiscont-preview
+- Paginile au `noindex, nofollow`, iar `robots.txt` blochează indexarea, ca previzualizarea să nu apară în Google și să nu concureze cu fiscontsrl.ro. La lansarea reală se scot amândouă (tag-ul `robots` din `_build/build.py` și `robots.txt`).
+
+Pentru a actualiza previzualizarea după o modificare, din folderul `site-nou`:
+
+```
+python _build/build.py
+git add -A
+git commit -m "Descrierea modificării"
+git push
+```
+
+GitHub Pages republică site-ul în 1–2 minute.
+
 ## Design
 
 Paleta: **petrol pe alb murdar**, aleasă din patru variante (albastru, bleumarin, grafit, petrol). Documentul de branding cere „nuanțe de albastru cu alb și negru” și lasă loc de propuneri; petrolul e un albastru-verzui închis, iar sigla neagră cu roșu rămâne neschimbată.
