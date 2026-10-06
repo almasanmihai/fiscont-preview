@@ -1,0 +1,48 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import { services } from '../../data/site';
+import { withBase } from '../../utils/paths';
+---
+
+<Base
+  title="Servicii | Fiscont"
+  description="Contabilitate și fiscalitate, consultanță și analiză financiară, resurse umane și salarizare, juridic. Fiscont, București."
+  section="servicii"
+>
+  <PageHead
+    crumb="Servicii"
+    h1="Servicii"
+    lead="Patru domenii, o singură echipă. Nu publicăm prețuri: ele depind de firma ta și se discută la o întâlnire."
+  />
+
+  <section class="section">
+    <div class="wrap">
+      <div class="ledger svc" role="table" aria-label="Servicii Fiscont">
+        <div class="r head" role="row">
+          <span role="columnheader">Domeniu</span>
+          <span role="columnheader">Ce înseamnă</span>
+          <span role="columnheader">De exemplu</span>
+        </div>
+        {
+          services.map((s) => (
+            <div class="r" role="row">
+              <span role="cell">
+                <h3>
+                  <a href={withBase(`servicii/${s.slug}`)}>{s.title}</a>
+                </h3>
+              </span>
+              <span role="cell">{s.summary}</span>
+              <span role="cell" class="muted">
+                {s.items.slice(0, 2).join(', ')}
+              </span>
+            </div>
+          ))
+        }
+      </div>
+      <div class="actions">
+        <a class="btn" href={`${withBase('contact')}#programare`}>Programează o discuție</a>
+      </div>
+    </div>
+  </section>
+</Base>

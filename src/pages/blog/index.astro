@@ -1,0 +1,93 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import PostRows from '../../components/PostRows.astro';
+import { categories } from '../../content.config';
+import { drafts } from '../../data/site';
+import { getCollection } from 'astro:content';
+import { withBase } from '../../utils/paths';
+
+const posts = await getCollection('blog', ({ data }) => !data.draft);
+const count = posts.length;
+---
+
+<Base
+  title="Blog | Fiscont"
+  description="Alerte fiscale, FISCONT Talks, articole despre fiscalitate, resurse umane, legislație și leadership."
+  section="blog"
+>
+  <PageHead
+    crumb="Blog"
+    h1="Blog"
+    lead="Alerte fiscale, articole practice, seria FISCONT Talks și textele Gabrielei Dacu despre felul în care conduci o firmă."
+  />
+
+  <section class="section">
+    <div class="wrap">
+      <div class="filters" role="group" aria-label="Filtrează după categorie">
+        <button type="button" data-filter="toate" aria-pressed="true">Toate</button>
+        {
+          Object.entries(categories).map(([k, v]) => (
+            <button type="button" data-filter={k} aria-pressed="false">
+              {v}
+            </button>
+          ))
+        }
+      </div>
+      <p id="filter-status" class="small muted" aria-live="polite" style="margin-bottom:1rem">
+        {count} articole
+      </p>
+
+      <div class="ledger posts" role="table" aria-label="Articole">
+        <div class="r head" role="row">
+          <span role="columnheader">Data</span>
+          <span role="columnheader">Articol</span>
+          <span role="columnheader">Categorie</span>
+        </div>
+        <PostRows />
+      </div>
+
+      <div class="draft-note">
+        <h2>Articole propuse, încă nepublicate</h2>
+        <p class="small muted" style="margin-top:.4rem">
+          Vizibile doar în această propunere. Temele vin din bannerele și materialele Fiscont; pe
+          site apar după ce sunt scrise și verificate.
+        </p>
+        <div class="ledger posts" role="table" aria-label="Articole propuse">
+          <div
+            class="r head"
+            role="row"
+            style="grid-template-columns:minmax(0,1fr) 10rem 14rem"
+          >
+            <span role="columnheader">Titlu propus</span>
+            <span role="columnheader">Categorie</span>
+            <span role="columnheader">Sursa temei</span>
+          </div>
+          {
+            drafts.map((d) => (
+              <div
+                class="r"
+                role="row"
+                style="grid-template-columns:minmax(0,1fr) 10rem 14rem"
+              >
+                <span role="cell" class="t">
+                  {d.title === 'Cum pregătești documentele lunare pentru contabil' ? (
+                    <a href={withBase('blog/cum-pregatesti-documentele-lunare')}>{d.title}</a>
+                  ) : (
+                    <span>{d.title}</span>
+                  )}
+                </span>
+                <span role="cell" class={d.category === 'alerte' ? 'c cat-alerta' : 'c'}>
+                  {categories[d.category]}
+                </span>
+                <span role="cell" class="muted small">
+                  {d.source}
+                </span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

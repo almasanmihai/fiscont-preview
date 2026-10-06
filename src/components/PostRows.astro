@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import { categories } from '../content.config';
+import { withBase } from '../utils/paths';
+
+interface Props {
+  limit?: number;
+  withExcerpt?: boolean;
+  ids?: string[];
+}
+
+const { limit, withExcerpt = true, ids } = Astro.props;
+
+let posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+if (ids?.length) {
+  const order = new Map(ids.map((id, i) => [id, i]));
+  posts = posts.filter((p) => order.has(p.id)).sort((a, b) => (order.get(a.id)! - order.get(b.id)!));
+} else if (limit) {
+  posts = posts.slice(0, limit);
+}
+
+const fmt = new Intl.DateTimeFormat('ro-RO', { day: 'numeric', month: 'short', year: 'numeric' });
+---
+
+{
+  posts.map((post) => {
+    const cat = post.data.category;
+    const catCls = cat === 'alerte' ? 'c cat-alerta' : 'c';
+    return (
+      <div class="r" role="row" data-cat={cat}>
+        <span role="cell" class="d">
+          {fmt.format(post.data.pubDate)}
+        </span>
+        <span role="cell" class="t">
+          <a href={withBase(`blog/${post.id}`)}>{post.data.title}</a>
+          {withExcerpt && post.data.description ? <p>{post.data.description}</p> : null}
+        </span>
+        <span role="cell" class={catCls}>
+          {categories[cat]}
+        </span>
+      </div>
+    );
+  })
+}

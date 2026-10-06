@@ -1,0 +1,45 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import ServiceSide from '../../components/ServiceSide.astro';
+import { services } from '../../data/site';
+import { withBase } from '../../utils/paths';
+
+export function getStaticPaths() {
+  return services.map((s) => ({ params: { slug: s.slug }, props: { service: s } }));
+}
+
+const { service: s } = Astro.props;
+---
+
+<Base title={`${s.title} | Fiscont`} description={s.description} section="servicii">
+  <PageHead
+    crumb={`<a href="${withBase('servicii')}">Servicii</a> / ${s.title}`}
+    h1={s.title}
+    lead={s.lead}
+  />
+
+  <section class="section">
+    <div class="wrap body-grid">
+      <div class="text">
+        <h2>Ce acoperim</h2>
+        <ul>
+          {s.covers.map((c) => <li>{c}</li>)}
+        </ul>
+        {s.extraHtml ? <Fragment set:html={s.extraHtml} /> : null}
+        <h2 id="intrebari">Întrebări frecvente</h2>
+        <div class="faq">
+          {
+            s.faqs.map(({ q, a }) => (
+              <details>
+                <summary>{q}</summary>
+                <p>{a}</p>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+      <ServiceSide people={s.people} />
+    </div>
+  </section>
+</Base>

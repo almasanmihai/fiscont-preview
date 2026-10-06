@@ -1,0 +1,173 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostRows from '../../components/PostRows.astro';
+import { categories } from '../../content.config';
+import { photoByName } from '../../data/site';
+import { getCollection, render } from 'astro:content';
+import { assetUrl, withBase } from '../../utils/paths';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const cat = post.data.category;
+const photo = photoByName[post.data.author] ?? photoByName['Gabriela Dacu'];
+const fmt = new Intl.DateTimeFormat('ro-RO', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+---
+
+<Base
+  title={`${post.data.title} | Blog Fiscont`}
+  description={post.data.description || post.data.title}
+  section="blog"
+>
+  <article>
+    <header class="article-head">
+      <div class="wrap">
+        <p class="small muted">
+          <a class="muted" href={withBase()}>Acasă</a> /{' '}
+          <a class="muted" href={withBase('blog')}>Blog</a> / {categories[cat]}
+        </p>
+        <h1 style="margin-top:1rem">{post.data.title}</h1>
+        {
+          post.data.description ? (
+            <p class="deck">{post.data.description}</p>
+          ) : null
+        }
+        <div class="byline">
+          <div class="who">
+            {
+              photo ? (
+                <span class="photo on-paper">
+                  <img
+                    src={assetUrl(`assets/echipa/${photo}`)}
+                    width="360"
+                    height="360"
+                    alt={post.data.author}
+                    loading="lazy"
+                  />
+                </span>
+              ) : (
+                <span class="photo on-paper empty">fotografie reală</span>
+              )
+            }
+            <div>
+              <b>{post.data.author}</b>
+              <span class="small muted">{post.data.authorRole}</span>
+            </div>
+          </div>
+          <dl>
+            <div>
+              <dt>Publicat</dt>
+              <dd>
+                {post.data.draft ? (
+                  <span class="todo">data</span>
+                ) : (
+                  fmt.format(post.data.pubDate)
+                )}
+              </dd>
+            </div>
+            <div>
+              <dt>Citire</dt>
+              <dd data-reading-time>~2 min</dd>
+            </div>
+            <div>
+              <dt>Categorie</dt>
+              <dd>{categories[cat]}</dd>
+            </div>
+          </dl>
+        </div>
+        {
+          post.data.draft ? (
+            <p class="small" style="margin-top:.8rem">
+              <span class="todo">
+                Articol demonstrativ pentru șablon, de revizuit de echipă înainte de publicare
+              </span>
+            </p>
+          ) : null
+        }
+      </div>
+    </header>
+
+    <div class="wrap body-grid article-body">
+      <div class="prose">
+        <Content />
+      </div>
+      <aside aria-labelledby="pe-scurt">
+        {
+          post.id === 'cum-pregatesti-documentele-lunare' ? (
+            <div class="summary">
+              <h2 id="pe-scurt">Pe scurt</h2>
+              <dl>
+                <div>
+                  <dt>Ce trimiți</dt>
+                  <dd>Facturi emise și primite, extrase, bonuri, contracte noi</dd>
+                </div>
+                <div>
+                  <dt>Cum</dt>
+                  <dd>Grupate pe tipuri, pe un singur canal</dd>
+                </div>
+                <div>
+                  <dt>Când</dt>
+                  <dd>Până la data convenită în fiecare lună</dd>
+                </div>
+                <div>
+                  <dt>Dacă lipsește ceva</dt>
+                  <dd>Anunță-ne din timp</dd>
+                </div>
+              </dl>
+            </div>
+          ) : null
+        }
+      </aside>
+    </div>
+
+    <div class="wrap" style="padding-bottom:var(--sp-5)">
+      <section class="author" aria-label="Despre autor">
+        {
+          photo ? (
+            <span class="photo on-paper lg">
+              <img
+                src={assetUrl(`assets/echipa/${photo}`)}
+                width="360"
+                height="360"
+                alt={post.data.author}
+                loading="lazy"
+              />
+            </span>
+          ) : (
+            <span class="photo on-paper lg empty">fotografie reală</span>
+          )
+        }
+        <div>
+          <h2 style="font-size:1.25rem">{post.data.author}</h2>
+          <p class="muted small" style="margin-top:.2rem">{post.data.authorRole} Fiscont</p>
+          <p style="margin-top:.8rem;max-width:60ch">
+            Are peste 20 de ani de experiență în contabilitate și a fondat Fiscont în 2012. Scrie
+            despre contabilitate, finanțe și ce înseamnă să conduci o firmă.
+          </p>
+        </div>
+      </section>
+      <p class="disclaimer">
+        Articolele au caracter informativ și nu înlocuiesc consultanța pentru situația concretă a
+        firmei tale. Legislația se schimbă; verifică data publicării sau întreabă-ne.
+      </p>
+
+      <section style="margin-top:var(--sp-5)" aria-labelledby="similare">
+        <h2 id="similare" style="font-size:1.3rem;margin-bottom:1rem">Alte articole</h2>
+        <div class="ledger posts" role="table" aria-label="Alte articole">
+          <PostRows limit={2} withExcerpt={false} />
+        </div>
+      </section>
+    </div>
+  </article>
+</Base>

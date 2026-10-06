@@ -1,0 +1,22 @@
+---
+import { withBase } from '../utils/paths';
+
+interface Props {
+  crumb: string;
+  h1: string;
+  lead: string;
+}
+
+const { crumb, h1, lead } = Astro.props;
+---
+
+<header class="page-head">
+  <div class="wrap">
+    <p class="crumbs">
+      <a href={withBase()}>Acasă</a> / <Fragment set:html={crumb} />
+    </p>
+    <h1>{h1}</h1>
+    <p class="lead">{lead}</p>
+    <slot />
+  </div>
+</header>

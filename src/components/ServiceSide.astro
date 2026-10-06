@@ -1,0 +1,49 @@
+---
+import { photoByName, roleByName } from '../data/site';
+import { assetUrl, withBase } from '../utils/paths';
+
+interface Props {
+  people: (string | { name: string; role: string; todo?: boolean | string })[];
+  heading?: string;
+}
+
+const { people, heading = 'Cine se ocupă' } = Astro.props;
+---
+
+<aside class="side" aria-labelledby="cine">
+  <h2 id="cine">{heading}</h2>
+  {
+    people.map((p) => {
+      const name = typeof p === 'string' ? p : p.name;
+      const role = typeof p === 'string' ? roleByName[name] : p.role;
+      const isTodo = typeof p !== 'string' && p.todo;
+      const photo = photoByName[name];
+      return (
+        <div class="r">
+          {photo ? (
+            <span class="photo on-paper">
+              <img
+                src={assetUrl(`assets/echipa/${photo}`)}
+                width="360"
+                height="360"
+                alt={name}
+                loading="lazy"
+              />
+            </span>
+          ) : (
+            <span class="photo on-paper empty">fotografie reală</span>
+          )}
+          <div>
+            <b>{name}</b>
+            <span>{isTodo ? <span class="todo">{role}</span> : role}</span>
+          </div>
+        </div>
+      );
+    })
+  }
+  <div class="r cta">
+    <div>
+      <a class="btn" href={`${withBase('contact')}#programare`}>Programează o discuție</a>
+    </div>
+  </div>
+</aside>

@@ -1,0 +1,93 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+---
+
+<Base
+  title="Contact | Fiscont"
+  description="Telefon +40 759 011 054, office@fiscontsrl.ro, Bd. Unirii nr. 64, București. Luni–vineri, 9:00–18:00."
+  section="contact"
+>
+  <PageHead
+    crumb="Contact"
+    h1="Contact"
+    lead="Sună-ne, scrie-ne sau alege o oră pentru o discuție online. Răspundem în timpul programului, de luni până vineri."
+  />
+
+  <section class="section">
+    <div class="wrap split">
+      <dl class="ledger kv">
+        <div class="r">
+          <dt>Telefon</dt>
+          <dd><a href="tel:+40759011054">+40 759 011 054</a></dd>
+        </div>
+        <div class="r">
+          <dt>E-mail</dt>
+          <dd><a href="mailto:office@fiscontsrl.ro">office@fiscontsrl.ro</a></dd>
+        </div>
+        <div class="r"><dt>Program</dt><dd>Luni–vineri, 9:00–18:00</dd></div>
+        <div class="r">
+          <dt>Birou</dt>
+          <dd>Bd. Unirii nr. 64, Bloc K4, scara 4, etaj 3, București</dd>
+        </div>
+      </dl>
+      <div class="aside-block" id="programare">
+        <h2 style="font-size:1.4rem">Discuție online</h2>
+        <p style="margin-top:.5rem">
+          Alege o oră liberă din calendar. Discuția durează{' '}
+          <span class="todo">__ minute</span> și ne ajută să înțelegem firma ta înainte de orice
+          propunere.
+        </p>
+        <div class="actions"><a class="btn" href="#">Alege o oră în calendar</a></div>
+        <p class="small muted" style="margin-top:.75rem">
+          <span class="todo">link Calendly real</span> Programarea se face pe calendly.com, care are
+          propria politică de confidențialitate.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="harta">
+    <div class="wrap">
+      <h2 id="harta">Cum ajungi la birou</h2>
+      <div class="map">
+        <div>
+          <p>
+            Harta este furnizată de Google și se încarcă doar dacă apeși butonul, ca să nu trimitem
+            date către Google fără acordul tău.
+          </p>
+          <button class="btn btn-line" type="button" data-load-map>Afișează harta</button>
+          <p class="small" style="margin-top:1rem;margin-bottom:0">
+            <a href="https://www.google.com/maps/search/?api=1&query=Bulevardul+Unirii+64+Bucuresti">
+              Deschide adresa în Google Maps
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="date">
+    <div class="wrap split">
+      <div>
+        <h2 id="date">Date de identificare</h2>
+        <p class="muted" style="margin-top:.5rem">
+          Pentru contracte, facturi și corespondență oficială.
+        </p>
+      </div>
+      <dl class="ledger kv">
+        <div class="r"><dt>Denumire</dt><dd>Fiscont Expert Consulting Solution SRL</dd></div>
+        <div class="r"><dt>CUI</dt><dd>30138979</dd></div>
+        <div class="r"><dt>Nr. Reg. Com.</dt><dd>J2012001192237</dd></div>
+        <div class="r">
+          <dt>Sediu social</dt>
+          <dd>Str. Smîrdan nr. 30, Bragadiru, jud. Ilfov</dd>
+        </div>
+        <div class="r">
+          <dt>CECCAR</dt>
+          <dd>Membru, autorizația nr. 8032, filiala Ilfov, viză la zi</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+</Base>

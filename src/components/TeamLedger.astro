@@ -1,0 +1,54 @@
+---
+import { team, type TeamMember } from '../data/site';
+import { assetUrl } from '../utils/paths';
+
+interface Props {
+  label: string;
+  lastCol?: string;
+  bios?: boolean;
+  members?: TeamMember[];
+}
+
+const { label, lastCol = 'Domeniu', bios = false, members = team } = Astro.props;
+---
+
+<div class="ledger" role="table" aria-label={label}>
+  <div class="r head" role="row">
+    <span role="columnheader"><span class="sr">Fotografie</span></span>
+    <span role="columnheader">Nume</span>
+    <span role="columnheader">Rol</span>
+    <span role="columnheader">{lastCol}</span>
+  </div>
+  {
+    members.map((m) => (
+      <div class="r" role="row">
+        <span role="cell">
+          {m.photo ? (
+            <span class="photo">
+              <img
+                src={`${assetUrl(`assets/echipa/${m.photo}`)}`}
+                width="360"
+                height="360"
+                alt={m.name}
+                loading="lazy"
+              />
+            </span>
+          ) : (
+            <span class="photo empty">fotografie reală</span>
+          )}
+        </span>
+        <span role="cell" class="name">
+          {m.name}
+        </span>
+        <span role="cell">{m.role}</span>
+        <span role="cell" class="muted">
+          {bios ? (
+            m.todoBio ? <span class="todo">{m.bio}</span> : m.bio
+          ) : (
+            m.area
+          )}
+        </span>
+      </div>
+    ))
+  }
+</div>
