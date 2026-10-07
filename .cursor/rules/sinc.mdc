@@ -11,12 +11,15 @@ Remote: `origin` → `https://github.com/almasanmihai/fiscont-preview.git`, bran
 
 ## Pași
 
-1. `git status`, `git diff`, `git log` — vezi ce se schimbă și urmează stilul mesajelor existente.
-2. Commit doar fișierele relevante. Exclude secrete (`.env`, credențiale), `node_modules`, `public/admin/`, `tina/__generated__/`.
-3. Mesaj scurt (1–2 propoziții), pe „de ce”.
-4. `git push` pe `origin` pentru branch-ul curent.
-5. `git status` după push și confirmă că `main` e la fel cu `origin/main`.
+1. `git fetch`, apoi `git status`, `git diff`, `git log` — vezi ce e local și ce a ajuns deja pe GitHub.
+2. Înainte de commit sau push, verifică `src/content/blog/` față de `origin/main`. Roxana adaugă articole din Tina (commit-uri „TinaCMS content update”, co-author Roxana Fleiser).
+3. Commit doar fișierele relevante, **în afara blogului**, dacă utilizatorul nu a cerut explicit o schimbare de articol. Exclude secrete (`.env`, credențiale), `node_modules`, `public/admin/`, `tina/__generated__/`, `DE_COMPLETAT.md`.
+4. Dacă `origin/main` e înainte, integrează commit-urile ei (`git pull`) înainte de push. Articolele ei rămân. Nu le șterge, nu le rescrie și nu le lași pe dinafară.
+5. Dacă diff-ul local ar șterge sau suprascrie un articol de pe GitHub, oprește-te și spune ce fișier e în pericol. Nu continua push-ul.
+6. Mesaj scurt (1–2 propoziții), pe „de ce”.
+7. `git push` pe `origin` pentru branch-ul curent.
+8. `git status` după push și confirmă că `main` e la fel cu `origin/main` și că articolele din `src/content/blog/` de pe GitHub sunt încă acolo.
 
-Dacă nu există modificări de commitat, spune asta și tot verifică dacă branch-ul local e în urma remote-ului; dacă da, push ce lipsește.
+Dacă nu există modificări de commitat, spune asta și tot adu commit-urile Tina lipsă, ca blogul local să fie la fel cu GitHub.
 
 Nu face force push. Nu modifica git config. Nu sări peste hooks.
