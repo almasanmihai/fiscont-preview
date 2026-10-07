@@ -1,46 +1,85 @@
 ---
 import Base from '../../layouts/Base.astro';
 import PageHead from '../../components/PageHead.astro';
-import { services } from '../../data/site';
+import { services, proiecte, ssm } from '../../data/site';
 import { withBase } from '../../utils/paths';
 ---
 
 <Base
   title="Servicii | Fiscont"
-  description="Contabilitate și fiscalitate, consultanță și analiză financiară, resurse umane și salarizare, juridic. Fiscont, București."
+  description="Contabilitate, consultanță, HR, juridic, Fiscont Proiecte și TCA SAFEWORK (SSM / PSI). Ecosistemul Fiscont, București."
   section="servicii"
 >
   <PageHead
     crumb="Servicii"
     h1="Servicii"
-    lead="Patru domenii, o singură echipă. Nu publicăm prețuri: ele depind de firma ta și se discută la o întâlnire."
+    lead="Ecosistemul Fiscont: evidență, decizie și conformitate. Prețurile se discută la o întâlnire, în funcție de firma ta."
   />
 
-  <section class="section">
+  <section class="section" aria-labelledby="eco-servicii">
     <div class="wrap">
-      <div class="ledger svc" role="table" aria-label="Servicii Fiscont">
-        <div class="r head" role="row">
-          <span role="columnheader">Domeniu</span>
-          <span role="columnheader">Ce înseamnă</span>
-          <span role="columnheader">De exemplu</span>
-        </div>
-        {
-          services.map((s) => (
-            <div class="r" role="row">
-              <span role="cell">
-                <h3>
+      <h2 id="eco-servicii" class="sr">Ecosistemul de servicii</h2>
+      <div class="eco">
+        <div class="eco-layer">
+          <p class="eco-label">Evidență</p>
+          <h3>Fiscont</h3>
+          <p class="eco-lead">Ce s-a întâmplat: contabilitate, HR și juridic.</p>
+          <ul class="eco-list">
+            {
+              services.map((s) => (
+                <li>
                   <a href={withBase(`servicii/${s.slug}`)}>{s.title}</a>
-                </h3>
-              </span>
-              <span role="cell">{s.summary}</span>
-              <span role="cell" class="muted">
-                {s.items.slice(0, 2).join(', ')}
-              </span>
-            </div>
-          ))
-        }
+                  <span>{s.summary}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+
+        <div class="eco-layer eco-proiecte">
+          <p class="eco-label">Decizie</p>
+          <h3>{proiecte.title}</h3>
+          <p class="eco-lead">{proiecte.lead}</p>
+          <ul class="eco-list">
+            {
+              proiecte.items.map((item) => (
+                <li>
+                  <span class="eco-item-title">{item.title}</span>
+                  <span>{item.summary}</span>
+                </li>
+              ))
+            }
+          </ul>
+          <p class="actions">
+            <a class="btn" href={proiecte.url} rel="noopener noreferrer">
+              Fiscont Proiecte
+            </a>
+          </p>
+        </div>
+
+        <div class="eco-layer">
+          <p class="eco-label">Conformitate</p>
+          <h3>{ssm.title}</h3>
+          <p class="eco-lead">{ssm.lead}</p>
+          <ul class="eco-list">
+            {
+              ssm.items.map((item) => (
+                <li>
+                  <span class="eco-item-title">{item.title}</span>
+                  <span>{item.summary}</span>
+                </li>
+              ))
+            }
+          </ul>
+          <p class="actions">
+            <a class="btn btn-line" href={ssm.url} rel="noopener noreferrer">
+              TCA SAFEWORK
+            </a>
+          </p>
+        </div>
       </div>
-      <div class="actions">
+
+      <div class="actions" style="margin-top:var(--sp-4)">
         <a class="btn" href={`${withBase('contact')}#programare`}>Programează o discuție</a>
       </div>
     </div>

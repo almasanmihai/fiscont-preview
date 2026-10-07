@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import PageHead from '../components/PageHead.astro';
 import TeamLedger from '../components/TeamLedger.astro';
+import { withBase } from '../utils/paths';
 
 const values = [
   'Integritate',
@@ -23,62 +24,66 @@ const values = [
     crumb="Despre noi"
     h1="O echipă care îți explică cifrele"
     lead="Fiscont a fost înființată în 2012 de Gabriela Dacu, care are peste 20 de ani de experiență în contabilitate. Credem că informația contabilă și fiscală, de multe ori complexă, trebuie să fie ușor de înțeles și de aplicat. De aceea explicăm lucrurile simplu, fără să complicăm mesajul."
-  />
+  >
+    <aside class="sheet" slot="aside" aria-labelledby="fisa-despre">
+      <div class="sheet-title">
+        <h2 id="fisa-despre">Fișa firmei</h2>
+        <span>date publice</span>
+      </div>
+      <dl>
+        <div class="row"><dt>Denumire</dt><dd>Fiscont Expert Consulting Solution SRL</dd></div>
+        <div class="row"><dt>CUI</dt><dd>30138979</dd></div>
+        <div class="row"><dt>Nr. Reg. Com.</dt><dd>J2012001192237</dd></div>
+        <div class="row">
+          <dt>Sediu social</dt>
+          <dd>Str. Smîrdan nr. 30, Bragadiru, jud. Ilfov</dd>
+        </div>
+        <div class="row"><dt>Înființare</dt><dd>2012</dd></div>
+        <div class="row total">
+          <dt>CECCAR</dt>
+          <dd>Autorizația nr. 8032, filiala Ilfov</dd>
+        </div>
+      </dl>
+      <p class="note">
+        Statutul de membru se poate verifica pe{' '}
+        <a href="https://ceccar.ro/ro/?page_id=97">ceccar.ro</a>.
+        Protecția datelor: Luminița Gazi.
+      </p>
+    </aside>
+  </PageHead>
 
   <section class="section" aria-labelledby="cum-lucram">
-    <div class="wrap body-grid">
-      <div class="text">
-        <h2 id="cum-lucram">Cum începe o colaborare</h2>
-        <ol class="steps">
-          <li>
-            <div>
-              <b>Discuția inițială</b>Aflăm cum funcționează firma, ce documente există și ce
-              termene se apropie.
-            </div>
-          </li>
-          <li>
-            <div>
-              <b>Preluarea evidenței</b>Preluăm documentele de la tine sau de la contabilul anterior
-              și verificăm situația înainte de prima lună de lucru.
-            </div>
-          </li>
-          <li>
-            <div>
-              <b>Lucrul lunar</b>Primim documentele, le înregistrăm și depunem declarațiile la
-              termen. Știi mereu cine se ocupă de firma ta.
-            </div>
-          </li>
-          <li>
-            <div>
-              <b>Discuții periodice</b>Îți explicăm rezultatele pe înțeles și ce urmează, fiscal și
-              financiar.
-            </div>
-          </li>
-        </ol>
-        <p class="small muted" style="margin-top:1rem">
-          <span class="todo">Pași de validat cu echipa</span>
-        </p>
-      </div>
-      <aside>
-        <dl class="ledger kv" aria-label="Date de identificare">
-          <div class="r"><dt>Denumire</dt><dd>Fiscont Expert Consulting Solution SRL</dd></div>
-          <div class="r"><dt>CUI</dt><dd>30138979</dd></div>
-          <div class="r"><dt>Nr. Reg. Com.</dt><dd>J2012001192237</dd></div>
-          <div class="r">
-            <dt>Sediu social</dt>
-            <dd>Str. Smîrdan nr. 30, Bragadiru, jud. Ilfov</dd>
+    <div class="wrap text">
+      <h2 id="cum-lucram">Cum începe o colaborare</h2>
+      <ol class="steps">
+        <li>
+          <div>
+            <b>Discuția inițială</b>Aflăm cum funcționează firma, ce documente există și ce
+            termene se apropie.
           </div>
-          <div class="r"><dt>Înființare</dt><dd>2012</dd></div>
-          <div class="r">
-            <dt>CECCAR</dt>
-            <dd>
-              Membru, autorizația nr. 8032, filiala Ilfov, viză la zi<br />
-              <a class="small" href="https://ceccar.ro/ro/?page_id=97">Verifică pe ceccar.ro</a>
-            </dd>
+        </li>
+        <li>
+          <div>
+            <b>Preluarea evidenței</b>Preluăm documentele de la tine sau de la contabilul anterior
+            și verificăm situația înainte de prima lună de lucru.
           </div>
-          <div class="r"><dt>Protecția datelor</dt><dd>Responsabil: Luminița Gazi</dd></div>
-        </dl>
-      </aside>
+        </li>
+        <li>
+          <div>
+            <b>Lucrul lunar</b>Primim documentele, le înregistrăm și depunem declarațiile la
+            termen. Știi mereu cine se ocupă de firma ta.
+          </div>
+        </li>
+        <li>
+          <div>
+            <b>Discuții periodice</b>Îți explicăm rezultatele pe înțeles și ce urmează, fiscal și
+            financiar.
+          </div>
+        </li>
+      </ol>
+      <p class="small muted" style="margin-top:1rem">
+        <span class="todo">Pași de validat cu echipa</span>
+      </p>
     </div>
   </section>
 
@@ -131,12 +136,32 @@ const values = [
           noi le urmărim pentru tine.
         </p>
       </div>
-      <div class="aside-block">
-        <h3>Clientul Fiscont</h3>
-        <p>
-          Antreprenorul care vrea mai mult decât contabilitate: direcție, stabilitate și creștere,
-          construite cu claritate financiară.
-        </p>
+      <div>
+        <div class="aside-block">
+          <h3>Clientul Fiscont</h3>
+          <p>
+            Antreprenorul care vrea mai mult decât contabilitate: direcție, stabilitate și creștere,
+            construite cu claritate financiară.
+          </p>
+        </div>
+        <div class="aside-block">
+          <h3>Recenzii independente</h3>
+          <p>Părerile clienților, publicate direct de ei, sunt pe profilul nostru Google.</p>
+          <p>
+            <a href="#">Citește recenziile pe Google</a>{' '}
+            <span class="todo">link de completat</span>
+          </p>
+        </div>
+        <div class="aside-block">
+          <h3>FISCONT Talks</h3>
+          <p>
+            Seria noastră de educație financiară aplicată pentru antreprenori: termeni, schimbări și
+            decizii pe înțeles.
+          </p>
+          <p>
+            <a href={`${withBase('blog')}?categorie=talks`}>Articole FISCONT Talks</a>
+          </p>
+        </div>
       </div>
     </div>
   </section>

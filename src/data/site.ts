@@ -264,6 +264,65 @@ export const drafts = [
   },
 ];
 
+/** Subset pe homepage: oamenii cheie, fără registrul complet. */
+export const homeTeam = team.filter((m) =>
+  ['Gabriela Dacu', 'Ileana Hagi', 'Luminița Gazi', 'Carmen Ioana', 'Rareș Andreescu'].includes(
+    m.name,
+  ),
+);
+
+/** Stratul de decizie al ecosistemului — site dedicat fiscontprint.ro */
+export const proiecte = {
+  title: 'Fiscont Proiecte',
+  lead:
+    'Evidența contabilă rămâne la Fiscont. Proiecte preiau cifrele și le transformă în decizii, structură și oameni care știu ce au de făcut.',
+  url: 'https://fiscontprint.ro/',
+  items: [
+    {
+      title: 'Rapoarte de tip CFO',
+      summary: 'Semnale lunare pentru conducere, din balanțe și note contabile.',
+    },
+    {
+      title: 'Audit intern',
+      summary: 'Controale, fluxuri și riscuri din zona financiară, pe hartă.',
+    },
+    {
+      title: 'Reorganizare financiară',
+      summary: 'Roluri, procese și raportări când businessul a crescut mai repede decât echipa.',
+    },
+    {
+      title: 'Departament financiar de la zero',
+      summary: 'Organigramă, proceduri și digitalizare până la autonomia echipei.',
+    },
+  ],
+} as const;
+
+/** SSM / PSI / SU — TCA SAFEWORK, parte din ecosistemul Fiscont */
+export const ssm = {
+  title: 'TCA SAFEWORK',
+  lead:
+    'Un singur furnizor pentru SSM și PSI / situații de urgență: un abonament, un contract, un om de contact — documentele nu se contrazic la control.',
+  url: 'https://almasanmihai.github.io/ssm-su-expert-safetywork/',
+  items: [
+    {
+      title: 'Documentație SSM',
+      summary: 'Evaluare riscuri, plan de prevenire, fișe de instructaj.',
+    },
+    {
+      title: 'PSI / situații de urgență',
+      summary: 'Dosar PSI, plan de evacuare și documentație SU.',
+    },
+    {
+      title: 'Instruiri și asistență',
+      summary: 'Instruiri la termen și consultanță de specialitate.',
+    },
+    {
+      title: 'Reprezentare la control',
+      summary: 'La control, suntem acolo — documente actualizate.',
+    },
+  ],
+} as const;
+
 export const nav = [
   { key: 'despre', href: '/despre', label: 'Despre noi' },
   { key: 'servicii', href: '/servicii', label: 'Servicii' },

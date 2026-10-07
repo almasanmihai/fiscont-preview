@@ -1,82 +1,100 @@
 ---
 import Base from '../layouts/Base.astro';
 import TeamLedger from '../components/TeamLedger.astro';
-import PostRows from '../components/PostRows.astro';
-import { services } from '../data/site';
-import { withBase } from '../utils/paths';
+import { services, homeTeam, proiecte, ssm } from '../data/site';
+import { assetUrl, withBase } from '../utils/paths';
 ---
 
 <Base
   title="Fiscont | Contabilitate dincolo de cifre, București"
   description="Fiscont Expert Consulting Solution: contabilitate, consultanță financiară, resurse umane și juridic pentru antreprenori. Membru CECCAR, activă din 2012, București."
 >
-  <section class="hero" aria-labelledby="titlu">
-    <div class="wrap hero-grid">
-      <div>
-        <h1 id="titlu">Contabilitate dincolo de cifre.</h1>
-        <p class="lead">
-          Ținem contabilitatea firmei tale corectă și la zi, apoi te ajutăm să înțelegi ce spun
-          cifrele. Așa iei decizii fundamentate, nu doar depui declarații la termen.
-        </p>
-        <div class="actions">
-          <a class="btn" href={`${withBase('contact')}#programare`}>Programează o discuție</a>
-          <a href={`${withBase('despre')}#echipa`}>Cunoaște echipa</a>
-        </div>
+  <section
+    class="hero hero-photo"
+    aria-labelledby="titlu"
+    style={`--hero-image: url('${assetUrl('assets/hero.png')}')`}
+  >
+    <div class="wrap hero-simple">
+      <h1 id="titlu">Contabilitate dincolo de cifre.</h1>
+      <p class="lead">
+        Ținem contabilitatea firmei tale corectă și la zi, apoi te ajutăm să înțelegi ce spun
+        cifrele. Așa iei decizii fundamentate, nu doar depui declarații la termen.
+      </p>
+      <div class="actions">
+        <a class="btn" href={`${withBase('contact')}#programare`}>Programează o discuție</a>
+        <a href={`${withBase('despre')}#echipa`}>Cunoaște echipa</a>
       </div>
-
-      <aside class="sheet" aria-labelledby="fisa">
-        <div class="sheet-title">
-          <h2 id="fisa">Fișa firmei</h2><span>date publice</span>
-        </div>
-        <dl>
-          <div class="row"><dt>Denumire</dt><dd>Fiscont Expert Consulting Solution SRL</dd></div>
-          <div class="row"><dt>CUI</dt><dd>30138979</dd></div>
-          <div class="row"><dt>Activă din</dt><dd>2012</dd></div>
-          <div class="row"><dt>Birou</dt><dd>Bd. Unirii nr. 64, București</dd></div>
-          <div class="row">
-            <dt>Echipă</dt>
-            <dd>Experți contabili, economiști, specialiști în resurse umane</dd>
-          </div>
-          <div class="row total">
-            <dt>Membru CECCAR</dt>
-            <dd>Autorizația nr. 8032, filiala Ilfov</dd>
-          </div>
-        </dl>
-        <p class="note">
-          Statutul de membru se poate verifica pe{' '}
-          <a href="https://ceccar.ro/ro/?page_id=97">ceccar.ro</a>.
-        </p>
-      </aside>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="ce-facem">
+  <section class="section" aria-labelledby="ecosistem">
     <div class="wrap">
       <div class="sec-head">
-        <h2 id="ce-facem">De la contabilitate la parteneriat financiar</h2>
+        <h2 id="ecosistem">Ecosistemul Fiscont</h2>
         <p>
-          Pe măsură ce afacerea crește, cifrele devin mai mult decât raportări. Te sprijinim în
-          patru domenii, cu aceeași echipă, ca informația să circule o singură dată și să fie
-          aceeași peste tot.
+          Contabilitate și HR, proiecte de tip CFO, SSM și PSI — același grup, aceeași logică: un
+          om de contact, informație care nu se contrazice.
         </p>
       </div>
-      <div class="cols">
-        {
-          services.map((s) => (
-            <div>
-              <h3>{s.title}</h3>
-              <p>{s.summary}</p>
-              <ul>
-                {s.items.map((i) => (
-                  <li>{i}</li>
-                ))}
-              </ul>
-              <a href={withBase(`servicii/${s.slug}`)}>
-                Despre {s.title[0].toLowerCase() + s.title.slice(1)}
-              </a>
-            </div>
-          ))
-        }
+
+      <div class="eco">
+        <div class="eco-layer">
+          <p class="eco-label">Evidență</p>
+          <h3>Fiscont</h3>
+          <p class="eco-lead">Ce s-a întâmplat: contabilitate, HR și juridic.</p>
+          <ul class="eco-list">
+            {
+              services.map((s) => (
+                <li>
+                  <a href={withBase(`servicii/${s.slug}`)}>{s.title}</a>
+                </li>
+              ))
+            }
+          </ul>
+          <p class="actions">
+            <a href={withBase('servicii')}>Toate serviciile</a>
+          </p>
+        </div>
+
+        <div class="eco-layer eco-proiecte">
+          <p class="eco-label">Decizie</p>
+          <h3>{proiecte.title}</h3>
+          <p class="eco-lead">Cifrele transformate în direcție: CFO, audit, reorganizare.</p>
+          <ul class="eco-list">
+            {
+              proiecte.items.map((item) => (
+                <li>
+                  <span class="eco-item-title">{item.title}</span>
+                </li>
+              ))
+            }
+          </ul>
+          <p class="actions">
+            <a class="btn" href={proiecte.url} rel="noopener noreferrer">
+              Fiscont Proiecte
+            </a>
+          </p>
+        </div>
+
+        <div class="eco-layer">
+          <p class="eco-label">Conformitate</p>
+          <h3>{ssm.title}</h3>
+          <p class="eco-lead">SSM și PSI / SU: un abonament, un contract, un om de contact.</p>
+          <ul class="eco-list">
+            {
+              ssm.items.map((item) => (
+                <li>
+                  <span class="eco-item-title">{item.title}</span>
+                </li>
+              ))
+            }
+          </ul>
+          <p class="actions">
+            <a class="btn btn-line" href={ssm.url} rel="noopener noreferrer">
+              TCA SAFEWORK
+            </a>
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -85,17 +103,17 @@ import { withBase } from '../utils/paths';
     <div class="wrap">
       <div class="sec-head">
         <h2 id="echipa">Oamenii care îți răspund</h2>
-        <p>Fiecare client știe cine se ocupă de firma lui. Aici sunt, cu rolul și domeniul fiecăruia.</p>
+        <p>Fiecare client știe cine se ocupă de firma lui.</p>
       </div>
-      <TeamLedger label="Echipa Fiscont" />
-      <p class="actions"><a href={`${withBase('despre')}#echipa`}>Mai multe despre echipă</a></p>
+      <TeamLedger label="Echipa Fiscont" members={homeTeam} />
+      <p class="actions"><a href={`${withBase('despre')}#echipa`}>Toată echipa</a></p>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="clienti">
+  <section class="section" aria-labelledby="incredere">
     <div class="wrap split">
       <figure class="quote">
-        <h2 id="clienti" class="sr">Ce spun clienții</h2>
+        <h2 id="incredere" class="sr">Ce spun clienții</h2>
         <blockquote>
           <q>
             Totul a funcționat foarte bine. Întreaga colaborare a decurs impecabil, fără probleme.
@@ -109,116 +127,26 @@ import { withBase } from '../utils/paths';
         </figcaption>
       </figure>
       <div>
-        <div class="aside-block">
-          <h3>Domenii în care lucrăm</h3>
-          <p>
-            Agricultură, servicii, comerț, transporturi, birouri notariale și cabinete medicale.
-            Pentru fiecare urmărim regulile fiscale specifice activității.
-          </p>
-        </div>
-        <div class="aside-block">
-          <h3>Recenzii independente</h3>
-          <p>Părerile clienților, publicate direct de ei, sunt pe profilul nostru Google.</p>
-          <p>
-            <a href="#">Citește recenziile pe Google</a>{' '}
-            <span class="todo">link de completat</span>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section tinted" aria-labelledby="talks">
-    <div class="wrap talks">
-      <div>
-        <h2 id="talks">FISCONT Talks</h2>
-        <p class="tagline">
-          Fiscalitatea poate fi clară. <span>Trebuie doar să fie înțeleasă corect.</span>
-        </p>
-        <p style="margin-top:var(--sp-2);max-width:48ch">
-          Seria noastră de educație financiară aplicată pentru antreprenori: explicăm pe înțeles
-          termenii, schimbările și deciziile care contează.
-        </p>
-        <p class="actions">
-          <a class="btn btn-line" href={`${withBase('blog')}?categorie=talks`}>Articole FISCONT Talks</a>
-        </p>
-      </div>
-      <div class="ledger" role="table" aria-label="Teme FISCONT Talks">
-        <div class="r head" role="row" style="grid-template-columns:1fr">
-          <span role="columnheader">Teme din serie</span>
-        </div>
-        <div class="r" role="row" style="grid-template-columns:1fr">
-          <span role="cell">
-            Amortizare, TVA, cheltuială deductibilă: când le confundăm apar frustrări, când le
-            înțelegem, deciziile devin mai așezate.
-          </span>
-        </div>
-        <div class="r" role="row" style="grid-template-columns:1fr">
-          <span role="cell">Aceeași afacere, dar cu taxe mai mari? Ce majorări de taxe aduce 2026.</span>
-        </div>
-        <div class="r" role="row" style="grid-template-columns:1fr">
-          <span role="cell">
-            Contabilitatea este colaborare și predictibilitate: resurse umane, REGES-ONLINE și
-            timpul.
-          </span>
-        </div>
-        <div class="r" role="row" style="grid-template-columns:1fr">
-          <span role="cell">
-            Diferența dintre o contabilitate de conformare și un partener financiar.
-          </span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="din-blog">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2 id="din-blog">Din blog</h2>
-        <p>
-          Alerte fiscale, articole practice și textele Gabrielei Dacu despre ce înseamnă să conduci
-          o firmă.
-        </p>
-      </div>
-      <div class="ledger posts" role="table" aria-label="Articole recente">
-        <div class="r head" role="row">
-          <span role="columnheader">Data</span>
-          <span role="columnheader">Titlu</span>
-          <span role="columnheader">Categorie</span>
-        </div>
-        <PostRows limit={3} withExcerpt={false} />
-      </div>
-      <p class="actions"><a href={withBase('blog')}>Toate articolele</a></p>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="unde">
-    <div class="wrap split">
-      <div>
-        <h2 id="unde">Unde ne găsești</h2>
+        <h2>Să vorbim despre firma ta</h2>
         <p class="lead" style="margin-top:var(--sp-2)">
-          Ne poți suna, scrie sau vizita la birou. Pentru o primă discuție, alege o oră care ți se
-          potrivește.
+          Prima discuție e despre situația ta. Alege o oră care ți se potrivește sau sună-ne.
         </p>
         <div class="actions">
           <a class="btn" href={`${withBase('contact')}#programare`}>Programează o discuție</a>
+          <a href="tel:+40759011054">+40 759 011 054</a>
         </div>
+        <dl class="ledger kv" style="margin-top:var(--sp-4)">
+          <div class="r">
+            <dt>E-mail</dt>
+            <dd><a href="mailto:office@fiscontsrl.ro">office@fiscontsrl.ro</a></dd>
+          </div>
+          <div class="r"><dt>Program</dt><dd>Luni–vineri, 9:00–18:00</dd></div>
+          <div class="r">
+            <dt>Birou</dt>
+            <dd>Bd. Unirii nr. 64, Bloc K4, scara 4, etaj 3, București</dd>
+          </div>
+        </dl>
       </div>
-      <dl class="ledger kv">
-        <div class="r">
-          <dt>Telefon</dt>
-          <dd><a href="tel:+40759011054">+40 759 011 054</a></dd>
-        </div>
-        <div class="r">
-          <dt>E-mail</dt>
-          <dd><a href="mailto:office@fiscontsrl.ro">office@fiscontsrl.ro</a></dd>
-        </div>
-        <div class="r"><dt>Program</dt><dd>Luni–vineri, 9:00–18:00</dd></div>
-        <div class="r">
-          <dt>Birou</dt>
-          <dd>Bd. Unirii nr. 64, Bloc K4, scara 4, etaj 3, București</dd>
-        </div>
-      </dl>
     </div>
   </section>
 </Base>

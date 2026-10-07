@@ -8,15 +8,19 @@ interface Props {
 }
 
 const { crumb, h1, lead } = Astro.props;
+const hasAside = Astro.slots.has('aside');
 ---
 
 <header class="page-head">
-  <div class="wrap">
-    <p class="crumbs">
-      <a href={withBase()}>Acasă</a> / <Fragment set:html={crumb} />
-    </p>
-    <h1>{h1}</h1>
-    <p class="lead">{lead}</p>
-    <slot />
+  <div class:list={['wrap', hasAside && 'page-head-grid']}>
+    <div>
+      <p class="crumbs">
+        <a href={withBase()}>Acasă</a> / <Fragment set:html={crumb} />
+      </p>
+      <h1>{h1}</h1>
+      <p class="lead">{lead}</p>
+      <slot />
+    </div>
+    {hasAside && <slot name="aside" />}
   </div>
 </header>
