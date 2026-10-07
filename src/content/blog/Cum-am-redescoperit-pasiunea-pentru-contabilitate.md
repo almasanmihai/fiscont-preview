@@ -27,13 +27,13 @@ Dar eu nu îmi vedeam propria firmă ca pe un business. O vedeam ca pe „locul 
 
 Până atunci, poate vrei să afli câteva lucruri despre mine - cine sunt eu, dincolo de contabilitate?
 
-# Cine sunt eu, dincolo de contabilitate?
+## Cine sunt eu, dincolo de contabilitate?
 
 Sunt Gabriela Dacu - expert contabil, fondator FISCONT, dar mai ales mamă a doi copii minunați, Teodora și Alexandru. Cea mai mare realizare a mea? Relația lor – se iubesc, se respectă, se ajută. Deși au o diferență de vârstă de 7 ani și jumătate, între ei e o legătură sinceră și frumoasă.
 
 Am și un soț care m-a susținut mereu – în alegerile mele, în visurile mele, chiar și la cumpărături 😊
 
-# Un mic „fun fact” despre mine
+## Un mic „fun fact” despre mine
 
 La 14 ani n-am avut curaj să dau la liceul economic pentru că mi-era teamă că nu sunt suficient de pregătită. Apoi, la facultate, am ales Finanțe-Bănci pentru că voiam „mai mult” decât simpla etichetă de contabil. Am dat accesul la audit doar ca să-mi demonstrez mie că pot. Știam că nu voi profesa, pentru că domeniul era limitat în acea perioadă. Și totuși… iată-mă. Fac contabilitate.
 
