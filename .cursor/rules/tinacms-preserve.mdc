@@ -1,0 +1,31 @@
+---
+description: Păstrează TinaCMS (Tina Cloud) funcțional la orice modificare UI/UX sau de conținut
+alwaysApply: true
+---
+
+# TinaCMS — nu strica editarea blogului
+
+TinaCMS + Tina Cloud sunt **live și folosite** (inclusiv de Roxana) pe acest proiect. Orice lucru pe UI/UX, layout, stiluri sau pagini trebuie să **păstreze** acest flux.
+
+## Ce trebuie să rămână intact
+
+- `tina/config.ts` — colecția `blog` (label **Articole**), path `src/content/blog`, câmpuri aliniate la schema Astro, `basePath: 'fiscont-preview'`
+- `tina/tina-lock.json` — **în repo** (nu în `.gitignore`)
+- `src/content.config.ts` — schema colecției `blog` (aceleași nume de câmpuri ca în Tina)
+- `src/content/blog/*.md` — articolele; nu le rescrie inutil
+- Scripturi: `"dev": "tinacms dev -c \"astro dev\""`, `"build": "tinacms build && astro build"`
+- `.github/workflows/deploy.yml` — secrets `TINA_CLIENT_ID` / `TINA_TOKEN` la nivel de job; Node 22 pentru build
+- `.gitignore`: `.env`, `public/admin/`, `tina/__generated__/` — **nu** ignora `tina-lock.json`
+- `astro.config.mjs`: `base: '/fiscont-preview'` (GitHub Pages)
+- Helper URL: `src/utils/paths.ts` (`withBase` / `assetUrl`) — CSS/asset-urile depind de slash-ul corect după base
+
+## Admin live
+
+- Site: https://almasanmihai.github.io/fiscont-preview/
+- Admin: https://almasanmihai.github.io/fiscont-preview/admin/index.html
+
+## La modificări UI/UX
+
+- Poți schimba layout, CSS, componente Astro, pagini de prezentare.
+- **Nu** scoate Tina din `dev`/`build`, **nu** muta folderul blogului fără actualizare în `tina/config.ts` + schema Astro, **nu** redenumi câmpurile frontmatter fără sync Tina ↔ Astro.
+- După schimbări relevante: verifică local adminul (`/fiscont-preview/admin/index.html`) și că `npm run build` încă rulează `tinacms build`.

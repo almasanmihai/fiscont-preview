@@ -1,0 +1,22 @@
+---
+description: Când utilizatorul spune „sinc”, fă commit și push pe GitHub ca proiectul să rămână sincronizat
+alwaysApply: true
+---
+
+# sinc — commit și push
+
+Când utilizatorul spune **sinc** (singur sau în propoziție), sincronizează repo-ul cu GitHub. Nu aștepta o cerere separată de commit sau push.
+
+Remote: `origin` → `https://github.com/almasanmihai/fiscont-preview.git`, branch `main`.
+
+## Pași
+
+1. `git status`, `git diff`, `git log` — vezi ce se schimbă și urmează stilul mesajelor existente.
+2. Commit doar fișierele relevante. Exclude secrete (`.env`, credențiale), `node_modules`, `public/admin/`, `tina/__generated__/`.
+3. Mesaj scurt (1–2 propoziții), pe „de ce”.
+4. `git push` pe `origin` pentru branch-ul curent.
+5. `git status` după push și confirmă că `main` e la fel cu `origin/main`.
+
+Dacă nu există modificări de commitat, spune asta și tot verifică dacă branch-ul local e în urma remote-ului; dacă da, push ce lipsește.
+
+Nu face force push. Nu modifica git config. Nu sări peste hooks.
