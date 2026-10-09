@@ -5,6 +5,7 @@ pubDate: 2025-05-05T00:00:00.000Z
 category: leadership
 author: Gabriela Dacu
 authorRole: Fondator și CEO
+draft: true
 ---
 
 În articolul trecut povesteam cum am redescoperit bucuria de a face contabilitate cu sens. De a fi nu doar un „furnizor de servicii”, ci un partener real pentru antreprenori.
