@@ -1,7 +1,7 @@
 ---
 title: Contabilul tău face totul bine? De ce trebuie să te implici în contabilitatea afacerii tale
 description: 'Ai încredere în contabilul tău, dar știi cum stă financiar afacerea ta? Descoperă ce poți face pentru a preveni erorile și riscurile contabile.'
-pubDate: 2025-05-05T00:00:00.000Z
+pubDate: 2025-04-08T00:00:00.000Z
 category: leadership
 author: Gabriela Dacu
 authorRole: Fondator și CEO
