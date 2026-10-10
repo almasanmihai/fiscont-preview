@@ -1,7 +1,7 @@
 ---
 title: 'Disciplină în business: echilibrul dintre strategie și execuție'
 description: 'Descoperă cum disciplina în business te ajută să separi strategia de execuție, să prioritizezi corect și să construiești o afacere sustenabilă.'
-pubDate: 2026-02-09T00:00:00.000Z
+pubDate: 2026-02-10T00:00:00.000Z
 category: leadership
 author: Gabriela Dacu
 authorRole: Fondator și CEO
