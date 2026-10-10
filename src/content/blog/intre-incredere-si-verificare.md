@@ -20,29 +20,21 @@ Pentru că da, chiar dacă ai un contabil bun, tu, ca antreprenor, ești direct 
 
 Până într-o zi, când am început să preiau clienți din ce în ce mai conștienți, mai organizați, iar problemele „tehnice” erau, să zicem, rezonabile. Situațiile de reconciliere se rezolvau, documentele erau acolo, colaborarea era OK. Așa că am lăsat ideea puțin deoparte.
 
-Însă, privind în urmă - la preluări mai vechi de 5 sau chiar 10 ani -, la momentele în care erorile contabile, profesionale sau interpretative au dus la pierderi reale, îmi dau seama că această idee merită reluată. Ba chiar susținută cu și mai multă forță.
+Însă, privind în urmă - la preluări mai vechi de 5 sau chiar 10 ani - la momentele în care erorile contabile, profesionale sau interpretative au dus la pierderi reale, îmi dau seama că această idee merită reluată. Ba chiar susținută cu și mai multă forță.
 
 ## Dar ce se întâmplă când antreprenorul „nu se bagă în contabilitate”?
 
 Am văzut, de prea multe ori, antreprenori care nu aveau niciun control sau nicio întrebare legată de ceea ce însemna zona financiar-contabilă. Nu pentru că nu-i interesa. Ci pentru că spuneau:
 
-\- „Nu mă pricep.”
-
-\- „Nu e treaba mea.”
-
-\- „Plătesc un contabil, să se ocupe.”
+„Nu mă pricep. Nu e treaba mea. Plătesc un contabil, să se ocupe.”
 
 Și totuși, în lipsa implicării, au urmat:
 
-\- Blocaje în afacere, de la lipsă de lichidități până la interdicții temporare;
-
-\- Pierderea unor oportunități majore;
-
-\- Costuri enorme de refacere contabilă;
-
-\- Sancțiuni instituționale și dosare ANAF în lucru;
-
-\- Timp pierdut și stres major pentru tot ce era deja făcut „greșit”.
+* Blocaje în afacere, de la lipsă de lichidități până la interdicții temporare;
+* Pierderea unor oportunități majore;
+* Costuri enorme de refacere contabilă;
+* Sancțiuni instituționale și dosare ANAF în lucru;
+* Timp pierdut și stres major pentru tot ce era deja făcut „greșit”.
 
 De multe ori, antreprenorul află că are o problemă abia când este deja prea târziu.
 
@@ -56,17 +48,13 @@ Dar chiar și așa, este datoria ta să știi cu cine lucrezi și cum te asiguri
 
 ## Ce poți face concret ca antreprenor
 
-\- Primește periodic rapoarte pe înțelesul tău și cere explicații acolo unde ai dubii.
+* Primește periodic rapoarte pe înțelesul tău și cere explicații acolo unde ai dubii.
+* Verifică soldurile conturilor esențiale: TVA, bănci, furnizori, clienți. Dacă nu se potrivesc cu realitatea, este un semn că ceva nu este în regulă.
+* Cere o a doua opinie din când în când - consultanță punctuală sau audit intern.
+* Stabilește un contract clar, cu responsabilități pentru contabil.
+* Fii implicat în momentele-cheie: bilanțuri, decizii fiscale, schimbări legislative.
 
-\- Verifică soldurile conturilor esențiale: TVA, bănci, furnizori, clienți. Dacă nu se potrivesc cu realitatea, este un semn că ceva nu este în regulă.
-
-\- Cere o a doua opinie din când în când - consultanță punctuală sau audit intern.
-
-\- Stabilește un contract clar, cu responsabilități pentru contabil.
-
-\- Fii implicat în momentele-cheie: bilanțuri, decizii fiscale, schimbări legislative.
-
-Implicarea ta \*\*nu\*\* înseamnă că „îi verifici” pe ceilalți. Înseamnă că îți iei în serios rolul de administrator al propriei afaceri.
+Implicarea ta nu înseamnă că „îi verifici” pe ceilalți. Înseamnă că îți iei în serios rolul de administrator al propriei afaceri.
 
 ## Ce m-a durut cel mai mult, profesional vorbind
 
@@ -74,13 +62,10 @@ Implicarea ta \*\*nu\*\* înseamnă că „îi verifici” pe ceilalți. Înseam
 
 De ce? Pentru că am văzut:
 
-\- Oameni care își asumă servicii contabile fără să înțeleagă riscurile;
-
-\- Afaceri cărora le lipsesc procedurile minime de control;
-
-\- Proprietari care nu cer explicații și semnează „ca să fie bine”;
-
-\- Greșeli grave care puteau fi prevenite.
+* Oameni care își asumă servicii contabile fără să înțeleagă riscurile;
+* Afaceri cărora le lipsesc procedurile minime de control;
+* Proprietari care nu cer explicații și semnează „ca să fie bine”;
+* Greșeli grave care puteau fi prevenite.
 
 Dar cel mai mult m-a durut altceva: când am realizat că noi, ca „părinți” ai unei afaceri, nu facem tot ce ține de noi pentru a-i oferi cele mai bune condiții să crească.
 
