@@ -9,11 +9,18 @@ import { assetUrl, withBase } from '../utils/paths';
   title="Fiscont | Contabilitate dincolo de cifre, București"
   description="Fiscont Expert Consulting Solution: contabilitate, consultanță financiară, resurse umane și juridic pentru antreprenori. Membru CECCAR, activă din 2012, București."
 >
-  <section
-    class="hero hero-photo"
-    aria-labelledby="titlu"
-    style={`--hero-image: url('${assetUrl('assets/hero.png')}')`}
-  >
+  <section class="hero hero-photo" aria-labelledby="titlu">
+    <picture class="hero-media" aria-hidden="true">
+      <source srcset={assetUrl('assets/hero.webp')} type="image/webp" />
+      <img
+        src={assetUrl('assets/hero.jpg')}
+        alt=""
+        width="1600"
+        height="900"
+        decoding="async"
+        fetchpriority="high"
+      />
+    </picture>
     <div class="wrap hero-simple">
       <h1 id="titlu">Contabilitate dincolo de cifre.</h1>
       <p class="lead">
