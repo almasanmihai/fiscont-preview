@@ -5,6 +5,7 @@ pubDate: 2026-08-17T00:00:00.000Z
 category: leadership
 author: Gabriela Dacu
 authorRole: Fondator și CEO
+draft: false
 ---
 
 Trăim într-o lume aproape haotică. Iar dacă ne uităm la mediul fiscal și la predictibilitatea din România, lucrurile nu devin deloc mai simple.
