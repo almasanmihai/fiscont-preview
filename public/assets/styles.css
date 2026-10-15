@@ -112,20 +112,27 @@ p+p{margin-top:1em}
 .hero h1{font-size:clamp(2.4rem,5.4vw,3.9rem);line-height:1.08;letter-spacing:-.02em;max-width:14ch}
 .hero .lead{margin-top:var(--sp-3)}
 .hero-photo{
-  position:relative;isolation:isolate;overflow:hidden;color:#fff;
-  background:var(--blue);padding-block:clamp(4rem,12vw,7.5rem);
+  position:relative;isolation:isolate;overflow:hidden;color:var(--ink);
+  background:var(--paper);padding-block:clamp(4rem,12vw,7.5rem);
 }
 .hero-media{position:absolute;inset:0;z-index:0}
-.hero-media img{width:100%;height:100%;object-fit:cover;object-position:72% center;display:block}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center right;display:block}
+.hero-photo::after{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:linear-gradient(100deg,rgba(242,242,242,.94) 0%,rgba(242,242,242,.78) 38%,rgba(242,242,242,.25) 62%,transparent 78%);
+}
 .hero-photo .wrap{position:relative;z-index:1}
-.hero-photo h1{color:#fff}
-.hero-photo .lead{color:rgba(255,255,255,.92)}
-.hero-photo .actions a:not(.btn){color:#fff;text-decoration-thickness:1px}
-.hero-photo .actions a:not(.btn):hover{color:#fff;text-decoration-thickness:2px}
-.hero-photo .btn{background:#fff;color:var(--blue);border-color:#fff}
-.hero-photo .btn:hover{background:var(--tint);border-color:var(--tint);color:var(--blue-2)}
+.hero-photo h1{color:var(--heading)}
+.hero-photo .lead{color:var(--ink)}
+.hero-photo .actions a:not(.btn){color:var(--blue)}
+.hero-photo .actions a:not(.btn):hover{color:var(--blue-2)}
+.hero-photo .btn{background:var(--blue);color:#fff;border-color:var(--blue)}
+.hero-photo .btn:hover{background:var(--blue-2);border-color:var(--blue-2);color:#fff}
 @media (max-width:700px){
-  .hero-media img{object-position:82% center}
+  .hero-media img{object-position:70% center}
+  .hero-photo::after{
+    background:linear-gradient(180deg,rgba(242,242,242,.92) 0%,rgba(242,242,242,.78) 55%,rgba(242,242,242,.35) 100%);
+  }
 }
 
 /* ---------- ecosistem (evidență + Proiecte) ---------- */
