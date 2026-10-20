@@ -302,7 +302,7 @@ export const ssm = {
   title: 'TCA SAFEWORK',
   lead:
     'Un singur furnizor pentru SSM și PSI / situații de urgență: un abonament, un contract, un om de contact — documentele nu se contrazic la control.',
-  url: 'https://almasanmihai.github.io/ssm-su-expert-safetywork/',
+  url: 'https://tcasafework.ro/',
   items: [
     {
       title: 'Documentație SSM',
