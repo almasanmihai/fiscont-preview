@@ -108,30 +108,31 @@ p+p{margin-top:1em}
 /* ---------- hero ---------- */
 .hero{background:var(--tint);padding-block:clamp(3rem,9vw,6.5rem)}
 .hero-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--sp-5);align-items:start}
-.hero-simple{max-width:42rem}
+.hero-simple{max-width:34rem}
 .hero h1{font-size:clamp(2.4rem,5.4vw,3.9rem);line-height:1.08;letter-spacing:-.02em;max-width:14ch}
 .hero .lead{margin-top:var(--sp-3)}
 .hero-photo{
   position:relative;isolation:isolate;overflow:hidden;color:var(--ink);
-  background:var(--paper);padding-block:clamp(4rem,12vw,7.5rem);
+  background:var(--paper);padding-block:clamp(4.5rem,14vw,8rem);
+  min-height:clamp(28rem,62vh,40rem);
+  display:flex;flex-direction:column;justify-content:center;
 }
 .hero-media{position:absolute;inset:0;z-index:0}
-.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center right;display:block}
-.hero-photo::after{
-  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
-  background:linear-gradient(100deg,rgba(242,242,242,.94) 0%,rgba(242,242,242,.78) 38%,rgba(242,242,242,.25) 62%,transparent 78%);
-}
-.hero-photo .wrap{position:relative;z-index:1}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:left center;display:block}
+.hero-photo .wrap{position:relative;z-index:1;width:100%}
+.hero-photo .hero-simple{margin:0;text-align:left;max-width:min(34rem,48%)}
 .hero-photo h1{color:var(--heading)}
-.hero-photo .lead{color:var(--ink)}
+.hero-photo .lead{color:var(--ink);max-width:38ch}
 .hero-photo .actions a:not(.btn){color:var(--blue)}
 .hero-photo .actions a:not(.btn):hover{color:var(--blue-2)}
 .hero-photo .btn{background:var(--blue);color:#fff;border-color:var(--blue)}
 .hero-photo .btn:hover{background:var(--blue-2);border-color:var(--blue-2);color:#fff}
 @media (max-width:700px){
+  .hero-photo .hero-simple{max-width:100%}
   .hero-media img{object-position:70% center}
   .hero-photo::after{
-    background:linear-gradient(180deg,rgba(242,242,242,.92) 0%,rgba(242,242,242,.78) 55%,rgba(242,242,242,.35) 100%);
+    content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:linear-gradient(180deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,.65) 50%,rgba(255,255,255,.25) 100%);
   }
 }
 
