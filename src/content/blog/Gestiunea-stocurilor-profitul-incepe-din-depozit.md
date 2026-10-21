@@ -7,7 +7,7 @@ author: Gabriela Dacu
 authorRole: Expert contabil & fondator FISCONT
 ---
 
-![](/uploads/gestiunea-stocurilor.png)
+![Gestiunea stocurilor contabiltate](/uploads/gestiunea-stocurilor.png)
 
 Pentru orice afacere care lucrează cu marfă, materii prime sau producție, gestiunea stocurilor reprezintă un pilon central de control financiar și operațional.
 
