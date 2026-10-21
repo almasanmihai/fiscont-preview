@@ -7,6 +7,8 @@ author: Gabriela Dacu
 authorRole: Expert contabil & fondator FISCONT
 ---
 
+![](/uploads/pexels-artempodrez-6779714.jpg)
+
 Pentru orice afacere care lucrează cu marfă, materii prime sau producție, gestiunea stocurilor reprezintă un pilon central de control financiar și operațional.
 
 În practică, stocurile funcționează ca o oglindă a businessului: dacă traseul fizic al bunurilor nu este corect înregistrat, contabilitatea nu poate reconstrui singură performanța economică a companiei.
