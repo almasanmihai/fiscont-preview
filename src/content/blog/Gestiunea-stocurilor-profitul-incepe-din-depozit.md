@@ -104,4 +104,4 @@ Dacă afacerea ta derulează operațiuni cu stocuri, depășește simpla verific
 
 Într-un business bazat pe marfă sau producție, stocurile influențează direct costul vânzărilor, marja brută și impozitul pe profit.
 
-Controlul gestiunii nu este o simplă formalitate administrativă, ci un instrument esențial de management financiar.
+Controlul gestiunii nu este o simplă formalitate administrativă, ci un instrument esențial de management financiar.![](/uploads/pexels-artempodrez-6779714.jpg)
