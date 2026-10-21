@@ -7,7 +7,7 @@ author: Gabriela Dacu
 authorRole: Expert contabil & fondator FISCONT
 ---
 
-![Documente, rapoarte financiare și grafice contabile.](/uploads/pexels-artempodrez-6779714.jpg)
+![](/uploads/gestiunea-stocurilor.png)
 
 Pentru orice afacere care lucrează cu marfă, materii prime sau producție, gestiunea stocurilor reprezintă un pilon central de control financiar și operațional.
 
@@ -104,4 +104,4 @@ Dacă afacerea ta derulează operațiuni cu stocuri, depășește simpla verific
 
 Într-un business bazat pe marfă sau producție, stocurile influențează direct costul vânzărilor, marja brută și impozitul pe profit.
 
-Controlul gestiunii nu este o simplă formalitate administrativă, ci un instrument esențial de management financiar.![](/uploads/pexels-artempodrez-6779714.jpg)
+Controlul gestiunii nu este o simplă formalitate administrativă, ci un instrument esențial de management financiar.![](/uploads/pexels-artempodrez-6779714.jpg)![](/uploads/gestiunea-stocurilor.png)
