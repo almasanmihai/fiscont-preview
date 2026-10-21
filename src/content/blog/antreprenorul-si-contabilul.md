@@ -7,6 +7,8 @@ author: Gabriela Dacu
 authorRole: Fondator și CEO
 ---
 
+![](/uploads/conta.png)
+
 Ultimele două luni au fost, ca în fiecare an, un maraton contracronometru în biroul nostru. S-a lucrat intens la finalizarea situațiilor financiare anuale. Deși ne-am organizat din timp, am stabilit priorități și am lucrat pe obiective clare, luna mai a rămas aceeași perioadă extrem de încărcată.
 
 Privind în urmă, m-am întrebat: unde greșim? De ce, deși planificăm totul, ajungem mereu să lucrăm sub o presiune uriașă în această perioadă?
