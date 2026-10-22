@@ -7,6 +7,8 @@ author: Gabriela Dacu
 authorRole: Fondator și CEO
 ---
 
+![](/uploads/delegare.png)
+
 Martie a fost, pentru mine, o lună despre decizii. Nu despre cele „perfecte”, ci despre cele reale.
 
 Sunt Gabriela Dacu - expert contabil, antreprenor și, în termeni mai moderni, CEO. Adică omul care trebuie să ia decizii. Des. Uneori rapid. Uneori fără toate datele.
