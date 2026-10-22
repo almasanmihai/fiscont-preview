@@ -19,7 +19,7 @@ Anul 2025 a fost despre maturizarea echipei, despre asumarea rolurilor, responsa
 
 Din punct de vedere profesional, în 2025 am continuat să învăț și să îmi dezvolt competențe noi, în special în zona de GM (General Manager).
 
-Din punct de vedere personal, sunt încă restantă la capitolul timp petrecut cu mai multă prezență în familie. Totuși, nu au existat dezechilibre majore. Cred că susținerea familiei și a celor apropiați a fost o parte importantă din performanța mea în 2025 — un element esențial pentru echilibrul profesional.
+Din punct de vedere personal, sunt încă restantă la capitolul timp petrecut cu mai multă prezență în familie. Totuși, nu au existat dezechilibre majore. Cred că susținerea familiei și a celor apropiați a fost o parte importantă din performanța mea în 2025 — un element esențial pentru echilibrul profesional. 
 
 ## Cu ce am intrat în 2025?
 
