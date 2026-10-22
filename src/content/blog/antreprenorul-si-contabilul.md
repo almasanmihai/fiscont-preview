@@ -19,9 +19,7 @@ Răspunsul pe care l-am descoperit nu ține de lipsa de organizare. Ține de o r
 
 În timp ce contabilul este concentrat să închidă corect anul fiscal trecut, să regleze conturi și să analizeze solduri, debite și credite, antreprenorul este ancorat în prezent și viitor.
 
-Privite simplu, lucrurile arată așa:
-
-TABEL -  DE FACUT
+Privite simplu, lucrurile arată așa:![](/uploads/contabilitate.png)
 
 Ambele perspective sunt la fel de corecte și de vitale pentru companie. Problema apare atunci când cele două lumi se întâlnesc, dar nu reușesc să comunice eficient.
 
