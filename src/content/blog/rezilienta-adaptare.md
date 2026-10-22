@@ -7,6 +7,8 @@ author: Gabriela Dacu
 authorRole: Fondator și CEO
 ---
 
+![](/uploads/Rezilienta.png)
+
 Trăim vremuri în care nimic nu mai e garantat. Clima se schimbă. Pacea nu mai este o certitudine. Afacerile trec prin transformări profunde, unele chiar istorice. Tehnologia ne provoacă să ținem pasul: marketing cu AI sau fără?! Clienții vor soluții rapide și clare, iar piața cere mai mult decât cifre.
 
 Toate industriile sunt puse la încercare. Și da, nici domeniul financiar-contabil nu face excepție. În ultimele luni, focusul meu și al echipei FISCONT a fost pe felul în care facem lucrurile. Dincolo de cifre, am pus accent pe evoluție reală și pe consolidarea unei culturi interne sănătoase.
