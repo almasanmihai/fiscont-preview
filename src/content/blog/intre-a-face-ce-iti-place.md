@@ -7,6 +7,8 @@ author: Gabriela Dacu
 authorRole: Fondator și CEO
 ---
 
+![](/uploads/leadership.png)
+
 Luna ianuarie a fost una intensă: obiective, targete, planuri, schimbări fiscale, acceptare de proiecte și intrare în execuție. O lună care, din toate punctele de vedere, a cerut multă energie, claritate și asumare.
 
 Provocarea principală a fost următoarea: deși aveam angajamente extrem de importante în zona de execuție, proiecte premium, cu termene clare de livrare, nu am putut începe lucrul până nu am aliniat, la un nivel satisfăcător pentru mine, strategia business-ului meu pentru trimestrul 1.
