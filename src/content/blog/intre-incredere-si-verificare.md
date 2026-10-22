@@ -8,6 +8,10 @@ authorRole: Fondator și CEO
 draft: false
 ---
 
+![](/uploads/fiscal.png)
+
+„Contabilul tău face totul bine?” De ce e responsabilitatea ta să știi răspunsul.
+
 În articolul trecut povesteam cum am redescoperit bucuria de a face contabilitate cu sens. De a fi nu doar un „furnizor de servicii”, ci un partener real pentru antreprenori.
 
 Astăzi vreau să vorbim despre ce înseamnă, concret, relația sănătoasă dintre antreprenor și contabil. Și mai ales, despre responsabilitatea antreprenorului în această ecuație.
