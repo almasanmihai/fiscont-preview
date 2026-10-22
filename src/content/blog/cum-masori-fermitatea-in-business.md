@@ -7,6 +7,8 @@ author: Gabriela Dacu
 authorRole: Fondator și CEO
 ---
 
+![](/uploads/business.png)
+
 Fermitatea este adesea văzută ca o trăsătură personală, nativă, cu posibilități limitate de schimbare. Aceasta a fost viziunea mea pentru o bună perioadă din viața mea de antreprenor. Însă am învățat o lecție importantă, poate mai târziu decât ar fi trebuit.
 
 ## Cum a început povestea mea antreprenorială
