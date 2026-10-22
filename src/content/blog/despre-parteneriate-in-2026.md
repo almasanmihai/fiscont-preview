@@ -8,6 +8,8 @@ authorRole: Fondator și CEO
 draft: false
 ---
 
+![](/uploads/parteneriate.png)
+
 Trăim într-o lume aproape haotică. Iar dacă ne uităm la mediul fiscal și la predictibilitatea din România, lucrurile nu devin deloc mai simple.
 
 Mediul fiscal din România nu a fost niciodată simplu, iar ultimii ani au adăugat și mai multă impredictibilitate. Indiferent dacă conduci un start-up sau o companie deja matură, realitatea este că nu funcționezi izolat. Ești într-o rețea continuă de parteneriate - cu clienții, echipele, furnizorii și colaboratorii tăi.
