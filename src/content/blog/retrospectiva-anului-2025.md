@@ -7,6 +7,8 @@ author: Gabriela Dacu
 authorRole: Fondator și CEO
 ---
 
+![](/uploads/retrospectiva.png)
+
 Dacă ar fi să pun într-un singur paragraf, sau în câteva cuvinte, ce a definit anul 2025 pentru mine din punct de vedere business, acestea ar fi: detașare emoțională, claritate și maturizare.
 
 Detașarea emoțională față de „copilul FISCONT”. Toate provocările din anul 2025, care au apărut inevitabil în business, au fost abordate astfel: OK, hai să vedem opțiunile, ce putem face acum și cum evităm astfel de situații pe viitor.
