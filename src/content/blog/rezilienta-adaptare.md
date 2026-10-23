@@ -38,7 +38,7 @@ Este solicitant. Dar este visul meu să construim un business funcțional, care 
 * Seriozitatea.
 * Responsabilitatea.
 * Asumarea profesiei.
-* Asumarea rolului de lider, indiferent de poziția din care acționez -prestator sau beneficiar.
+* Asumarea rolului de lider, indiferent de poziția din care acționez - prestator sau beneficiar.
 * Învățarea continuă și dezvoltarea profesională și personală.
 
 Am constatat în timp că personalitatea influențează profund și deciziile profesionale. Așa că am învățat să îmi cultiv reziliența, adaptabilitatea și diplomația. Nu din teorie, ci din realitatea zilnică a conducerii unui business.
