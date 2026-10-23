@@ -35,9 +35,9 @@ Pentru că delegarea nu înseamnă doar să dai mai departe. Înseamnă să ai �
 
 Am învățat că delegarea funcționează doar dacă este:
 
-* Etapizată.
-* Urmărită.
-* Măsurată.
+* etapizată;
+* urmărită;
+* măsurată.
 
 Și, mai ales, înțeleasă de ambele părți. Nu există delegare „dintr-o dată”. Există construcție.
 
