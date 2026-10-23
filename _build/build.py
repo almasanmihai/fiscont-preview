@@ -84,9 +84,6 @@ SERVICES = [
     ("resurse-umane.html", "Resurse umane și salarizare",
      "Partea salarială și administrativă a echipei tale, în acord cu legislația muncii.",
      ["Contracte de muncă", "REGES-ONLINE", "Stat de plată", "Dosare de personal"]),
-    ("juridic.html", "Juridic",
-     "Contracte, Registrul Comerțului și întrebările juridice curente, împreună cu juriștii cu care colaborăm.",
-     ["Revizuirea contractelor", "Asistență la ONRC", "Consultanță punctuală sau lunară"]),
 ]
 
 NAV = [("despre", "despre.html", "Despre noi"), ("servicii", "servicii.html", "Servicii"),
@@ -259,7 +256,7 @@ def build_index():
 <section class="section" aria-labelledby="ce-facem"><div class="wrap">
   <div class="sec-head">
     <h2 id="ce-facem">De la contabilitate la parteneriat financiar</h2>
-    <p>Pe măsură ce afacerea crește, cifrele devin mai mult decât raportări. Te sprijinim în patru domenii, cu aceeași echipă, ca informația să circule o singură dată și să fie aceeași peste tot.</p>
+    <p>Pe măsură ce afacerea crește, cifrele devin mai mult decât raportări. Te sprijinim în contabilitate, consultanță și resurse umane, cu aceeași echipă, ca informația să circule o singură dată și să fie aceeași peste tot.</p>
   </div>
   <div class="cols">
 {cols}
@@ -336,7 +333,7 @@ def build_index():
   </dl>
 </div></section>"""
     page("index.html", "Fiscont | Contabilitate dincolo de cifre, București",
-         "Fiscont Expert Consulting Solution: contabilitate, consultanță financiară, resurse umane și juridic pentru antreprenori. Membru CECCAR, activă din 2012, București.",
+         "Fiscont Expert Consulting Solution: contabilitate, consultanță financiară și resurse umane pentru antreprenori. Membru CECCAR, activă din 2012, București.",
          "", body)
 
 
@@ -412,7 +409,7 @@ def build_servicii():
         f'<span role="cell" class="muted">{", ".join(items[:2])}</span></div>'
         for f, t, s, items in SERVICES)
     body = f"""{page_head("Servicii", "Servicii",
-        "Patru domenii, o singură echipă. Nu publicăm prețuri: ele depind de firma ta și se discută la o întâlnire.")}
+        "Trei domenii, o singură echipă. Nu publicăm prețuri: ele depind de firma ta și se discută la o întâlnire.")}
 
 <section class="section"><div class="wrap">
   <div class="ledger svc" role="table" aria-label="Servicii Fiscont">
@@ -422,7 +419,7 @@ def build_servicii():
   <div class="actions"><a class="btn" href="contact.html#programare">Programează o discuție</a></div>
 </div></section>"""
     page("servicii.html", "Servicii | Fiscont",
-         "Contabilitate și fiscalitate, consultanță și analiză financiară, resurse umane și salarizare, juridic. Fiscont, București.",
+         "Contabilitate și fiscalitate, consultanță și analiză financiară, resurse umane și salarizare. Fiscont, București.",
          "servicii", body)
 
 
@@ -487,25 +484,6 @@ def build_services():
          ("Pot externaliza doar salarizarea?",
           "Da. Resursele umane se pot contracta separat sau împreună cu contabilitatea. Discutăm la prima întâlnire ce se potrivește firmei tale.")],
         ["Luminița Gazi", "Carmen Ioana"])
-
-    service_page(
-        "juridic.html", "Juridic",
-        "Revizuirea contractelor, asistență la Registrul Comerțului și răspunsuri la întrebările juridice ale firmei, împreună cu juriștii cu care colaborăm.",
-        "Juridic",
-        "Revizuirea contractelor, asistență la Registrul Comerțului și consultanță juridică punctuală sau lunară, prin juriști colaboratori.",
-        ["Revizuirea contractelor comerciale.",
-         "Asistență pentru înregistrări și modificări la Registrul Comerțului (ONRC).",
-         "Consultanță punctuală, pentru o situație anume.",
-         "Consultanță lunară, pentru firmele care au nevoie constant de sprijin."],
-        """
-    <h2>Cum lucrăm</h2>
-    <p>Partea juridică o asigură juriști colaboratori, prin echipa Fiscont. Așa, informația contabilă, cea de resurse umane și cea juridică despre firma ta rămâne aceeași, iar tu ai un singur punct de contact.</p>
-""",
-        [("Cine îmi răspunde la întrebările juridice?",
-          "Un jurist colaborator, prin intermediul echipei noastre. Îți spunem de la început cine este și cum lucrează."),
-         ("Pot cere doar o consultanță, fără un contract lunar?",
-          "Da. Poți alege o consultanță punctuală sau un pachet lunar.")],
-        [("Juriști colaboratori", TODO("nume și calitate profesională")), "Luminița Gazi"])
 
 
 def build_blog():

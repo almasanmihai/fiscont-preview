@@ -192,43 +192,6 @@ export const services: Service[] = [
     ],
     people: ['Luminița Gazi', 'Carmen Ioana'],
   },
-  {
-    slug: 'juridic',
-    title: 'Juridic',
-    summary:
-      'Contracte, Registrul Comerțului și întrebările juridice curente, împreună cu juriștii cu care colaborăm.',
-    items: [
-      'Revizuirea contractelor',
-      'Asistență la ONRC',
-      'Consultanță punctuală sau lunară',
-    ],
-    lead:
-      'Revizuirea contractelor, asistență la Registrul Comerțului și răspunsuri la întrebările juridice ale firmei, împreună cu juriștii cu care colaborăm.',
-    description:
-      'Revizuirea contractelor, asistență la Registrul Comerțului și consultanță juridică punctuală sau lunară, prin juriști colaboratori.',
-    covers: [
-      'Revizuirea contractelor comerciale.',
-      'Asistență pentru înregistrări și modificări la Registrul Comerțului (ONRC).',
-      'Consultanță punctuală, pentru o situație anume.',
-      'Consultanță lunară, pentru firmele care au nevoie constant de sprijin.',
-    ],
-    faqs: [
-      {
-        q: 'Cine îmi răspunde la întrebările juridice?',
-        a: 'Un jurist colaborator, prin intermediul echipei noastre. Îți spunem de la început cine este și cum lucrează.',
-      },
-      {
-        q: 'Pot cere doar o consultanță, fără un contract lunar?',
-        a: 'Da. Poți alege o consultanță punctuală sau un pachet lunar.',
-      },
-    ],
-    people: [
-      { name: 'Juriști colaboratori', role: 'nume și calitate profesională', todo: true },
-      'Luminița Gazi',
-    ],
-    extraHtml: `<h2>Cum lucrăm</h2>
-    <p>Partea juridică o asigură juriști colaboratori, prin echipa Fiscont. Așa, informația contabilă, cea de resurse umane și cea juridică despre firma ta rămâne aceeași, iar tu ai un singur punct de contact.</p>`,
-  },
 ];
 
 export const drafts = [
