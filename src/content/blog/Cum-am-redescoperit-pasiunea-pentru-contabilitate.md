@@ -7,6 +7,8 @@ author: Gabriela Dacu
 authorRole: Expert contabil & fondator FISCONT
 ---
 
+![](/uploads/de27b2e088814fa994ff8a44f2a9a467.jpg.avif)
+
 # Contabilitate dincolo de cifre: motivație & inspirație
 
 Eram „proprietara” unei firme de contabilitate de aproape 10 ani. Și totuși, nu mă simțeam cu adevărat un antreprenor. Nici prin deciziile pe care le luam, nici printr-o satisfacție financiară reală. Aveam sentimentul că, la suprafață, totul era „bine”. Dar în interior, simțeam o nemulțumire care mă apăsa.
@@ -35,7 +37,7 @@ Am și un soț care m-a susținut mereu – în alegerile mele, în visurile mel
 
 ## Un mic „fun fact” despre mine
 
-La 14 ani n-am avut curaj să dau la liceul economic pentru că mi-era teamă că nu sunt suficient de pregătită. Apoi, la facultate, am ales Finanțe-Bănci pentru că voiam „mai mult” decât simpla etichetă de contabil. Am dat accesul la audit doar ca să-mi demonstrez mie că pot. Știam că nu voi profesa, pentru că domeniul era limitat în acea perioadă. Și totuși… iată-mă. Fac contabilitate.
+La 14 ani n-am avut curaj să dau la liceul economic pentru că mi-era teamă că nu sunt suficient de pregătită. Apoi, la facultate, am ales Finanțe-Bănci pentru că voiam „mai mult” decât simpla etichetă de contabil. Am dat examenul la audit doar ca să-mi demonstrez mie că pot. Știam că nu voi profesa, pentru că domeniul era limitat în acea perioadă. Și totuși… iată-mă. Fac contabilitate.
 
 Și-mi place. Pentru că azi știu de ce o fac. Am înțeles rolul meu. Misiunea mea.
 
