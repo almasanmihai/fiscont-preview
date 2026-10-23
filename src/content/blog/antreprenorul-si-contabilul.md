@@ -25,7 +25,7 @@ Ambele perspective sunt la fel de corecte și de vitale pentru companie. Problem
 
 ## Parabola emailului din ianuarie: „De ce vorbim în mai despre trecut?”
 
-O situație clasică, care generează frustrări, sună cam așa:
+O situație clasică, care generează frustrări sună cam așa:
 
 **Contabilul**: „Ți-am trimis în ianuarie situația clienților neîncasați, nu am primit feedback. Acum trebuie să facem provizioane ca să putem închide corect anul.”
 
