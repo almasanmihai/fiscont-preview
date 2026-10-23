@@ -16,7 +16,7 @@ Mediul fiscal din România nu a fost niciodată simplu, iar ultimii ani au adău
 
 Nu îmi propun să ofer adevăruri absolute, ci să împărtășesc o lecție desprinsă din experiența companiei FISCONT din ultimele luni: cum pot parteneriatele potrivite să schimbe complet direcția unei afaceri și perspectiva asupra viitorului ei.
 
-## Serviciile financiar-contabile trec printr-o schimbare profundă
+***Serviciile financiar-contabile trec printr-o schimbare profundă***
 
 Sectorul nostru se află într-un punct de cotitură, presat din două direcții majore.
 
