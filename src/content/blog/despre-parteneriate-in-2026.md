@@ -2,7 +2,7 @@
 title: 'Parteneriate strategice în 2026: de la servicii interne la modelul de hub'
 description: 'Descoperă cum parteneriatele strategice, automatizarea și tehnologia ajută FISCONT să dezvolte un model de business flexibil și eficient.'
 pubDate: 2026-08-17T00:00:00.000Z
-category: leadership
+category: fiscal
 author: Gabriela Dacu
 authorRole: Fondator și CEO
 draft: false
