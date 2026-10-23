@@ -19,7 +19,7 @@ Anul 2025 a fost despre maturizarea echipei, despre asumarea rolurilor, responsa
 
 Din punct de vedere profesional, în 2025 am continuat să învăț și să îmi dezvolt competențe noi, în special în zona de GM (General Manager).
 
-Din punct de vedere personal, sunt încă restantă la capitolul timp petrecut cu mai multă prezență în familie. Totuși, nu au existat dezechilibre majore. Cred că susținerea familiei și a celor apropiați a fost o parte importantă din performanța mea în 2025 — un element esențial pentru echilibrul profesional. 
+Din punct de vedere personal, sunt încă restantă la capitolul timp petrecut cu mai multă prezență în familie. Totuși, nu au existat dezechilibre majore. Cred că susținerea familiei și a celor apropiați a fost o parte importantă din performanța mea în 2025 — un element esențial pentru echilibrul profesional.
 
 ## Cu ce am intrat în 2025?
 
@@ -57,7 +57,7 @@ Colaborarea cu Sostenia, partenerul care a asigurat implementarea soluției de t
 
 ## Ce nu a funcționat în 2025?
 
-Prezența insuficientă pe clienții importanți a fost una dintre provocări. Aplicarea reală a principiului Pareto la nivel de echipă a fost o conștientizare importantă. Acest lucru m-a forțat să regândesc strategia de livrare a serviciilor financiare: contabilitate, consultanță, payroll și servicii conexe.
+Prezența insuficientă în relația cu clienții importanți a fost una dintre provocări. Aplicarea reală a principiului Pareto la nivel de echipă a fost o conștientizare importantă. Acest lucru m-a forțat să regândesc strategia de livrare a serviciilor financiare: contabilitate, consultanță, payroll și servicii conexe.
 
 De asemenea, deschiderea unui nou serviciu, planificată pentru 2025, nu a funcționat. Am făcut un pas înapoi pentru a evalua partenerii, iar acțiunea propriu-zisă a avut loc abia spre finalul anului.
 
