@@ -2,7 +2,7 @@
 title: Contabilul tău face totul bine? De ce trebuie să te implici în contabilitatea afacerii tale
 description: 'Ai încredere în contabilul tău, dar știi cum stă financiar afacerea ta? Descoperă ce poți face pentru a preveni erorile și riscurile contabile.'
 pubDate: 2026-04-08T00:00:00.000Z
-category: leadership
+category: fiscal
 author: Gabriela Dacu
 authorRole: Fondator și CEO
 draft: false
@@ -24,7 +24,7 @@ Pentru că da, chiar dacă ai un contabil bun, tu, ca antreprenor, ești direct 
 
 Până într-o zi, când am început să preiau clienți din ce în ce mai conștienți, mai organizați, iar problemele „tehnice” erau, să zicem, rezonabile. Situațiile de reconciliere se rezolvau, documentele erau acolo, colaborarea era OK. Așa că am lăsat ideea puțin deoparte.
 
-Însă, privind în urmă - la preluări mai vechi de 5 sau chiar 10 ani - la momentele în care erorile contabile, profesionale sau interpretative au dus la pierderi reale, îmi dau seama că această idee merită reluată. Ba chiar susținută cu și mai multă forță.
+Însă, privind în urmă, la preluări mai vechi de 5 sau chiar 10 ani - la momentele în care erorile contabile, profesionale sau interpretative au dus la pierderi reale, îmi dau seama că această idee merită reluată. Ba chiar susținută cu și mai multă forță.
 
 ## Dar ce se întâmplă când antreprenorul „nu se bagă în contabilitate”?
 
