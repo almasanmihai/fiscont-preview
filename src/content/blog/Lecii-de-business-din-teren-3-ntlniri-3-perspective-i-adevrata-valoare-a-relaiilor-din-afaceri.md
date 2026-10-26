@@ -8,6 +8,8 @@ authorRole: 'CEO '
 draft: false
 ---
 
+![](/uploads/postari_FB-4.png)
+
 # Despre relații de business, feedback și lecțiile pe care le descoperim atunci când suntem cu adevărat prezenți.
 
 Săptămâna trecută am avut trei experiențe diferite. Trei întâlniri, trei contexte și oameni cu perspective foarte diferite.
