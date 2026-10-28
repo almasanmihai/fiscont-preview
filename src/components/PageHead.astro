@@ -5,9 +5,10 @@ interface Props {
   crumb: string;
   h1: string;
   lead: string;
+  leadStrong?: boolean;
 }
 
-const { crumb, h1, lead } = Astro.props;
+const { crumb, h1, lead, leadStrong = false } = Astro.props;
 const hasAside = Astro.slots.has('aside');
 ---
 
@@ -18,7 +19,7 @@ const hasAside = Astro.slots.has('aside');
         <a href={withBase()}>Acasă</a> / <Fragment set:html={crumb} />
       </p>
       <h1>{h1}</h1>
-      <p class="lead">{lead}</p>
+      <p class="lead">{leadStrong ? <strong>{lead}</strong> : lead}</p>
       <slot />
     </div>
     {hasAside && <slot name="aside" />}
