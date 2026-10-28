@@ -259,6 +259,10 @@ export const ssm = {
   ],
 } as const;
 
+/** Listarea Google Maps a biroului, unde sunt recenziile publice. */
+export const googleReviewsUrl =
+  'https://www.google.com/maps/search/?api=1&query=Fiscont+SRL+Bulevardul+Unirii+64+București';
+
 /** Recenzii publicate pe site-ul actual, în ordinea caruselului. */
 export const reviews = [
   {

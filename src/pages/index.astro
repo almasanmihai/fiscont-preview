@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import TeamLedger from '../components/TeamLedger.astro';
-import { services, homeTeam, proiecte, ssm, reviews, industries } from '../data/site';
+import { services, homeTeam, proiecte, ssm, reviews, googleReviewsUrl, industries } from '../data/site';
 import { assetUrl, withBase } from '../utils/paths';
 ---
 
@@ -141,11 +141,14 @@ import { assetUrl, withBase } from '../utils/paths';
 
   <section class="section" aria-labelledby="incredere">
     <div class="wrap">
+      <div class="reviews-head">
+        <h2 id="incredere">Ce spun clienții noștri</h2>
+        <a href={googleReviewsUrl} target="_blank" rel="noopener noreferrer">Recenziile pe Google</a>
+      </div>
       <div class="quote-marquee" data-quote-marquee>
         <button type="button" class="quote-arrow prev" data-quote-prev aria-label="Recenzia anterioară"></button>
         <button type="button" class="quote-arrow next" data-quote-next aria-label="Recenzia următoare"></button>
         <div class="quote-window">
-        <h2 id="incredere" class="sr">Ce spun clienții</h2>
         <div class="quote-track">
           {
             reviews.map((review) => (
