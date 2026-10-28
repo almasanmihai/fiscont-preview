@@ -43,22 +43,6 @@ export const team: TeamMember[] = [
     bio: 'Expert contabil în echipa Fiscont.',
     photo: 'rares-andreescu.jpg',
   },
-  {
-    name: 'Ludmila Prisacariu',
-    role: 'Specialist contabil',
-    area: 'Contabilitate',
-    bio: '2 rânduri despre parcurs',
-    photo: null,
-    todoBio: true,
-  },
-  {
-    name: 'Andreea Iordache',
-    role: 'Specialist contabil',
-    area: 'Contabilitate',
-    bio: '2 rânduri despre parcurs',
-    photo: null,
-    todoBio: true,
-  },
 ];
 
 export const roleByName = Object.fromEntries(team.map((m) => [m.name, m.role]));
@@ -114,13 +98,7 @@ export const services: Service[] = [
         a: 'Depinde de volumul de documente, de numărul de angajați și de serviciile de care ai nevoie. Discutăm la prima întâlnire, după ce înțelegem cum funcționează firma.',
       },
     ],
-    people: [
-      'Gabriela Dacu',
-      'Ileana Hagi',
-      'Rareș Andreescu',
-      'Ludmila Prisacariu',
-      'Andreea Iordache',
-    ],
+    people: ['Gabriela Dacu', 'Ileana Hagi', 'Rareș Andreescu'],
     extraHtml: `<h2>Pentru cine</h2>
     <p>Lucrăm cu firme de mărimi diferite, din agricultură, servicii, comerț și transporturi, precum și cu birouri notariale și cabinete medicale.</p>`,
   },
