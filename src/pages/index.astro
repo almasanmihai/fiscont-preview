@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import TeamLedger from '../components/TeamLedger.astro';
-import { services, homeTeam, proiecte, ssm } from '../data/site';
+import { services, homeTeam, proiecte, ssm, reviews, industries } from '../data/site';
 import { assetUrl, withBase } from '../utils/paths';
 ---
 
@@ -50,7 +50,7 @@ import { assetUrl, withBase } from '../utils/paths';
         <div class="eco-layer">
           <p class="eco-label">Evidență</p>
           <h3>Fiscont</h3>
-          <p class="eco-lead">Ce s-a întâmplat: contabilitate și HR.</p>
+          <p class="eco-lead">Ce s-a întâmplat: contabilitate, HR și juridic.</p>
           <ul class="eco-list">
             {
               services.map((s) => (
@@ -110,31 +110,46 @@ import { assetUrl, withBase } from '../utils/paths';
 
   <section class="team on-blue" aria-labelledby="echipa">
     <div class="wrap">
-      <div class="sec-head">
-        <h2 id="echipa">Oamenii care îți răspund</h2>
-        <p>Fiecare client știe cine se ocupă de firma lui.</p>
+      <div class="sec-head team-intro">
+        <h2 id="echipa" class="script">Descoperă oamenii din spatele cifrelor.</h2>
+        <p>
+          <strong>O echipă de experți. Un parteneriat construit pe încredere și peste 10 ani de experiență.</strong>
+          În spatele fiecărei afaceri bine gestionate stau oameni care înțeleg cifrele, anticipează
+          provocările și găsesc soluții. La Fiscont, îmbinăm expertiza contabilă și fiscală cu
+          atenția față de fiecare client, pentru ca tu să ai claritate, siguranță și sprijin în
+          deciziile care contează.
+        </p>
       </div>
-      <TeamLedger label="Echipa Fiscont" members={homeTeam} />
+      <TeamLedger label="Echipa Fiscont" members={homeTeam} bios={true} lastCol="Pe scurt" />
       <p class="actions"><a href={`${withBase('despre')}#echipa`}>Toată echipa</a></p>
     </div>
   </section>
 
   <section class="section" aria-labelledby="incredere">
     <div class="wrap split">
-      <figure class="quote">
+      <div class="quote-carousel" data-carousel>
         <h2 id="incredere" class="sr">Ce spun clienții</h2>
-        <blockquote>
-          <q>
-            Totul a funcționat foarte bine. Întreaga colaborare a decurs impecabil, fără probleme.
-            Nu am simțit niciodată nevoia să cer simplificarea proceselor sau a procedurilor, ceea
-            ce, pentru mine, este un semn clar că lucrurile sunt bine gândite și eficient
-            implementate.
-          </q>
-        </blockquote>
-        <figcaption>
-          <b>Magic Speed SRL</b><span class="muted small">client Fiscont</span>
-        </figcaption>
-      </figure>
+        {
+          reviews.map((review, i) => (
+            <figure class="quote" data-slide hidden={i !== 0}>
+              <blockquote>
+                <q>{review.quote}</q>
+              </blockquote>
+              <figcaption>
+                <b>{review.author}</b>
+                <span class="muted small">client Fiscont</span>
+              </figcaption>
+            </figure>
+          ))
+        }
+        <div class="carousel-nav">
+          <button type="button" data-prev>Anterioară</button>
+          <span data-carousel-status class="small muted">
+            1 din {reviews.length}
+          </span>
+          <button type="button" data-next>Următoarea</button>
+        </div>
+      </div>
       <div>
         <h2>Să vorbim despre firma ta</h2>
         <p class="lead" style="margin-top:var(--sp-2)">
@@ -155,6 +170,50 @@ import { assetUrl, withBase } from '../utils/paths';
             <dd>Bd. Unirii nr. 64, Bloc K4, scara 4, etaj 3, București</dd>
           </div>
         </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="industrii">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="industrii">Industrii</h2>
+        <p>
+          Soluții contabile adaptate pentru orice industrie. Avem experiență în diverse domenii, de
+          la agricultură, servicii și comerț, până la transporturi, birouri notariale și cabinete
+          medicale. Indiferent de sectorul tău de activitate, echipa noastră de experți te ajută să
+          îndeplinești toate reglementările fiscale, oferindu-ți siguranță și conformitate.
+        </p>
+      </div>
+      <div class="logo-marquee">
+        <ul class="logo-track">
+          {
+            industries.map((logo) => (
+              <li>
+                <img
+                  src={assetUrl(`assets/clienti/${logo.file}`)}
+                  alt={logo.name}
+                  width="160"
+                  height="80"
+                  loading="lazy"
+                />
+              </li>
+            ))
+          }
+          {
+            industries.map((logo) => (
+              <li data-clone aria-hidden="true">
+                <img
+                  src={assetUrl(`assets/clienti/${logo.file}`)}
+                  alt=""
+                  width="160"
+                  height="80"
+                  loading="lazy"
+                />
+              </li>
+            ))
+          }
+        </ul>
       </div>
     </div>
   </section>

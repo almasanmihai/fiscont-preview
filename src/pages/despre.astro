@@ -2,8 +2,6 @@
 import Base from '../layouts/Base.astro';
 import PageHead from '../components/PageHead.astro';
 import TeamLedger from '../components/TeamLedger.astro';
-import { withBase } from '../utils/paths';
-
 const values = [
   'Integritate',
   'Transparență',
@@ -123,46 +121,6 @@ const values = [
         <p>Fotografiile și prezentările sunt ale oamenilor reali care lucrează la Fiscont.</p>
       </div>
       <TeamLedger label="Echipa Fiscont" lastCol="Pe scurt" bios={true} />
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="domenii">
-    <div class="wrap split">
-      <div class="text">
-        <h2 id="domenii">Domenii în care lucrăm</h2>
-        <p style="margin-top:.6em">
-          Avem experiență cu firme din agricultură, servicii, comerț, transporturi, precum și cu
-          birouri notariale și cabinete medicale. Fiecare domeniu are reguli fiscale proprii, iar
-          noi le urmărim pentru tine.
-        </p>
-      </div>
-      <div>
-        <div class="aside-block">
-          <h3>Clientul Fiscont</h3>
-          <p>
-            Antreprenorul care vrea mai mult decât contabilitate: direcție, stabilitate și creștere,
-            construite cu claritate financiară.
-          </p>
-        </div>
-        <div class="aside-block">
-          <h3>Recenzii independente</h3>
-          <p>Părerile clienților, publicate direct de ei, sunt pe profilul nostru Google.</p>
-          <p>
-            <a href="#">Citește recenziile pe Google</a>{' '}
-            <span class="todo">link de completat</span>
-          </p>
-        </div>
-        <div class="aside-block">
-          <h3>FISCONT Talks</h3>
-          <p>
-            Seria noastră de educație financiară aplicată pentru antreprenori: termeni, schimbări și
-            decizii pe înțeles.
-          </p>
-          <p>
-            <a href={`${withBase('blog')}?categorie=talks`}>Articole FISCONT Talks</a>
-          </p>
-        </div>
-      </div>
     </div>
   </section>
 </Base>

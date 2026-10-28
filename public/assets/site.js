@@ -81,6 +81,40 @@
     });
   }
 
+  /* carusel de recenzii */
+  document.querySelectorAll("[data-carousel]").forEach(function (root) {
+    var slides = Array.prototype.slice.call(root.querySelectorAll("[data-slide]"));
+    var prev = root.querySelector("[data-prev]");
+    var next = root.querySelector("[data-next]");
+    var status = root.querySelector("[data-carousel-status]");
+    if (slides.length < 2 || !prev || !next) return;
+    var i = 0;
+    var timer = null;
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function show(n) {
+      i = (n + slides.length) % slides.length;
+      slides.forEach(function (slide, idx) { slide.hidden = idx !== i; });
+      if (status) status.textContent = (i + 1) + " din " + slides.length;
+    }
+    function stop() {
+      if (timer) { window.clearInterval(timer); timer = null; }
+    }
+    function start() {
+      if (reduce || timer) return;
+      timer = window.setInterval(function () { show(i + 1); }, 7000);
+    }
+    prev.addEventListener("click", function () { show(i - 1); });
+    next.addEventListener("click", function () { show(i + 1); });
+    root.addEventListener("mouseenter", stop);
+    root.addEventListener("mouseleave", start);
+    root.addEventListener("focusin", stop);
+    root.addEventListener("focusout", function (e) {
+      if (!root.contains(e.relatedTarget)) start();
+    });
+    show(0);
+    start();
+  });
+
   /* acord cookie-uri: ambele opțiuni la fel de vizibile */
   var consent = document.getElementById("consent");
   if (consent && !store("fiscont-consent")) {

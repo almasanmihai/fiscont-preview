@@ -10,37 +10,37 @@ export type TeamMember = {
 export const team: TeamMember[] = [
   {
     name: 'Gabriela Dacu',
-    role: 'Fondator și CEO',
+    role: 'Fondator și CEO, expert contabil, consultant fiscal',
     area: 'Contabilitate, consultanță financiară',
-    bio: 'Peste 20 de ani de experiență în contabilitate. A fondat Fiscont în 2012.',
+    bio: 'Peste 20 de ani de experiență în contabilitate. A fondat Fiscont în 2012, cu viziunea de a deveni un partener de încredere pentru afaceri.',
     photo: 'gabriela-dacu.jpg',
   },
   {
     name: 'Ileana Hagi',
-    role: 'Economist senior și consultant fiscal',
+    role: 'Senior contabil, departamentul de contabilitate',
     area: 'Fiscalitate',
-    bio: 'Ghidează clienții prin legislația fiscală.',
+    bio: 'Ghidează clienții prin complexitatea legislației fiscale, cu soluții clare și aplicate.',
     photo: 'ileana-hagi.jpg',
   },
   {
     name: 'Luminița Gazi',
-    role: 'Expert în legislația muncii, responsabil cu protecția datelor',
+    role: 'Expert legislația muncii, resurse umane și administrare contracte',
     area: 'Resurse umane, GDPR',
-    bio: 'În echipa Fiscont din 2016.',
+    bio: 'Din 2016, contribuie la aplicarea corectă a legislației muncii și a regulilor privind protecția datelor.',
     photo: 'luminita-gazi.jpg',
   },
   {
     name: 'Carmen Ioana',
-    role: 'Economist senior, șef birou operațiuni clienți',
+    role: 'Team leader contabilitate, senior contabil',
     area: 'Relația cu clienții',
-    bio: 'Coordonează operațiunile cu clienții.',
+    bio: 'Coordonează operațiunile cu clienții, punând accent pe colaborare, organizare și calitatea serviciilor.',
     photo: 'carmen-ioana.jpg',
   },
   {
     name: 'Rareș Andreescu',
-    role: 'Expert contabil',
+    role: 'Expert contabil senior, departamentul de contabilitate',
     area: 'Contabilitate',
-    bio: 'Expert contabil în echipa Fiscont.',
+    bio: 'De 9 ani în echipa Fiscont, contribuie la dezvoltarea companiei prin profesionalism, integritate și implicare.',
     photo: 'rares-andreescu.jpg',
   },
 ];
@@ -170,6 +170,44 @@ export const services: Service[] = [
     ],
     people: ['Luminița Gazi', 'Carmen Ioana'],
   },
+  {
+    slug: 'juridic',
+    title: 'Juridic',
+    summary:
+      'Juriști colaboratori pentru înființări de firme, acte, contracte și recuperarea creanțelor.',
+    items: [
+      'Înființare firme',
+      'Redactare acte legale',
+      'Recuperare creanțe',
+      'Elaborare și negociere contracte',
+    ],
+    lead:
+      'Pentru un contract, relația cu ONRC sau alt aspect juridic, juriștii colaboratori te susțin prin consultanță punctuală sau printr-un pachet lunar. Procesul rămâne clar, ca tu să te ocupi de afacere.',
+    description:
+      'Înființări de firme, acte legale, contracte și recuperarea creanțelor, prin juriști colaboratori. Fiscont, București.',
+    covers: [
+      'Înființarea firmelor.',
+      'Redactarea actelor legale și consultanță pentru documentație.',
+      'Elaborarea și negocierea contractelor.',
+      'Recuperarea creanțelor.',
+      'Pachete lunare de consultanță, când ai nevoie de sprijin constant.',
+    ],
+    faqs: [
+      {
+        q: 'Cine se ocupă de partea juridică?',
+        a: 'Lucrăm cu juriști colaboratori. Tu rămâi în contact cu echipa Fiscont, iar ei preiau actele, contractele și demersurile convenite.',
+      },
+      {
+        q: 'Pot lua doar un serviciu, fără abonament?',
+        a: 'Da. Poți cere o consultanță punctuală sau un pachet lunar, în funcție de cât de des ai nevoie de sprijin.',
+      },
+      {
+        q: 'Cât costă?',
+        a: 'Depinde de demers: o înființare, un contract sau un pachet lunar. Stabilim tariful la prima discuție, după ce înțelegem ce ai de rezolvat.',
+      },
+    ],
+    people: ['Gabriela Dacu'],
+  },
 ];
 
 export const drafts = [
@@ -258,6 +296,59 @@ export const ssm = {
     },
   ],
 } as const;
+
+/** Recenzii publicate pe site-ul actual, în ordinea caruselului. */
+export const reviews = [
+  {
+    quote:
+      'Sunt foarte mulțumit de colaborarea cu FISCONT. De fiecare dată când am solicitat ceva, am primit rapid răspunsuri și soluții — uneori chiar mai mult decât am cerut. Apreciez mult faptul că am numerele de telefon ale colegilor și pot vorbi direct cu o persoană. În 2025, când multe companii mari folosesc doar roboți, e o reală diferență să poți avea o interacțiune umană. În toți acești ani, nu am încasat nicio amendă — ceea ce spune totul despre profesionalismul echipei.',
+    author: 'Zeki Med SRL',
+  },
+  {
+    quote:
+      'Apreciez mult că am alături o echipă de încredere, că nu există întrebări „stupide” și că pot conta pe sprijinul lor oricând. Pentru mine, acest lucru este extrem de important. Momentan totul este în regulă — oameni foarte faini și o colaborare care îmi oferă liniște.',
+    author: 'Develop Concept SRL',
+  },
+  {
+    quote:
+      'Colaborarea este foarte bună, lucrurile se desfășoară fluid și primim răspunsuri rapide. Ne bucurăm că totul ajunge la timp și că găsim întotdeauna soluții împreună. Pentru viitor, ne-ar ajuta și mai mult o consultanță proactivă pe partea financiar-contabilă — interpretarea rezultatelor, analiza balanței și evidențierea oportunităților de optimizare fiscală.',
+    author: 'Cemado Trade International SRL',
+  },
+  {
+    quote:
+      'Doamna Carmen răspunde mereu prompt ori de câte ori sun, iar informațiile primite au fost întotdeauna corecte, complete și susținute legislativ. Totul la timp. Întreaga echipă FISCONT este, practic, interfața mea cu autoritățile, iar faptul că în toți acești ani nu am avut nicio problemă spune totul despre cât de mulțumit sunt. Chiar dacă ne leagă o prietenie veche, colaborarea noastră s-a construit profesional, iar astăzi pot spune cu toată sinceritatea că nu aș schimba nimic. Interacțiunea cu toți colegii este excelentă. Pe o scară de la 1 la 10, aleg 10 — fără ezitare.',
+    author: 'Light Plus SRL',
+  },
+  {
+    quote:
+      'Totul este în regulă. Colegele sunt foarte profesioniste și prompte, iar faptul că m-ați sunat pentru a cere feedback mi-a arătat încă o dată atenția voastră la detalii. Apreciez!',
+    author: 'Savu Tatiana',
+  },
+  {
+    quote:
+      'Apreciem mult eficiența colaborării cu FISCONT. Faptul că toate documentele sunt încărcate pe server face lucrurile mult mai rapide și mai simple. Nevoile noastre sunt acoperite complet, iar asta ne oferă încredere și liniște — nu simțim că ne lipsește ceva.',
+    author: 'Dental Optim SRL',
+  },
+  {
+    quote:
+      'Totul a funcționat foarte bine. Întreaga colaborare a decurs impecabil, fără probleme. Nu am simțit niciodată nevoia să cer simplificarea proceselor sau a procedurilor — ceea ce, pentru mine, este un semn clar că lucrurile sunt bine gândite și eficient implementate.',
+    author: 'Magic Speed SRL',
+  },
+] as const;
+
+/** Logo-urile din caruselul de industrii de pe site-ul actual. */
+export const industries = [
+  { name: 'Turquoise Bakery', file: 'turquoise-bakery.png' },
+  { name: 'Introlife', file: 'introlife.png' },
+  { name: 'Bomar Solution', file: 'bomar-solution.png' },
+  { name: 'Mostiro', file: 'mostiro.png' },
+  { name: 'Pamro Solutions', file: 'pamro.png' },
+  { name: 'Morem', file: 'morem.jpg' },
+  { name: 'Global Fast', file: 'global-fast.png' },
+  { name: 'Apa Cargo Services', file: 'apa-cargo.jpeg' },
+  { name: 'Royal Trans', file: 'royal-trans.png' },
+  { name: 'Fluid System', file: 'fluid-system.png' },
+] as const;
 
 export const nav = [
   { key: 'despre', href: '/despre', label: 'Despre noi' },
