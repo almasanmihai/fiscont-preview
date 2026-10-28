@@ -5,7 +5,6 @@ import PostRows from '../../components/PostRows.astro';
 import { categories } from '../../content.config';
 import { drafts } from '../../data/site';
 import { getCollection } from 'astro:content';
-import { withBase } from '../../utils/paths';
 
 const posts = await getCollection('blog', ({ data }) => !data.draft);
 const count = posts.length;
@@ -71,11 +70,7 @@ const count = posts.length;
                 style="grid-template-columns:minmax(0,1fr) 10rem 14rem"
               >
                 <span role="cell" class="t">
-                  {d.title === 'Cum pregătești documentele lunare pentru contabil' ? (
-                    <a href={withBase('blog/cum-pregatesti-documentele-lunare')}>{d.title}</a>
-                  ) : (
-                    <span>{d.title}</span>
-                  )}
+                  <span>{d.title}</span>
                 </span>
                 <span role="cell" class={d.category === 'alerte' ? 'c cat-alerta' : 'c'}>
                   {categories[d.category]}

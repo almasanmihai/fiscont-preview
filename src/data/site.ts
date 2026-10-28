@@ -198,11 +198,6 @@ export const drafts = [
     category: 'leadership' as const,
     source: 'material de Gabriela Dacu',
   },
-  {
-    title: 'Cum pregătești documentele lunare pentru contabil',
-    category: 'fiscal' as const,
-    source: 'articol demonstrativ din șablon',
-  },
 ];
 
 /** Subset pe homepage: oamenii cheie, fără registrul complet. */
