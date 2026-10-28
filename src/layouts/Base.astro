@@ -1,5 +1,5 @@
 ---
-import { nav } from '../data/site';
+import { nav, services } from '../data/site';
 import { assetUrl, withBase } from '../utils/paths';
 
 interface Props {
@@ -10,6 +10,8 @@ interface Props {
 
 const { title, description, section = '' } = Astro.props;
 const home = withBase();
+const here = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isHere = (href: string) => (href.replace(/\/$/, '') || '/') === here;
 ---
 
 <!doctype html>
@@ -43,13 +45,32 @@ const home = withBase();
           <ul>
             {
               nav.map(({ key, href, label }) => (
-                <li>
+                <li class:list={[{ 'has-sub': key === 'servicii' }]}>
                   <a
                     href={withBase(href)}
                     aria-current={key === section ? 'page' : undefined}
+                    aria-haspopup={key === 'servicii' ? 'true' : undefined}
                   >
                     {label}
                   </a>
+                  {
+                    key === 'servicii' && (
+                      <ul class="sub" aria-label="Servicii de contabilitate">
+                        {
+                          services.map((s) => {
+                            const href = withBase(`servicii/${s.slug}`);
+                            return (
+                              <li>
+                                <a href={href} aria-current={isHere(href) ? 'page' : undefined}>
+                                  {s.title}
+                                </a>
+                              </li>
+                            );
+                          })
+                        }
+                      </ul>
+                    )
+                  }
                 </li>
               ))
             }

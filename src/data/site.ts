@@ -132,7 +132,7 @@ export const services: Service[] = [
         a: 'Depinde de ce ai nevoie: o analiză punctuală sau un sprijin constant. Discutăm la prima întâlnire.',
       },
     ],
-    people: ['Gabriela Dacu', 'Ileana Hagi'],
+    people: ['Gabriela Dacu', 'Rareș Andreescu'],
     extraHtml: `<h2>Pentru cine</h2>
     <p>Pentru antreprenorii care vor mai mult decât contabilitate: direcție, stabilitate și creștere. Diferența față de o contabilitate de conformare apare atunci când cifrele devin mai mult decât raportări.</p>`,
   },
