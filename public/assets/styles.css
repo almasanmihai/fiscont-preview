@@ -17,6 +17,7 @@
   --on-blue-line:rgba(255,255,255,.26);
   --heading:#00305B;   /* titluri */
   --band:#1B2833;      /* fundalul blocului echipei, același albastru ca fiscontprint.ro */
+  --script:#D9B886;    /* auriu/cupru pentru textul caligrafic, ca pe fiscontprint.ro */
 
   --head:"Poppins",system-ui,"Segoe UI",sans-serif;
   --text:"DM Sans",system-ui,"Segoe UI",sans-serif;
@@ -232,11 +233,11 @@ p+p{margin-top:1em}
 .team .ledger .r > *{border-left-color:var(--on-blue-line)}
 .team .ledger .head{color:var(--on-blue-muted);border-bottom-color:#fff}
 .team .ledger .r > *:first-child{padding-block:.8rem}
-.team .name{font-family:"Dancing Script",cursive;font-weight:600;font-size:1.85rem;line-height:1.15;letter-spacing:0}
+.team .name{font-family:"Dancing Script",cursive;font-weight:600;font-size:1.85rem;line-height:1.15;letter-spacing:0;color:var(--script)}
 .team .team-intro{grid-template-columns:1fr;align-items:start}
 .team .script{
   font-family:"Dancing Script",cursive;font-weight:600;letter-spacing:0;
-  font-size:clamp(2.4rem,5vw,3.5rem);line-height:1.15;max-width:18ch;color:#fff
+  font-size:clamp(2.4rem,5vw,3.5rem);line-height:1.15;max-width:18ch;color:var(--script)
 }
 .team .team-intro p{max-width:68ch;margin-top:var(--sp-2)}
 .team .team-intro strong{display:block;margin-bottom:.7rem;color:#fff;font-weight:600}
