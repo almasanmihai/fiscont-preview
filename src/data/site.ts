@@ -310,6 +310,7 @@ export const industries = [
   { name: 'Apa Cargo Services', file: 'apa-cargo.jpeg' },
   { name: 'Royal Trans', file: 'royal-trans.png' },
   { name: 'Fluid System', file: 'fluid-system.png' },
+  { name: 'SSM Group', file: 'ssm-group.png' },
 ] as const;
 
 export const nav = [

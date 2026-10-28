@@ -244,26 +244,44 @@ p+p{margin-top:1em}
 
 /* ---------- citat ---------- */
 .quote{max-width:42ch;margin:0}
+.talk-cta{margin-top:var(--sp-5)}
 .quote blockquote{margin:0}
 .quote q{quotes:"„" "”";font:500 clamp(1.25rem,2.2vw,1.55rem)/1.5 var(--head);color:var(--ink);display:block;letter-spacing:-.005em}
+.quote-marquee .quote q{font-size:1.2rem}
 .quote figcaption{margin-top:var(--sp-2);padding-top:var(--sp-2);border-top:1px solid var(--ink);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem 1.5rem}
 .quote figcaption b{font-weight:700}
-.quote-carousel [data-slide][hidden]{display:none}
-.carousel-nav{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1rem;margin-top:var(--sp-3)}
-.carousel-nav button{
-  min-height:44px;padding:.4rem .9rem;background:transparent;color:var(--blue);
-  border:1px solid var(--line);border-radius:4px;font:500 .95rem var(--head);cursor:pointer
+.quote-marquee{position:relative}
+.quote-window{overflow:hidden;container-type:inline-size;margin-inline:3.5rem}
+.quote-track{display:flex;align-items:stretch;gap:3rem;width:max-content;margin:0;animation:marquee 105s linear infinite}
+.quote-marquee:hover .quote-track,.quote-marquee:focus-within .quote-track{animation-play-state:paused}
+.quote-arrow{
+  position:absolute;top:50%;z-index:1;transform:translateY(-50%);
+  width:2.75rem;height:2.75rem;padding:0;border-radius:50%;
+  border:1px solid var(--line);background:var(--surface);color:var(--blue);
+  display:grid;place-items:center;cursor:pointer
 }
-.carousel-nav button:hover{border-color:var(--ink);color:var(--blue-2)}
+.quote-arrow.prev{left:0}
+.quote-arrow.next{right:0}
+.quote-arrow:hover{border-color:var(--ink);color:var(--blue-2)}
+.quote-arrow::before{
+  content:"";width:.55rem;height:.55rem;border-left:2px solid currentColor;border-bottom:2px solid currentColor;
+  transform:rotate(45deg);margin-left:.2rem
+}
+.quote-arrow.next::before{transform:rotate(-135deg);margin-left:0;margin-right:.2rem}
+.quote-marquee .quote{
+  flex:none;width:min(34rem,100cqi);max-width:none;box-sizing:border-box;
+  display:flex;flex-direction:column
+}
+.quote-marquee .quote figcaption{margin-top:auto}
 
 .logo-marquee{overflow:hidden;margin-top:var(--sp-4)}
 .logo-track{display:flex;gap:1rem;width:max-content;margin:0;padding:.25rem 0;list-style:none;animation:marquee 42s linear infinite}
 .logo-marquee:hover .logo-track,.logo-marquee:focus-within .logo-track{animation-play-state:paused}
 .logo-track li{
-  flex:none;width:9.5rem;height:5.75rem;background:var(--surface);border:1px solid var(--line);
-  border-radius:8px;display:grid;place-items:center;padding:.65rem
+  flex:none;width:7.4rem;height:7.4rem;background:#fff;border-radius:50%;overflow:hidden;
+  box-shadow:0 0 0 1px rgba(10,31,51,.08),0 6px 16px rgba(10,31,51,.06)
 }
-.logo-track img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.logo-track img{width:100%;height:100%;max-width:none;object-fit:cover;border-radius:50%}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .split{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--sp-5);align-items:start}
 .aside-block{border-top:2px solid var(--ink);padding-top:var(--sp-2)}
@@ -439,9 +457,12 @@ p+p{margin-top:1em}
 @media (max-width:420px){.wordmark .logo{width:150px}}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}
-  .logo-marquee{overflow:visible}
-  .logo-track{flex-wrap:wrap;width:auto}
-  .logo-track [data-clone]{display:none}
+  .logo-marquee,.quote-window{overflow:visible}
+  .logo-track,.quote-track{flex-wrap:wrap;width:auto}
+  .logo-track [data-clone],.quote-track [data-clone]{display:none}
+  .quote-marquee .quote{width:100%}
+  .quote-window{margin-inline:0}
+  .quote-arrow{display:none}
 }
 @media print{
   .site-head,.consent,.site-foot,.menu-btn{display:none}

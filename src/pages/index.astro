@@ -140,31 +140,43 @@ import { assetUrl, withBase } from '../utils/paths';
   </section>
 
   <section class="section" aria-labelledby="incredere">
-    <div class="wrap split">
-      <div class="quote-carousel" data-carousel>
+    <div class="wrap">
+      <div class="quote-marquee" data-quote-marquee>
+        <button type="button" class="quote-arrow prev" data-quote-prev aria-label="Recenzia anterioară"></button>
+        <button type="button" class="quote-arrow next" data-quote-next aria-label="Recenzia următoare"></button>
+        <div class="quote-window">
         <h2 id="incredere" class="sr">Ce spun clienții</h2>
-        {
-          reviews.map((review, i) => (
-            <figure class="quote" data-slide hidden={i !== 0}>
-              <blockquote>
-                <q>{review.quote}</q>
-              </blockquote>
-              <figcaption>
-                <b>{review.author}</b>
-                <span class="muted small">client Fiscont</span>
-              </figcaption>
-            </figure>
-          ))
-        }
-        <div class="carousel-nav">
-          <button type="button" data-prev>Anterioară</button>
-          <span data-carousel-status class="small muted">
-            1 din {reviews.length}
-          </span>
-          <button type="button" data-next>Următoarea</button>
+        <div class="quote-track">
+          {
+            reviews.map((review) => (
+              <figure class="quote">
+                <blockquote>
+                  <q>{review.quote}</q>
+                </blockquote>
+                <figcaption>
+                  <b>{review.author}</b>
+                  <span class="muted small">client Fiscont</span>
+                </figcaption>
+              </figure>
+            ))
+          }
+          {
+            reviews.map((review) => (
+              <figure class="quote" data-clone aria-hidden="true">
+                <blockquote>
+                  <q>{review.quote}</q>
+                </blockquote>
+                <figcaption>
+                  <b>{review.author}</b>
+                  <span class="muted small">client Fiscont</span>
+                </figcaption>
+              </figure>
+            ))
+          }
+        </div>
         </div>
       </div>
-      <div>
+      <div class="talk-cta">
         <h2>Să vorbim despre firma ta</h2>
         <p class="lead" style="margin-top:var(--sp-2)">
           Prima discuție e despre situația ta. Alege o oră care ți se potrivește sau sună-ne.
@@ -207,8 +219,8 @@ import { assetUrl, withBase } from '../utils/paths';
                 <img
                   src={assetUrl(`assets/clienti/${logo.file}`)}
                   alt={logo.name}
-                  width="160"
-                  height="80"
+                  width="118"
+                  height="118"
                   loading="lazy"
                 />
               </li>
@@ -220,8 +232,8 @@ import { assetUrl, withBase } from '../utils/paths';
                 <img
                   src={assetUrl(`assets/clienti/${logo.file}`)}
                   alt=""
-                  width="160"
-                  height="80"
+                  width="118"
+                  height="118"
                   loading="lazy"
                 />
               </li>

@@ -81,38 +81,102 @@
     });
   }
 
-  /* carusel de recenzii */
-  document.querySelectorAll("[data-carousel]").forEach(function (root) {
-    var slides = Array.prototype.slice.call(root.querySelectorAll("[data-slide]"));
-    var prev = root.querySelector("[data-prev]");
-    var next = root.querySelector("[data-next]");
-    var status = root.querySelector("[data-carousel-status]");
-    if (slides.length < 2 || !prev || !next) return;
-    var i = 0;
-    var timer = null;
-    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    function show(n) {
-      i = (n + slides.length) % slides.length;
-      slides.forEach(function (slide, idx) { slide.hidden = idx !== i; });
-      if (status) status.textContent = (i + 1) + " din " + slides.length;
+  /* săgețile opresc derularea și mută recenziile câte una */
+  document.querySelectorAll("[data-quote-marquee]").forEach(function (root) {
+    var track = root.querySelector(".quote-track");
+    var prev = root.querySelector("[data-quote-prev]");
+    var next = root.querySelector("[data-quote-next]");
+    if (!track || !prev || !next) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var manual = false;
+    var offset = 0;
+    var raf = 0;
+    var duration = 105000;
+
+    function period() { return track.scrollWidth / 2; }
+    function readOffset() {
+      var m = getComputedStyle(track).transform;
+      if (!m || m === "none") return offset;
+      var parts = m.match(/matrix\(([^)]+)\)/);
+      if (!parts) return offset;
+      var x = parseFloat(parts[1].split(",")[4]);
+      return isNaN(x) ? offset : x;
     }
-    function stop() {
-      if (timer) { window.clearInterval(timer); timer = null; }
+    function wrap(x) {
+      var p = period();
+      if (!p) return x;
+      while (x <= -p) x += p;
+      while (x > 0) x -= p;
+      return x;
     }
-    function start() {
-      if (reduce || timer) return;
-      timer = window.setInterval(function () { show(i + 1); }, 7000);
+    function cardStep() {
+      var card = track.querySelector(".quote");
+      var gap = parseFloat(getComputedStyle(track).columnGap);
+      if (isNaN(gap)) gap = parseFloat(getComputedStyle(track).gap) || 0;
+      return (card ? card.getBoundingClientRect().width : 0) + gap;
     }
-    prev.addEventListener("click", function () { show(i - 1); });
-    next.addEventListener("click", function () { show(i + 1); });
-    root.addEventListener("mouseenter", stop);
-    root.addEventListener("mouseleave", start);
-    root.addEventListener("focusin", stop);
-    root.addEventListener("focusout", function (e) {
-      if (!root.contains(e.relatedTarget)) start();
+    function apply(x, animate) {
+      offset = x;
+      track.style.transition = animate ? "transform .45s ease" : "none";
+      track.style.transform = "translateX(" + x + "px)";
+    }
+    function stopRaf() {
+      if (raf) { cancelAnimationFrame(raf); raf = 0; }
+    }
+    function freeze() {
+      stopRaf();
+      if (!manual) {
+        offset = readOffset();
+        manual = true;
+        track.style.animation = "none";
+        apply(offset, false);
+      } else {
+        offset = readOffset();
+      }
+    }
+    function step(sign) {
+      freeze();
+      var delta = cardStep();
+      if (!delta) return;
+      var index = -offset / delta;
+      var targetIndex = sign < 0 ? Math.ceil(index - 0.02) : Math.floor(index + 0.02);
+      if (Math.abs(targetIndex - index) < 0.02) targetIndex += sign < 0 ? 1 : -1;
+      var from = offset;
+      var target = -targetIndex * delta;
+      if (target > 0) {
+        from -= period();
+        target -= period();
+      }
+      apply(from, false);
+      track.getBoundingClientRect();
+      apply(target, true);
+    }
+    function startRaf() {
+      if (!manual || raf) return;
+      offset = wrap(readOffset());
+      apply(offset, false);
+      var speed = period() / duration;
+      var last = performance.now();
+      function tick(now) {
+        var dt = now - last;
+        last = now;
+        apply(wrap(offset - speed * dt), false);
+        raf = requestAnimationFrame(tick);
+      }
+      raf = requestAnimationFrame(tick);
+    }
+    track.addEventListener("transitionend", function () {
+      var wrapped = wrap(offset);
+      if (wrapped !== offset) apply(wrapped, false);
     });
-    show(0);
-    start();
+    prev.addEventListener("click", function () { step(1); });
+    next.addEventListener("click", function () { step(-1); });
+    root.addEventListener("mouseenter", stopRaf);
+    root.addEventListener("focusin", stopRaf);
+    root.addEventListener("mouseleave", startRaf);
+    root.addEventListener("focusout", function (e) {
+      if (!root.contains(e.relatedTarget)) startRaf();
+    });
   });
 
   /* acord cookie-uri: ambele opțiuni la fel de vizibile */
