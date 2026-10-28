@@ -205,7 +205,7 @@ p+p{margin-top:1em}
 .cols a{margin-top:auto}
 
 /* ---------- registru generic ---------- */
-.ledger{border-top:2px solid var(--ink)}
+.ledger{border-top:2px solid var(--ink);margin:0}
 .ledger .r{display:grid;border-bottom:1px solid var(--line);align-items:baseline}
 .ledger .r[hidden]{display:none}
 .ledger .r > *{padding:.95rem 1rem;border-left:1px solid var(--line);min-width:0}
