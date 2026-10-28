@@ -8,6 +8,7 @@ export const categories = {
   alerte: 'Alerte fiscale',
   talks: 'FISCONT Talks',
   leadership: 'Leadership',
+  business: 'Business & antreprenoriat',
 } as const;
 
 export type CategoryKey = keyof typeof categories;
@@ -25,6 +26,7 @@ const blog = defineCollection({
       'alerte',
       'talks',
       'leadership',
+      'business',
     ]),
     author: z.string().optional().default('Gabriela Dacu'),
     authorRole: z.string().optional().default('Fondator și CEO'),

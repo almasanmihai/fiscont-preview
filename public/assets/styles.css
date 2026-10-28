@@ -186,6 +186,7 @@ p+p{margin-top:1em}
 /* ---------- registru generic ---------- */
 .ledger{border-top:2px solid var(--ink)}
 .ledger .r{display:grid;border-bottom:1px solid var(--line);align-items:baseline}
+.ledger .r[hidden]{display:none}
 .ledger .r > *{padding:.95rem 1rem;border-left:1px solid var(--line);min-width:0}
 .ledger .r > *:first-child{border-left:0;padding-left:0}
 .ledger .r > *:last-child{padding-right:0}

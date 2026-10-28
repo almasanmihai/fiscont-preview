@@ -43,7 +43,7 @@ Câmpuri frontmatter (schema Astro):
 | `title` | string |
 | `description` | string (opțional) |
 | `pubDate` | date |
-| `category` | fiscal \| hr \| legislatie \| alerte \| talks \| leadership |
+| `category` | fiscal \| hr \| legislatie \| alerte \| talks \| leadership \| business |
 | `author` | string |
 | `authorRole` | string |
 | `draft` | boolean |

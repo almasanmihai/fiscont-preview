@@ -56,6 +56,7 @@ export default defineConfig({
               { value: 'alerte', label: 'Alerte fiscale' },
               { value: 'talks', label: 'FISCONT Talks' },
               { value: 'leadership', label: 'Leadership' },
+              { value: 'business', label: 'Business & antreprenoriat' },
             ],
           },
           {
