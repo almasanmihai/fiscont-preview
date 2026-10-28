@@ -170,44 +170,6 @@ export const services: Service[] = [
     ],
     people: ['Luminița Gazi', 'Carmen Ioana'],
   },
-  {
-    slug: 'juridic',
-    title: 'Juridic',
-    summary:
-      'Juriști colaboratori pentru înființări de firme, acte, contracte și recuperarea creanțelor.',
-    items: [
-      'Înființare firme',
-      'Redactare acte legale',
-      'Recuperare creanțe',
-      'Elaborare și negociere contracte',
-    ],
-    lead:
-      'Pentru un contract, relația cu ONRC sau alt aspect juridic, juriștii colaboratori te susțin prin consultanță punctuală sau printr-un pachet lunar. Procesul rămâne clar, ca tu să te ocupi de afacere.',
-    description:
-      'Înființări de firme, acte legale, contracte și recuperarea creanțelor, prin juriști colaboratori. Fiscont, București.',
-    covers: [
-      'Înființarea firmelor.',
-      'Redactarea actelor legale și consultanță pentru documentație.',
-      'Elaborarea și negocierea contractelor.',
-      'Recuperarea creanțelor.',
-      'Pachete lunare de consultanță, când ai nevoie de sprijin constant.',
-    ],
-    faqs: [
-      {
-        q: 'Cine se ocupă de partea juridică?',
-        a: 'Lucrăm cu juriști colaboratori. Tu rămâi în contact cu echipa Fiscont, iar ei preiau actele, contractele și demersurile convenite.',
-      },
-      {
-        q: 'Pot lua doar un serviciu, fără abonament?',
-        a: 'Da. Poți cere o consultanță punctuală sau un pachet lunar, în funcție de cât de des ai nevoie de sprijin.',
-      },
-      {
-        q: 'Cât costă?',
-        a: 'Depinde de demers: o înființare, un contract sau un pachet lunar. Stabilim tariful la prima discuție, după ce înțelegem ce ai de rezolvat.',
-      },
-    ],
-    people: ['Gabriela Dacu'],
-  },
 ];
 
 export const drafts = [

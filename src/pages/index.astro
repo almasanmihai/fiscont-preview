@@ -24,9 +24,13 @@ import { assetUrl, withBase } from '../utils/paths';
     <div class="wrap">
       <div class="hero-simple">
         <h1 id="titlu">Contabilitate dincolo de cifre.</h1>
+        <p class="hero-kicker">
+          Partenerul tău de încredere pentru claritate financiară și creștere sustenabilă.
+        </p>
         <p class="lead">
-          Ținem contabilitatea firmei tale corectă și la zi, apoi te ajutăm să înțelegi ce spun
-          cifrele. Așa iei decizii fundamentate, nu doar depui declarații la termen.
+          Transformăm rigoarea contabilă și fiscală în decizii inteligente de business. Îți oferim
+          claritatea, controlul și libertatea de care ai nevoie pentru o dezvoltare sigură și
+          sustenabilă.
         </p>
         <div class="actions">
           <a class="btn" href={`${withBase('contact')}#programare`}>Programează o discuție</a>
@@ -38,19 +42,29 @@ import { assetUrl, withBase } from '../utils/paths';
 
   <section class="section" aria-labelledby="ecosistem">
     <div class="wrap">
-      <div class="sec-head">
+      <div class="sec-head eco-head">
         <h2 id="ecosistem">Ecosistemul Fiscont</h2>
-        <p>
-          Contabilitate și HR, proiecte de tip CFO, SSM și PSI — același grup, aceeași logică: un
-          om de contact, informație care nu se contrazice.
-        </p>
+        <div>
+          <p>
+            <strong>Contabilitate | CFO | HR | SSM &amp; PSI:</strong> expertiză integrată și
+            soluții conectate pentru mai multă claritate și predictibilitate în afacerea ta.
+          </p>
+          <p>
+            O afacere sustenabilă are nevoie de claritate financiară, decizii bine fundamentate și
+            procese care funcționează împreună.
+          </p>
+        </div>
       </div>
 
       <div class="eco">
         <div class="eco-layer">
           <p class="eco-label">Evidență</p>
-          <h3>Fiscont</h3>
-          <p class="eco-lead">Ce s-a întâmplat: contabilitate, HR și juridic.</p>
+          <h3>Fiscont Contabilitate</h3>
+          <p class="eco-lead">
+            <strong>Claritate în cifre. Control în activitatea de zi cu zi.</strong>
+            Servicii contabile și administrative care te ajută să ții evidența corectă a afacerii
+            și să ai informațiile necesare pentru a o gestiona.
+          </p>
           <ul class="eco-list">
             {
               services.map((s) => (
@@ -61,7 +75,7 @@ import { assetUrl, withBase } from '../utils/paths';
             }
           </ul>
           <p class="actions">
-            <a href={withBase('servicii')}>Toate serviciile</a>
+            <a href={withBase('servicii')}>Descoperă serviciile Fiscont</a>
           </p>
         </div>
 
@@ -121,7 +135,7 @@ import { assetUrl, withBase } from '../utils/paths';
         </p>
       </div>
       <TeamLedger label="Echipa Fiscont" members={homeTeam} bios={true} lastCol="Pe scurt" />
-      <p class="actions"><a href={`${withBase('despre')}#echipa`}>Toată echipa</a></p>
+      <p class="actions"><a href={withBase('despre')}>Află mai multe despre noi</a></p>
     </div>
   </section>
 
