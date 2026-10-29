@@ -18,6 +18,8 @@ const home = withBase();
 const here = Astro.url.pathname.replace(/\/$/, '') || '/';
 const isHere = (href: string) => (href.replace(/\/$/, '') || '/') === here;
 
+// Doar domeniul final se indexează; previzualizarea rămâne ascunsă de motoarele de căutare.
+const indexable = Astro.site?.hostname === 'fiscontsrl.ro';
 const canonical = pageUrl(Astro.url.pathname, Astro.site);
 const ogImage = new URL(
   image && /^https?:/.test(image) ? image : assetUrl(image ?? 'assets/hero.jpg'),
@@ -61,7 +63,7 @@ const structured = jsonLd ? [business, jsonLd] : business;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="robots" content="noindex, nofollow" />
+    {indexable ? null : <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonical} />
     <meta property="og:type" content={ogType} />
     <meta property="og:locale" content="ro_RO" />
@@ -189,23 +191,11 @@ const structured = jsonLd ? [business, jsonLd] : business;
           </div>
         </div>
         <div class="foot-meta">
-          <span>© 2012–2026 Fiscont Expert Consulting Solution SRL</span>
-          <span>Conținut actualizat în septembrie 2026</span>
+          <span>© 2012–{new Date().getFullYear()} Fiscont Expert Consulting Solution SRL</span>
         </div>
       </div>
     </footer>
 
-    <div class="consent" id="consent" role="region" aria-label="Acord pentru cookie-uri" hidden>
-      <p>
-        Folosim cookie-uri de analiză doar dacă ești de acord. Site-ul funcționează la fel și dacă
-        refuzi. Detalii în
-        <a href={`${withBase('confidentialitate')}#cookie`}>politica de confidențialitate</a>.
-      </p>
-      <div class="actions">
-        <button class="btn btn-line" type="button" data-consent="refuz">Refuz</button>
-        <button class="btn btn-line" type="button" data-consent="accept">Accept</button>
-      </div>
-    </div>
     <script src={assetUrl('assets/site.js')} defer></script>
   </body>
 </html>

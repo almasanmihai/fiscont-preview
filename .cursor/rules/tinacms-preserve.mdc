@@ -9,14 +9,14 @@ TinaCMS + Tina Cloud sunt **live și folosite** (inclusiv de Roxana) pe acest pr
 
 ## Ce trebuie să rămână intact
 
-- `tina/config.ts` — colecția `blog` (label **Articole**), path `src/content/blog`, câmpuri aliniate la schema Astro, `basePath: 'fiscont-preview'`
+- `tina/config.ts` — colecția `blog` (label **Articole**), path `src/content/blog`, câmpuri aliniate la schema Astro, `basePath` din `site.config.mjs` (`fiscont-preview` pe previzualizare, gol pe fiscontsrl.ro)
 - `tina/tina-lock.json` — **în repo** (nu în `.gitignore`)
 - `src/content.config.ts` — schema colecției `blog` (aceleași nume de câmpuri ca în Tina)
 - `src/content/blog/*.md` — articolele; nu le rescrie inutil
 - Scripturi: `"dev": "tinacms dev -c \"astro dev\""`, `"build": "tinacms build && astro build"`
 - `.github/workflows/deploy.yml` — secrets `TINA_CLIENT_ID` / `TINA_TOKEN` la nivel de job; Node 22 pentru build
 - `.gitignore`: `.env`, `public/admin/`, `tina/__generated__/` — **nu** ignora `tina-lock.json`
-- `astro.config.mjs`: `base: '/fiscont-preview'` (GitHub Pages)
+- `site.config.mjs`: `site` / `base` (`/fiscont-preview` pe GitHub Pages, `/` cu `SITE_PROD=1` pe fiscontsrl.ro); `astro.config.mjs` și `tina/config.ts` le citesc de acolo
 - Helper URL: `src/utils/paths.ts` (`withBase` / `assetUrl`) — CSS/asset-urile depind de slash-ul corect după base
 
 ## Admin live

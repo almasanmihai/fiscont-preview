@@ -1,12 +1,12 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import { unified } from '@astrojs/markdown-remark';
 import sitemap from '@astrojs/sitemap';
 import { rehypeBaseUrls } from './src/utils/rehype-base-urls.js';
-
-const base = '/fiscont-preview';
+import { site, base } from './site.config.mjs';
 
 export default defineConfig({
-  site: 'https://almasanmihai.github.io',
+  site,
   base,
   trailingSlash: 'never',
   integrations: [sitemap()],
@@ -14,6 +14,6 @@ export default defineConfig({
     format: 'file',
   },
   markdown: {
-    rehypePlugins: [rehypeBaseUrls(base)],
+    processor: unified({ rehypePlugins: [rehypeBaseUrls(base)] }),
   },
 });

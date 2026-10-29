@@ -1,4 +1,5 @@
 import { defineConfig } from 'tinacms';
+import { isProd } from '../site.config.mjs';
 
 export default defineConfig({
   branch: 'main',
@@ -8,7 +9,8 @@ export default defineConfig({
   build: {
     outputFolder: 'admin',
     publicFolder: 'public',
-    basePath: 'fiscont-preview',
+    // Pe GitHub Pages site-ul stă sub /fiscont-preview; pe fiscontsrl.ro stă la rădăcină.
+    basePath: isProd ? '' : 'fiscont-preview',
   },
 
   media: {
