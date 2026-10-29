@@ -7,7 +7,7 @@ author: Gabriela Dacu
 authorRole: Expert contabil & fondator FISCONT
 ---
 
-![](/uploads/de27b2e088814fa994ff8a44f2a9a467.jpg.avif)
+![Mâini care țin pietre pe care scrie Vision, Family, Love, Faith și Success](/uploads/de27b2e088814fa994ff8a44f2a9a467.jpg.avif)
 
 # Contabilitate dincolo de cifre: motivație & inspirație
 

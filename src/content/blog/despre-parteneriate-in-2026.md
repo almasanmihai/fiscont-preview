@@ -8,7 +8,7 @@ authorRole: Fondator și CEO
 draft: false
 ---
 
-![](/uploads/parteneriate.png)
+![Două mâini care țin față în față o regină albă și un cal negru de șah](/uploads/parteneriate.png)
 
 Trăim într-o lume aproape haotică. Iar dacă ne uităm la mediul fiscal și la predictibilitatea din România, lucrurile nu devin deloc mai simple.
 

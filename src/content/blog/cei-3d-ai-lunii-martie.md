@@ -7,7 +7,7 @@ author: Gabriela Dacu
 authorRole: Fondator și CEO
 ---
 
-![](/uploads/delegare.png)
+![Desen colorat cu un bec aprins, înconjurat de grafice, monede, oameni, o rachetă și săgeți în sus](/uploads/delegare.png)
 
 Martie a fost, pentru mine, o lună despre decizii. Nu despre cele „perfecte”, ci despre cele reale.
 

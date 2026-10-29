@@ -8,7 +8,7 @@ authorRole: Fondator și CEO
 draft: false
 ---
 
-![](/uploads/fiscal.png)
+![Două persoane la un birou, cu un calculator și rapoarte contabile cu grafice](/uploads/fiscal.png)
 
 „Contabilul tău face totul bine?” De ce e responsabilitatea ta să știi răspunsul.
 

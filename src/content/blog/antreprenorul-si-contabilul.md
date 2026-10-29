@@ -7,7 +7,7 @@ author: Gabriela Dacu
 authorRole: Fondator și CEO
 ---
 
-![](/uploads/conta.png)
+![Dosare și hârtii pe un birou, cu întrebarea: Tu când ai analizat ultima dată „indicatorii de bord” ai afacerii tale alături de contabilul tău?](/uploads/conta.png)
 
 Ultimele două luni au fost, ca în fiecare an, un maraton contracronometru în biroul nostru. S-a lucrat intens la finalizarea situațiilor financiare anuale. Deși ne-am organizat din timp, am stabilit priorități și am lucrat pe obiective clare, luna mai a rămas aceeași perioadă extrem de încărcată.
 
@@ -19,7 +19,7 @@ Răspunsul pe care l-am descoperit nu ține de lipsa de organizare. Ține de o r
 
 În timp ce contabilul este concentrat să închidă corect anul fiscal trecut, să regleze conturi și să analizeze solduri, debite și credite, antreprenorul este ancorat în prezent și viitor.
 
-Privite simplu, lucrurile arată așa:![](/uploads/contabil.png)
+Privite simplu, lucrurile arată așa:![Tabel. Ce vede contabilul (trecutul): situații financiare la 31 decembrie, provizioane și ajustări de valoare, datorii pe termen scurt și lung. Ce vede antreprenorul (prezentul): vânzări și oportunități zilnice, lipsă de lichiditate și cash-flow, clienți noi, salarii și investiții](/uploads/contabil.png)
 
 Ambele perspective sunt la fel de corecte și de vitale pentru companie. Problema apare atunci când cele două lumi se întâlnesc, dar nu reușesc să comunice eficient.
 

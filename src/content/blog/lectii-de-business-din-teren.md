@@ -8,7 +8,7 @@ authorRole: 'CEO '
 draft: false
 ---
 
-![](/uploads/postari_FB-4.png)
+![Portretul unei femei cu ochelari, sprijinită de o tablă cu notițe](/uploads/postari_FB-4.png)
 
 ## Despre relații de business, feedback și lecțiile pe care le descoperim atunci când suntem cu adevărat prezenți.
 

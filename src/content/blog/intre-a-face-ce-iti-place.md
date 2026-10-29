@@ -7,7 +7,7 @@ author: Gabriela Dacu
 authorRole: Fondator și CEO
 ---
 
-![](/uploads/leadership.png)
+![Ilustrație cu piese de șah, becuri aprinse, o balanță și grafice de creștere](/uploads/leadership.png)
 
 Luna ianuarie a fost una intensă: obiective, targete, planuri, schimbări fiscale, acceptare de proiecte și intrare în execuție. O lună care, din toate punctele de vedere, a cerut multă energie, claritate și asumare.
 

@@ -7,7 +7,7 @@ author: Gabriela Dacu
 authorRole: Fondator și CEO
 ---
 
-![](/uploads/retrospectiva.png)
+![Femeie la birou privind spre oraș, lângă un laptop cu bilanțul anului 2025 și un caiet cu lecțiile învățate](/uploads/retrospectiva.png)
 
 Dacă ar fi să pun într-un singur paragraf, sau în câteva cuvinte, ce a definit anul 2025 pentru mine din punct de vedere business, acestea ar fi: detașare emoțională, claritate și maturizare.
 
