@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import TeamLedger from '../components/TeamLedger.astro';
-import { services, homeTeam, proiecte, ssm, reviews, googleReviewsUrl, industries } from '../data/site';
+import { services, proiecte, ssm, reviews, googleReviewsUrl, industries } from '../data/site';
 import { assetUrl, withBase } from '../utils/paths';
 ---
 
@@ -134,7 +134,7 @@ import { assetUrl, withBase } from '../utils/paths';
           deciziile care contează.
         </p>
       </div>
-      <TeamLedger label="Echipa Fiscont" members={homeTeam} bios={true} lastCol="Pe scurt" />
+      <TeamLedger label="Echipa Fiscont" bios={true} lastCol="Pe scurt" />
       <p class="actions"><a href={withBase('despre')}>Află mai multe despre noi</a></p>
     </div>
   </section>
@@ -190,6 +190,9 @@ import { assetUrl, withBase } from '../utils/paths';
         </div>
         </div>
       </div>
+      <button type="button" class="marquee-toggle" data-marquee-toggle aria-pressed="false">
+        Oprește derularea recenziilor
+      </button>
       <div class="talk-cta">
         <h2>Să vorbim despre firma ta</h2>
         <p class="lead" style="margin-top:var(--sp-2)">
@@ -255,6 +258,9 @@ import { assetUrl, withBase } from '../utils/paths';
           }
         </ul>
       </div>
+      <button type="button" class="marquee-toggle" data-marquee-toggle aria-pressed="false">
+        Oprește derularea logo-urilor
+      </button>
     </div>
   </section>
 </Base>

@@ -2,12 +2,13 @@
 import Base from '../../layouts/Base.astro';
 import PostRows from '../../components/PostRows.astro';
 import { categories } from '../../content.config';
-import { photoByName } from '../../data/site';
+import { team } from '../../data/site';
 import { getCollection, render } from 'astro:content';
-import { assetUrl, withBase } from '../../utils/paths';
+import { assetUrl, pageUrl, withBase } from '../../utils/paths';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  // Ciornele nu primesc pagină: altfel ar fi accesibile direct prin URL.
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
   return posts.map((post) => ({
     params: { slug: post.id },
     props: { post },
@@ -17,18 +18,43 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await render(post);
 const cat = post.data.category;
-const photo = photoByName[post.data.author] ?? photoByName['Gabriela Dacu'];
+const member = team.find((m) => m.name === post.data.author);
+const photo = member?.photo ?? null;
+const authorRole = post.data.authorRole.trim();
+const body = post.body ?? '';
+const firstImage = body.match(/!\[[^\]]*\]\((\/uploads\/[^)\s]+)/)?.[1];
+const words = body
+  .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
+  .replace(/[#>*_`[\]()-]/g, ' ')
+  .trim()
+  .split(/\s+/).length;
+const readingMins = Math.max(1, Math.round(words / 200));
 const fmt = new Intl.DateTimeFormat('ro-RO', {
   day: 'numeric',
   month: 'long',
   year: 'numeric',
 });
+const article = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description || undefined,
+  datePublished: post.data.pubDate.toISOString(),
+  inLanguage: 'ro',
+  author: { '@type': 'Person', name: post.data.author, jobTitle: post.data.authorRole },
+  publisher: { '@id': `${new URL(withBase(), Astro.site).href}#firma` },
+  mainEntityOfPage: pageUrl(Astro.url.pathname, Astro.site),
+  image: firstImage ? new URL(withBase(firstImage), Astro.site).href : undefined,
+};
 ---
 
 <Base
   title={`${post.data.title} | Blog Fiscont`}
   description={post.data.description || post.data.title}
   section="blog"
+  image={firstImage}
+  ogType="article"
+  jsonLd={article}
 >
   <article>
     <header class="article-head">
@@ -56,9 +82,7 @@ const fmt = new Intl.DateTimeFormat('ro-RO', {
                     loading="lazy"
                   />
                 </span>
-              ) : (
-                <span class="photo on-paper empty">fotografie reală</span>
-              )
+              ) : null
             }
             <div>
               <b>{post.data.author}</b>
@@ -69,16 +93,12 @@ const fmt = new Intl.DateTimeFormat('ro-RO', {
             <div>
               <dt>Publicat</dt>
               <dd>
-                {post.data.draft ? (
-                  <span class="todo">data</span>
-                ) : (
-                  fmt.format(post.data.pubDate)
-                )}
+                <time datetime={post.data.pubDate.toISOString()}>{fmt.format(post.data.pubDate)}</time>
               </dd>
             </div>
             <div>
               <dt>Citire</dt>
-              <dd data-reading-time>~2 min</dd>
+              <dd>{readingMins} min</dd>
             </div>
             <div>
               <dt>Categorie</dt>
@@ -86,15 +106,6 @@ const fmt = new Intl.DateTimeFormat('ro-RO', {
             </div>
           </dl>
         </div>
-        {
-          post.data.draft ? (
-            <p class="small" style="margin-top:.8rem">
-              <span class="todo">
-                Articol demonstrativ pentru șablon, de revizuit de echipă înainte de publicare
-              </span>
-            </p>
-          ) : null
-        }
       </div>
     </header>
 
@@ -117,17 +128,14 @@ const fmt = new Intl.DateTimeFormat('ro-RO', {
                 loading="lazy"
               />
             </span>
-          ) : (
-            <span class="photo on-paper lg empty">fotografie reală</span>
-          )
+          ) : null
         }
         <div>
           <h2 style="font-size:1.25rem">{post.data.author}</h2>
-          <p class="muted small" style="margin-top:.2rem">{post.data.authorRole} Fiscont</p>
-          <p style="margin-top:.8rem;max-width:60ch">
-            Are peste 20 de ani de experiență în contabilitate și a fondat Fiscont în 2012. Scrie
-            despre contabilitate, finanțe și ce înseamnă să conduci o firmă.
+          <p class="muted small" style="margin-top:.2rem">
+            {/fiscont/i.test(authorRole) ? authorRole : `${authorRole}, Fiscont`}
           </p>
+          {member ? <p style="margin-top:.8rem;max-width:60ch">{member.bio}</p> : null}
         </div>
       </section>
       <p class="disclaimer">
@@ -138,7 +146,12 @@ const fmt = new Intl.DateTimeFormat('ro-RO', {
       <section style="margin-top:var(--sp-5)" aria-labelledby="similare">
         <h2 id="similare" style="font-size:1.3rem;margin-bottom:1rem">Alte articole</h2>
         <div class="ledger posts" role="table" aria-label="Alte articole">
-          <PostRows limit={2} withExcerpt={false} />
+          <div class="r head" role="row">
+            <span role="columnheader">Data</span>
+            <span role="columnheader">Articol</span>
+            <span role="columnheader">Categorie</span>
+          </div>
+          <PostRows limit={2} withExcerpt={false} exclude={post.id} />
         </div>
       </section>
     </div>

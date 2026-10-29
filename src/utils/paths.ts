@@ -9,3 +9,10 @@ export function withBase(path = ''): string {
 export function assetUrl(path: string): string {
   return withBase(path.replace(/^\//, ''));
 }
+
+/** URL absolut al paginii, fără „.html” (build.format: 'file'), la fel ca în sitemap. */
+export function pageUrl(pathname: string, site: URL | undefined): string {
+  let clean = pathname.replace(/\.html$/, '').replace(/\/index$/, '/');
+  if (clean === withBase()) clean = `${clean.replace(/\/$/, '')}/`;
+  return new URL(clean, site).href;
+}

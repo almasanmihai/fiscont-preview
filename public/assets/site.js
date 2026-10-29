@@ -50,20 +50,24 @@
         }
       });
     });
-    /* blog.html?categorie=talks deschide direct categoria cerută */
+    /* /blog?categorie=talks deschide direct categoria cerută */
     var wanted = new URLSearchParams(window.location.search).get("categorie");
     var match = wanted && document.querySelector('[data-filter="' + wanted.replace(/[^a-z]/g, "") + '"]');
     if (match) match.click();
   }
 
-  /* timp de citire calculat din text (≈200 cuvinte/minut) */
-  var prose = document.querySelector(".prose");
-  var rt = document.querySelectorAll("[data-reading-time]");
-  if (prose && rt.length) {
-    var words = prose.textContent.trim().split(/\s+/).length;
-    var mins = Math.max(1, Math.round(words / 200));
-    rt.forEach(function (el) { el.textContent = mins + " min"; });
-  }
+  /* butonul de sub carusel oprește sau pornește derularea automată */
+  document.querySelectorAll("[data-marquee-toggle]").forEach(function (b) {
+    var target = b.previousElementSibling;
+    if (!target) return;
+    var label = b.textContent.trim();
+    b.addEventListener("click", function () {
+      var paused = target.classList.toggle("is-paused");
+      b.setAttribute("aria-pressed", paused ? "true" : "false");
+      b.textContent = paused ? label.replace("Oprește", "Pornește") : label;
+      target.dispatchEvent(new CustomEvent("marquee:pause", { detail: paused }));
+    });
+  });
 
   /* harta se încarcă doar la cerere (fără cookie-uri Google până atunci) */
   var mapBtn = document.querySelector("[data-load-map]");
@@ -152,7 +156,7 @@
       apply(target, true);
     }
     function startRaf() {
-      if (!manual || raf) return;
+      if (!manual || raf || root.classList.contains("is-paused")) return;
       offset = wrap(readOffset());
       apply(offset, false);
       var speed = period() / duration;
@@ -176,6 +180,9 @@
     root.addEventListener("mouseleave", startRaf);
     root.addEventListener("focusout", function (e) {
       if (!root.contains(e.relatedTarget)) startRaf();
+    });
+    root.addEventListener("marquee:pause", function (e) {
+      if (e.detail) stopRaf(); else startRaf();
     });
   });
 

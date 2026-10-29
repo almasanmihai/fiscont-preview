@@ -200,13 +200,6 @@ export const drafts = [
   },
 ];
 
-/** Subset pe homepage: oamenii cheie, fără registrul complet. */
-export const homeTeam = team.filter((m) =>
-  ['Gabriela Dacu', 'Ileana Hagi', 'Luminița Gazi', 'Carmen Ioana', 'Rareș Andreescu'].includes(
-    m.name,
-  ),
-);
-
 /** Stratul de decizie al ecosistemului — site dedicat fiscontprint.ro */
 export const proiecte = {
   title: 'Fiscont Proiecte',

@@ -7,11 +7,13 @@ interface Props {
   limit?: number;
   withExcerpt?: boolean;
   ids?: string[];
+  /** Articolul deschis, ca să nu apară în propria listă de „Alte articole”. */
+  exclude?: string;
 }
 
-const { limit, withExcerpt = true, ids } = Astro.props;
+const { limit, withExcerpt = true, ids, exclude } = Astro.props;
 
-let posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+let posts = (await getCollection('blog', ({ data, id }) => !data.draft && id !== exclude)).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 

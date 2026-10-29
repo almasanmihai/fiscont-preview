@@ -1,17 +1,57 @@
 ---
 import { nav, services } from '../data/site';
-import { assetUrl, withBase } from '../utils/paths';
+import { assetUrl, pageUrl, withBase } from '../utils/paths';
 
 interface Props {
   title: string;
   description: string;
   section?: string;
+  /** Imaginea pentru distribuire (cale relativă la public/ sau URL absolut). */
+  image?: string;
+  ogType?: 'website' | 'article';
+  /** Date structurate în plus față de cele ale firmei (de exemplu un Article). */
+  jsonLd?: Record<string, unknown>;
 }
 
-const { title, description, section = '' } = Astro.props;
+const { title, description, section = '', image, ogType = 'website', jsonLd } = Astro.props;
 const home = withBase();
 const here = Astro.url.pathname.replace(/\/$/, '') || '/';
 const isHere = (href: string) => (href.replace(/\/$/, '') || '/') === here;
+
+const canonical = pageUrl(Astro.url.pathname, Astro.site);
+const ogImage = new URL(
+  image && /^https?:/.test(image) ? image : assetUrl(image ?? 'assets/hero.jpg'),
+  Astro.site,
+).href;
+const homeUrl = new URL(home, Astro.site).href;
+const business = {
+  '@context': 'https://schema.org',
+  '@type': 'AccountingService',
+  '@id': `${homeUrl}#firma`,
+  name: 'Fiscont',
+  legalName: 'Fiscont Expert Consulting Solution SRL',
+  url: homeUrl,
+  logo: new URL(assetUrl('assets/logo-fiscont.png'), Astro.site).href,
+  image: new URL(assetUrl('assets/hero.jpg'), Astro.site).href,
+  telephone: '+40759011054',
+  email: 'office@fiscontsrl.ro',
+  foundingDate: '2012',
+  taxID: '30138979',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Bd. Unirii nr. 64, Bloc K4, scara 4, etaj 3',
+    addressLocality: 'București',
+    addressCountry: 'RO',
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '18:00',
+  },
+  sameAs: ['https://fiscontprint.ro/', 'https://tcasafework.ro/'],
+};
+const structured = jsonLd ? [business, jsonLd] : business;
 ---
 
 <!doctype html>
@@ -22,10 +62,19 @@ const isHere = (href: string) => (href.replace(/\/$/, '') || '/') === here;
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="robots" content="noindex, nofollow" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Dancing+Script:wght@600&family=Poppins:ital,wght@0,500;0,600;0,700;1,500&display=swap" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:locale" content="ro_RO" />
+    <meta property="og:site_name" content="Fiscont" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="sitemap" href={assetUrl('sitemap-index.xml')} />
+    <link rel="stylesheet" href={assetUrl('assets/fonts.css')} />
     <link rel="stylesheet" href={assetUrl('assets/styles.css')} />
+    <script type="application/ld+json" set:html={JSON.stringify(structured).replace(/</g, '\\u003c')} />
     <link rel="icon" href={assetUrl('assets/favicon-64.png')} type="image/png" />
     <link rel="apple-touch-icon" href={assetUrl('assets/apple-touch-icon.png')} />
     <script is:inline>
