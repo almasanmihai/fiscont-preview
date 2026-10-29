@@ -346,9 +346,6 @@ p+p{margin-top:1em}
 }
 .filters button:hover{border-color:var(--ink)}
 .filters button[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
-.draft-note{margin-top:var(--sp-4);padding-top:var(--sp-3);border-top:1px dashed var(--muted)}
-.draft-note h2{font-size:1.2rem}
-.draft-note .ledger{margin-top:var(--sp-2)}
 
 /* ---------- pagini interioare ---------- */
 .page-head{background:var(--tint);padding-block:clamp(2.25rem,6vw,4.25rem) var(--sp-4)}
@@ -430,12 +427,6 @@ p+p{margin-top:1em}
 .foot-grid a{color:var(--ink)}
 .foot-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 2rem;margin-top:var(--sp-4);padding-top:var(--sp-2);border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
 
-/* ---------- cookie-uri ---------- */
-.consent{position:fixed;left:var(--gutter);right:var(--gutter);bottom:1rem;z-index:40;max-width:34rem;background:var(--surface);border:1px solid var(--ink);border-top:3px solid var(--blue);padding:1rem 1.1rem;box-shadow:0 10px 28px rgba(10,31,51,.14);display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1rem}
-.consent[hidden]{display:none}
-.consent p{font-size:.88rem;line-height:1.45;flex:1 1 16rem}
-.consent .actions{margin-top:0;gap:.5rem;flex:none}
-.consent .btn{min-height:44px;padding:.5rem 1rem}
 
 /* ---------- responsive ---------- */
 @media (max-width:1060px){
@@ -512,5 +503,5 @@ p+p{margin-top:1em}
   .quote-arrow,.marquee-toggle{display:none}
 }
 @media print{
-  .site-head,.consent,.site-foot,.menu-btn{display:none}
+  .site-head,.site-foot,.menu-btn{display:none}
 }

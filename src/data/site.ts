@@ -172,34 +172,6 @@ export const services: Service[] = [
   },
 ];
 
-export const drafts = [
-  {
-    title: 'Ce se schimbă atunci când ANAF te invită la audiere',
-    category: 'alerte' as const,
-    source: 'din bannerul „Alertă informativă”',
-  },
-  {
-    title: 'Amortizare, TVA, cheltuială deductibilă: diferențele care contează',
-    category: 'talks' as const,
-    source: 'din seria FISCONT Talks',
-  },
-  {
-    title: 'Ce majorări de taxe aduce 2026',
-    category: 'talks' as const,
-    source: 'din seria FISCONT Talks',
-  },
-  {
-    title: 'Resurse umane și REGES-ONLINE: de ce contează timpul',
-    category: 'talks' as const,
-    source: 'din seria FISCONT Talks',
-  },
-  {
-    title: 'Cum construiești un buget realist: de la cifra de afaceri la obiective financiare',
-    category: 'leadership' as const,
-    source: 'material de Gabriela Dacu',
-  },
-];
-
 /** Stratul de decizie al ecosistemului — site dedicat fiscontprint.ro */
 export const proiecte = {
   title: 'Fiscont Proiecte',

@@ -2,13 +2,6 @@
 (function () {
   "use strict";
 
-  function store(key, value) {
-    try {
-      if (value === undefined) return window.localStorage.getItem(key);
-      window.localStorage.setItem(key, value);
-    } catch (e) { return null; }
-  }
-
   /* meniu pe mobil */
   var btn = document.querySelector(".menu-btn");
   var nav = document.getElementById("nav");
@@ -43,11 +36,7 @@
           r.hidden = !match;
           if (match) shown++;
         });
-        if (status) {
-          status.textContent = shown === 0
-            ? "Nu există încă articole publicate în această categorie. Vezi mai jos articolele în pregătire."
-            : shown + (shown === 1 ? " articol" : " articole");
-        }
+        if (status) status.textContent = shown + (shown === 1 ? " articol" : " articole");
       });
     });
     /* /blog?categorie=talks deschide direct categoria cerută */
@@ -185,16 +174,4 @@
       if (e.detail) stopRaf(); else startRaf();
     });
   });
-
-  /* acord cookie-uri: ambele opțiuni la fel de vizibile */
-  var consent = document.getElementById("consent");
-  if (consent && !store("fiscont-consent")) {
-    consent.hidden = false;
-    consent.querySelectorAll("[data-consent]").forEach(function (b) {
-      b.addEventListener("click", function () {
-        store("fiscont-consent", b.getAttribute("data-consent"));
-        consent.hidden = true;
-      });
-    });
-  }
 })();
