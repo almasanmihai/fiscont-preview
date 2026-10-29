@@ -3,6 +3,13 @@ import Base from '../layouts/Base.astro';
 import TeamLedger from '../components/TeamLedger.astro';
 import { services, proiecte, ssm, reviews, googleReviewsUrl, industries } from '../data/site';
 import { assetUrl, withBase } from '../utils/paths';
+
+type Logo = (typeof industries)[number];
+// Fără acordul clientului nu publicăm nici numele, nici logo-ul original (vezi src/data/site.ts).
+const logoSrc = (l: Logo) =>
+  l.acord
+    ? assetUrl(`assets/clienti/${l.file}`)
+    : assetUrl(`assets/clienti/blur/${l.file.replace(/\.\w+$/, '.jpg')}`);
 ---
 
 <Base
@@ -168,7 +175,11 @@ import { assetUrl, withBase } from '../utils/paths';
                   <q>{review.quote}</q>
                 </blockquote>
                 <figcaption>
-                  <b>{review.author}</b>
+                  {review.acord ? (
+                    <b>{review.author}</b>
+                  ) : (
+                    <b class="redacted" aria-hidden="true">Client Fiscont SRL</b>
+                  )}
                   <span class="muted small">client Fiscont</span>
                 </figcaption>
               </figure>
@@ -181,7 +192,11 @@ import { assetUrl, withBase } from '../utils/paths';
                   <q>{review.quote}</q>
                 </blockquote>
                 <figcaption>
-                  <b>{review.author}</b>
+                  {review.acord ? (
+                    <b>{review.author}</b>
+                  ) : (
+                    <b class="redacted" aria-hidden="true">Client Fiscont SRL</b>
+                  )}
                   <span class="muted small">client Fiscont</span>
                 </figcaption>
               </figure>
@@ -234,8 +249,8 @@ import { assetUrl, withBase } from '../utils/paths';
             industries.map((logo) => (
               <li>
                 <img
-                  src={assetUrl(`assets/clienti/${logo.file}`)}
-                  alt={logo.name}
+                  src={logoSrc(logo)}
+                  alt={logo.acord ? logo.name : 'Logo de client Fiscont'}
                   width="118"
                   height="118"
                   loading="lazy"
@@ -247,7 +262,7 @@ import { assetUrl, withBase } from '../utils/paths';
             industries.map((logo) => (
               <li data-clone aria-hidden="true">
                 <img
-                  src={assetUrl(`assets/clienti/${logo.file}`)}
+                  src={logoSrc(logo)}
                   alt=""
                   width="118"
                   height="118"
