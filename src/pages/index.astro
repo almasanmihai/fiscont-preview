@@ -1,15 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
 import TeamLedger from '../components/TeamLedger.astro';
-import { services, proiecte, ssm, reviews, googleReviewsUrl, industries } from '../data/site';
+import { services, proiecte, ssm, googleReviewsUrl } from '../data/site';
+import { shownReviews, shownLogos } from '../data/clienti';
 import { assetUrl, withBase } from '../utils/paths';
-
-type Logo = (typeof industries)[number];
-// Fără acordul clientului nu publicăm nici numele, nici logo-ul original (vezi src/data/site.ts).
-const logoSrc = (l: Logo) =>
-  l.acord
-    ? assetUrl(`assets/clienti/${l.file}`)
-    : assetUrl(`assets/clienti/blur/${l.file.replace(/\.\w+$/, '.jpg')}`);
 ---
 
 <Base
@@ -169,13 +163,13 @@ const logoSrc = (l: Logo) =>
         <div class="quote-window">
         <div class="quote-track">
           {
-            reviews.map((review) => (
+            shownReviews.map((review) => (
               <figure class="quote">
                 <blockquote>
                   <q>{review.quote}</q>
                 </blockquote>
                 <figcaption>
-                  {review.acord ? (
+                  {review.author ? (
                     <b>{review.author}</b>
                   ) : (
                     <b class="redacted" aria-hidden="true">Client Fiscont SRL</b>
@@ -186,13 +180,13 @@ const logoSrc = (l: Logo) =>
             ))
           }
           {
-            reviews.map((review) => (
+            shownReviews.map((review) => (
               <figure class="quote" data-clone aria-hidden="true">
                 <blockquote>
                   <q>{review.quote}</q>
                 </blockquote>
                 <figcaption>
-                  {review.acord ? (
+                  {review.author ? (
                     <b>{review.author}</b>
                   ) : (
                     <b class="redacted" aria-hidden="true">Client Fiscont SRL</b>
@@ -246,11 +240,11 @@ const logoSrc = (l: Logo) =>
       <div class="logo-marquee">
         <ul class="logo-track">
           {
-            industries.map((logo) => (
+            shownLogos.map((logo) => (
               <li>
                 <img
-                  src={logoSrc(logo)}
-                  alt={logo.acord ? logo.name : 'Logo de client Fiscont'}
+                  src={assetUrl(logo.file)}
+                  alt={logo.name ?? 'Logo de client Fiscont'}
                   width="118"
                   height="118"
                   loading="lazy"
@@ -259,10 +253,10 @@ const logoSrc = (l: Logo) =>
             ))
           }
           {
-            industries.map((logo) => (
+            shownLogos.map((logo) => (
               <li data-clone aria-hidden="true">
                 <img
-                  src={logoSrc(logo)}
+                  src={assetUrl(logo.file)}
                   alt=""
                   width="118"
                   height="118"

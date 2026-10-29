@@ -230,71 +230,64 @@ export const googleReviewsUrl =
 
 /**
  * Recenzii publicate pe site-ul actual, în ordinea caruselului.
- * `acord: true` doar după ce clientul a confirmat în scris că îi putem afișa numele;
- * până atunci numele nu apare în pagină, doar un text blurat.
+ * Autorii și acordurile lor sunt în repo-ul privat (private/clienti.json), legate prin `id`;
+ * vezi src/data/clienti.ts.
  */
 export const reviews = [
   {
     quote:
       'Sunt foarte mulțumit de colaborarea cu FISCONT. De fiecare dată când am solicitat ceva, am primit rapid răspunsuri și soluții — uneori chiar mai mult decât am cerut. Apreciez mult faptul că am numerele de telefon ale colegilor și pot vorbi direct cu o persoană. În 2025, când multe companii mari folosesc doar roboți, e o reală diferență să poți avea o interacțiune umană. În toți acești ani, nu am încasat nicio amendă — ceea ce spune totul despre profesionalismul echipei.',
-    author: 'Zeki Med SRL',
-    acord: false,
+    id: 'r01',
   },
   {
     quote:
       'Apreciez mult că am alături o echipă de încredere, că nu există întrebări „stupide” și că pot conta pe sprijinul lor oricând. Pentru mine, acest lucru este extrem de important. Momentan totul este în regulă — oameni foarte faini și o colaborare care îmi oferă liniște.',
-    author: 'Develop Concept SRL',
-    acord: false,
+    id: 'r02',
   },
   {
     quote:
       'Colaborarea este foarte bună, lucrurile se desfășoară fluid și primim răspunsuri rapide. Ne bucurăm că totul ajunge la timp și că găsim întotdeauna soluții împreună. Pentru viitor, ne-ar ajuta și mai mult o consultanță proactivă pe partea financiar-contabilă — interpretarea rezultatelor, analiza balanței și evidențierea oportunităților de optimizare fiscală.',
-    author: 'Cemado Trade International SRL',
-    acord: false,
+    id: 'r03',
   },
   {
     quote:
       'Doamna Carmen răspunde mereu prompt ori de câte ori sun, iar informațiile primite au fost întotdeauna corecte, complete și susținute legislativ. Totul la timp. Întreaga echipă FISCONT este, practic, interfața mea cu autoritățile, iar faptul că în toți acești ani nu am avut nicio problemă spune totul despre cât de mulțumit sunt. Chiar dacă ne leagă o prietenie veche, colaborarea noastră s-a construit profesional, iar astăzi pot spune cu toată sinceritatea că nu aș schimba nimic. Interacțiunea cu toți colegii este excelentă. Pe o scară de la 1 la 10, aleg 10 — fără ezitare.',
-    author: 'Light Plus SRL',
-    acord: false,
+    id: 'r04',
   },
   {
     quote:
       'Totul este în regulă. Colegele sunt foarte profesioniste și prompte, iar faptul că m-ați sunat pentru a cere feedback mi-a arătat încă o dată atenția voastră la detalii. Apreciez!',
-    author: 'Savu Tatiana',
-    acord: false,
+    id: 'r05',
   },
   {
     quote:
       'Apreciem mult eficiența colaborării cu FISCONT. Faptul că toate documentele sunt încărcate pe server face lucrurile mult mai rapide și mai simple. Nevoile noastre sunt acoperite complet, iar asta ne oferă încredere și liniște — nu simțim că ne lipsește ceva.',
-    author: 'Dental Optim SRL',
-    acord: false,
+    id: 'r06',
   },
   {
     quote:
       'Totul a funcționat foarte bine. Întreaga colaborare a decurs impecabil, fără probleme. Nu am simțit niciodată nevoia să cer simplificarea proceselor sau a procedurilor — ceea ce, pentru mine, este un semn clar că lucrurile sunt bine gândite și eficient implementate.',
-    author: 'Magic Speed SRL',
-    acord: false,
+    id: 'r07',
   },
 ] as const;
 
 /**
- * Logo-urile din caruselul de industrii de pe site-ul actual.
- * Fără acord se afișează varianta blurată din public/assets/clienti/blur/. Cu `acord: true`,
- * copiază logo-ul original din originale/clienti/ în public/assets/clienti/.
+ * Logo-urile din caruselul de industrii, în ordinea de pe site-ul actual.
+ * Public sunt doar variantele blurate (public/assets/clienti/blur/<id>.jpg); numele și
+ * originalele sunt în repo-ul privat. Vezi src/data/clienti.ts.
  */
 export const industries = [
-  { name: 'Turquoise Bakery', file: 'turquoise-bakery.png', acord: false },
-  { name: 'Introlife', file: 'introlife.png', acord: false },
-  { name: 'Bomar Solution', file: 'bomar-solution.png', acord: false },
-  { name: 'Mostiro', file: 'mostiro.png', acord: false },
-  { name: 'Pamro Solutions', file: 'pamro.png', acord: false },
-  { name: 'Morem', file: 'morem.jpg', acord: false },
-  { name: 'Global Fast', file: 'global-fast.png', acord: false },
-  { name: 'Apa Cargo Services', file: 'apa-cargo.jpeg', acord: false },
-  { name: 'Royal Trans', file: 'royal-trans.png', acord: false },
-  { name: 'Fluid System', file: 'fluid-system.png', acord: false },
-  { name: 'SSM Group', file: 'ssm-group.png', acord: false },
+  { id: 'logo-01' },
+  { id: 'logo-02' },
+  { id: 'logo-03' },
+  { id: 'logo-04' },
+  { id: 'logo-05' },
+  { id: 'logo-06' },
+  { id: 'logo-07' },
+  { id: 'logo-08' },
+  { id: 'logo-09' },
+  { id: 'logo-10' },
+  { id: 'logo-11' },
 ] as const;
 
 export const nav = [

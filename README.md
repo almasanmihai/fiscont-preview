@@ -34,6 +34,20 @@ Ieșirea e în `dist/`. Deploy pe GitHub Pages prin `.github/workflows/deploy.ym
 - Repo: https://github.com/almasanmihai/fiscont-preview
 - Paginile au `noindex, nofollow`; `robots.txt` blochează indexarea.
 
+## Date private despre clienți
+
+Numele din recenzii, numele și logo-urile originale ale clienților nu stau în acest repo (care e
+public), ci în repo-ul privat `almasanmihai/fiscont-privat`:
+
+- `clienti.json` — pentru fiecare `id` din `src/data/site.ts`: autorul sau numele și `acord`;
+- `clienti/` — logo-urile originale.
+
+La build, workflow-ul îl aduce în `private/` cu cheia de deploy din secretul `PRIVATE_DEPLOY_KEY`.
+Pe site apar doar clienții cu `"acord": true`; ceilalți rămân anonimi, cu logo blurat.
+Fără folderul `private/`, site-ul se construiește cu toți clienții ascunși.
+
+Local: `gh repo clone almasanmihai/fiscont-privat private`.
+
 ## Lansare pe fiscontsrl.ro
 
 Adresa și calea de bază sunt într-un singur loc, `site.config.mjs`, citit de Astro și de Tina.

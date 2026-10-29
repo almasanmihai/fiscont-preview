@@ -33,3 +33,9 @@ yarn-error.log*
 
 # export local al paginii de start; nu urcă pe GitHub
 pagina-start-teme.html
+
+# date despre clienți: vin din repo-ul privat fiscont-privat (vezi README)
+private/
+# logo-uri originale copiate la build doar pentru clienții cu acord; în repo stau doar cele blurate
+public/assets/clienti/*
+!public/assets/clienti/blur/

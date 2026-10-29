@@ -16,9 +16,19 @@ jobs:
     env:
       TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
       TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+      PRIVATE_DEPLOY_KEY: ${{ secrets.PRIVATE_DEPLOY_KEY }}
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
+      # Numele clienților și logo-urile originale vin din repo-ul privat; fără cheie,
+      # site-ul se construiește cu ele ascunse.
+      - name: Checkout private client data
+        if: env.PRIVATE_DEPLOY_KEY != ''
+        uses: actions/checkout@v4
+        with:
+          repository: almasanmihai/fiscont-privat
+          ssh-key: ${{ secrets.PRIVATE_DEPLOY_KEY }}
+          path: private
       - name: Install, build, and upload your site
         uses: withastro/action@v3
         with:
