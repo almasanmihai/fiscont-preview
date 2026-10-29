@@ -30,3 +30,6 @@ DE_COMPLETAT.md
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# export local al paginii de start; nu urcă pe GitHub
+pagina-start-teme.html
