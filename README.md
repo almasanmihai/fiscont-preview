@@ -25,8 +25,8 @@ Ieșirea e în `dist/`. Deploy pe GitHub Pages prin `.github/workflows/deploy.ym
 - `src/content/blog/` — articolele (Markdown + frontmatter)
 - `src/content.config.ts` — schema colecției `blog`
 - `src/data/site.ts` — echipă, servicii, navigare
-- `public/assets/` — CSS, JS, logo, poze echipă
-- `_build/build.py` — generatorul vechi (referință; nu mai e folosit)
+- `public/assets/` — CSS, JS, fonturi, logo, poze echipă
+- `originale/` — fișierele sursă ale pozelor (nu se publică)
 
 ## Previzualizare online
 
