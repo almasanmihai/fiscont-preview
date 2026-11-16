@@ -1,23 +1,23 @@
 /* Fiscont — site de prezentare
-   Brand: Poppins (titluri, butoane) + DM Sans (text); navy + cyan (ref. Wix Law Firm), roșul siglei ca accent rar. */
+   Brand: Poppins (titluri, butoane) + DM Sans (text); navy pe hârtie crem (tema Cabinet), roșul siglei ca accent rar. */
 :root{
-  /* Paleta navy / cyan pe gri rece (ref. template Wix Knoll & Walters, octombrie 2026) */
+  /* Paleta Cabinet: navy neschimbat, hârtie crem și neutrale calde */
   --blue:#00305B;      /* navy: linkuri, butoane, linia de sus a fișei */
   --blue-2:#002244;    /* navy închis: hover */
-  --sky:#41B7C4;       /* cyan: decor / accent UI (nu text mic pe alb) */
+  --sky:#41B7C4;       /* accent rar UI (ex. surse în prose) */
   --red:#F60015;       /* roșul din siglă: accent rar (linia dublă a totalului) */
   --red-text:#C4000F;  /* roșul siglei închis, pentru text mic lizibil */
-  --ink:#0A1F33;       /* text de bază */
-  --muted:#5A6B7A;
-  --paper:#F2F2F2;     /* fundalul paginii: gri deschis rece */
+  --ink:#1A1814;       /* text de bază */
+  --muted:#6A6258;
+  --paper:#F7F4EE;     /* fundalul paginii: hârtie crem */
   --surface:#FFFFFF;   /* suprafețe care stau „deasupra”: fișa firmei, butoane, banner */
-  --tint:#EAF4F6;      /* benzi: primul ecran, antetul paginilor, FISCONT Talks */
-  --line:#C8CED4;
-  --on-blue-muted:#DCE4EA; /* text secundar pe banda echipei, ca pe fiscontprint.ro */
+  --tint:#EFE8DC;      /* benzi: primul ecran, antetul paginilor, FISCONT Talks */
+  --line:#D9D1C5;
+  --on-blue-muted:#DDD6CC; /* text secundar pe banda echipei */
   --on-blue-line:rgba(255,255,255,.26);
   --heading:#00305B;   /* titluri */
-  --band:#1B2833;      /* fundalul blocului echipei, același albastru ca fiscontprint.ro */
-  --script:#D9B886;    /* auriu/cupru pentru textul caligrafic, ca pe fiscontprint.ro */
+  --band:#1A242C;      /* fundalul blocului echipei */
+  --script:#C6A15B;    /* auriu pentru textul caligrafic */
 
   --head:"Poppins",system-ui,"Segoe UI",sans-serif;
   --text:"DM Sans",system-ui,"Segoe UI",sans-serif;
@@ -82,9 +82,9 @@ p+p{margin-top:1em}
 /* bara de sus rămâne fixă; e semitransparentă, iar ce trece pe sub ea se vede estompat */
 .site-head{
   position:sticky;top:0;z-index:30;
-  background:rgba(242,242,242,.5);
+  background:color-mix(in srgb, var(--paper) 78%, transparent);
   -webkit-backdrop-filter:saturate(140%) blur(8px);backdrop-filter:saturate(140%) blur(8px);
-  border-bottom:1px solid rgba(200,206,212,.6);
+  border-bottom:1px solid color-mix(in srgb, var(--line) 75%, transparent);
 }
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.site-head{background:var(--paper)}}
 @media (prefers-reduced-transparency:reduce){.site-head{background:var(--paper);-webkit-backdrop-filter:none;backdrop-filter:none}}
