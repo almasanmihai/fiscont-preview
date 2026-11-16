@@ -295,4 +295,5 @@ export const nav = [
   { key: 'servicii', href: '/servicii', label: 'Servicii' },
   { key: 'blog', href: '/blog', label: 'Blog' },
   { key: 'contact', href: '/contact', label: 'Contact' },
+  { key: 'portal', href: 'https://myfiscont.ro/', label: 'Portal clienți' },
 ] as const;

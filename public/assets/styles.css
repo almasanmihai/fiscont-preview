@@ -91,10 +91,15 @@ p+p{margin-top:1em}
 .site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3);min-height:78px}
 .wordmark{display:inline-flex;align-items:center;text-decoration:none}
 .wordmark .logo{width:180px;height:auto}
-.nav > ul{display:flex;gap:clamp(1.25rem,2.5vw,2.25rem);list-style:none;margin:0;padding:0}
+.nav > ul{display:flex;align-items:center;gap:clamp(1.25rem,2.5vw,2.25rem);list-style:none;margin:0;padding:0}
 .nav a{color:var(--ink);text-decoration:none;padding:.5rem 0;border-bottom:2px solid transparent;font:500 .98rem var(--head)}
 .nav a:hover{color:var(--blue);border-bottom-color:var(--line)}
 .nav > ul > li > a[aria-current="page"]{border-bottom-color:var(--blue);color:var(--blue)}
+.nav a.btn{
+  min-height:40px;padding:.45rem 1.1rem;border-bottom:1px solid var(--blue);
+  color:#fff;background:var(--blue);font:500 .95rem/1.2 var(--head)
+}
+.nav a.btn:hover{color:#fff;background:var(--blue-2);border-color:var(--blue-2);border-bottom-color:var(--blue-2)}
 .nav .has-sub{position:relative}
 .nav .has-sub::before{content:"";position:absolute;left:0;right:0;top:100%;height:.6rem}
 .nav .has-sub > a::after{
@@ -445,9 +450,14 @@ p+p{margin-top:1em}
   .menu-btn{display:inline-flex;align-items:center}
   .js .nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--paper);border-bottom:2px solid var(--ink)}
   .js .nav.open{display:block}
-  .nav > ul{flex-direction:column;gap:0;padding:0 var(--gutter) .5rem}
+  .nav > ul{flex-direction:column;align-items:stretch;gap:0;padding:0 var(--gutter) .5rem}
   .nav > ul > li{border-top:1px solid var(--line)}
   .nav > ul > li > a{display:block;padding:.9rem 0;font-size:1.05rem;border-bottom:0}
+  .nav > ul > li > a.btn{
+    display:inline-flex;justify-content:center;margin:.65rem 0 .85rem;padding:.55rem 1.1rem;width:100%;
+    border:1px solid var(--blue);border-bottom:1px solid var(--blue);font-size:1rem
+  }
+  .nav > ul > li > a.btn:hover{border-color:var(--blue-2);border-bottom-color:var(--blue-2)}
   .nav .has-sub::before{display:none}
   .nav .sub{
     display:block;position:static;min-width:0;margin:0;padding:0 0 .35rem 1rem;

@@ -95,12 +95,17 @@ const structured = jsonLd ? [business, jsonLd] : business;
         <nav class="nav" id="nav" aria-label="Principal">
           <ul>
             {
-              nav.map(({ key, href, label }) => (
+              nav.map(({ key, href, label }) => {
+                const external = /^https?:\/\//.test(href);
+                return (
                 <li class:list={[{ 'has-sub': key === 'servicii' }]}>
                   <a
-                    href={withBase(href)}
-                    aria-current={key === section ? 'page' : undefined}
+                    class:list={[{ btn: key === 'portal' }]}
+                    href={external ? href : withBase(href)}
+                    aria-current={!external && key === section ? 'page' : undefined}
                     aria-haspopup={key === 'servicii' ? 'true' : undefined}
+                    target={external ? '_blank' : undefined}
+                    rel={external ? 'noopener noreferrer' : undefined}
                   >
                     {label}
                   </a>
@@ -123,7 +128,8 @@ const structured = jsonLd ? [business, jsonLd] : business;
                     )
                   }
                 </li>
-              ))
+                );
+              })
             }
           </ul>
         </nav>
